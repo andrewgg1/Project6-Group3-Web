@@ -1,0 +1,104 @@
+{
+  "albums": [
+    {
+      "album_name": "Arrival",
+      "release_year": 1976,
+      "genre": "pop"
+    },
+    {
+      "album_name": "Back in Black",
+      "release_year": 1980,
+      "genre": "hard rock"
+    },
+    {
+      "album_name": "25",
+      "release_year": 2015,
+      "genre": "pop"
+    },
+    {
+      "album_name": "Toys in the Attic",
+      "release_year": 1975,
+      "genre": "rock"
+    },
+    {
+      "album_name": "AM",
+      "release_year": 2013,
+      "genre": "indie rock"
+    },
+    {
+      "album_name": "Abbey Road",
+      "release_year": 1969,
+      "genre": "rock"
+    },
+    {
+      "album_name": "Lemonade",
+      "release_year": 2016,
+      "genre": "r&b"
+    },
+    {
+      "album_name": "Paranoid",
+      "release_year": 1970,
+      "genre": "metal"
+    },
+    {
+      "album_name": "Highway 61 Revisited",
+      "release_year": 1965,
+      "genre": "folk rock"
+    },
+    {
+      "album_name": "Exodus",
+      "release_year": 1977,
+      "genre": "reggae"
+    },
+    {
+      "album_name": "Parachutes",
+      "release_year": 2000,
+      "genre": "alternative rock"
+    },
+    {
+      "album_name": "The Rise and Fall of Ziggy Stardust",
+      "release_year": 1972,
+      "genre": "rock"
+    },
+    {
+      "album_name": "Violator",
+      "release_year": 1990,
+      "genre": "electronic"
+    },
+    {
+      "album_name": "Views",
+      "release_year": 2016,
+      "genre": "hip hop"
+    },
+    {
+      "album_name": "÷ (Divide)",
+      "release_year": 2017,
+      "genre": "pop"
+    },
+    {
+      "album_name": "Goodbye Yellow Brick Road",
+      "release_year": 1973,
+      "genre": "rock"
+    },
+    {
+      "album_name": "The Sun Sessions",
+      "release_year": 1976,
+      "genre": "rock and roll"
+    },
+    {
+      "album_name": "The Marshall Mathers LP",
+      "release_year": 2000,
+      "genre": "hip hop"
+    },
+    {
+      "album_name": "Rumours",
+      "release_year": 1977,
+      "genre": "rock"
+    },
+    {
+      "album_name": "The Colour and the Shape",
+      "release_year": 1997,
+      "genre": "alternative rock"
+    }
+  ]
+}

@@ -1,0 +1,354 @@
+{
+  "artists": [
+    {
+      "artist_name": "ABBA",
+      "country_of_origin": "Sweden",
+      "age": 72,
+      "genres": ["Pop", "Disco"],
+      "label": "Polar Music"
+    },
+    {
+      "artist_name": "AC/DC",
+      "country_of_origin": "Australia",
+      "age": 73,
+      "genres": ["Rock", "Hard Rock"],
+      "label": "Columbia Records"
+    },
+    {
+      "artist_name": "Adele",
+      "country_of_origin": "UK",
+      "age": 35,
+      "genres": ["Pop", "Soul"],
+      "label": "Columbia Records"
+    },
+    {
+      "artist_name": "Aerosmith",
+      "country_of_origin": "USA",
+      "age": 76,
+      "genres": ["Rock", "Hard Rock"],
+      "label": "Columbia Records"
+    },
+    {
+      "artist_name": "Arctic Monkeys",
+      "country_of_origin": "UK",
+      "age": 38,
+      "genres": ["Alternative Rock", "Indie Rock"],
+      "label": "Domino Recording Company"
+    },
+    {
+      "artist_name": "Beatles, The",
+      "country_of_origin": "UK",
+      "age": 84,
+      "genres": ["Rock", "Pop Rock"],
+      "label": "Apple Records"
+    },
+    {
+      "artist_name": "Beyoncé",
+      "country_of_origin": "USA",
+      "age": 42,
+      "genres": ["R&B", "Pop"],
+      "label": "Columbia Records"
+    },
+    {
+      "artist_name": "Black Sabbath",
+      "country_of_origin": "UK",
+      "age": 75,
+      "genres": ["Metal", "Heavy Metal"],
+      "label": "Warner Records"
+    },
+    {
+      "artist_name": "Bob Dylan",
+      "country_of_origin": "USA",
+      "age": 82,
+      "genres": ["Folk Rock", "Rock"],
+      "label": "Columbia Records"
+    },
+    {
+      "artist_name": "Bob Marley",
+      "country_of_origin": "Jamaica",
+      "age": 76,
+      "genres": ["Reggae", "Ska"],
+      "label": "Island Records"
+    },
+    {
+      "artist_name": "Coldplay",
+      "country_of_origin": "UK",
+      "age": 46,
+      "genres": ["Alternative Rock", "Pop Rock"],
+      "label": "Parlophone"
+    },
+    {
+      "artist_name": "David Bowie",
+      "country_of_origin": "UK",
+      "age": 69,
+      "genres": ["Rock", "Art Rock"],
+      "label": "RCA Records"
+    },
+    {
+      "artist_name": "Depeche Mode",
+      "country_of_origin": "UK",
+      "age": 64,
+      "genres": ["Electronic", "New Wave"],
+      "label": "Mute Records"
+    },
+    {
+      "artist_name": "Drake",
+      "country_of_origin": "Canada",
+      "age": 37,
+      "genres": ["Hip Hop", "R&B"],
+      "label": "OVO Sound"
+    },
+    {
+      "artist_name": "Ed Sheeran",
+      "country_of_origin": "UK",
+      "age": 33,
+      "genres": ["Pop", "Folk Pop"],
+      "label": "Atlantic Records"
+    },
+    {
+      "artist_name": "Elton John",
+      "country_of_origin": "UK",
+      "age": 76,
+      "genres": ["Pop Rock", "Rock"],
+      "label": "Mercury Records"
+    },
+    {
+      "artist_name": "Elvis Presley",
+      "country_of_origin": "USA",
+      "age": 42,
+      "genres": ["Rock and Roll", "Pop"],
+      "label": "RCA Records"
+    },
+    {
+      "artist_name": "Eminem",
+      "country_of_origin": "USA",
+      "age": 51,
+      "genres": ["Hip Hop", "Rap"],
+      "label": "Aftermath Entertainment"
+    },
+    {
+      "artist_name": "Fleetwood Mac",
+      "country_of_origin": "UK",
+      "age": 78,
+      "genres": ["Rock", "Pop Rock"],
+      "label": "Warner Records"
+    },
+    {
+      "artist_name": "Foo Fighters",
+      "country_of_origin": "USA",
+      "age": 55,
+      "genres": ["Rock", "Alternative Rock"],
+      "label": "RCA Records"
+    },
+    {
+      "artist_name": "Frank Sinatra",
+      "country_of_origin": "USA",
+      "age": 82,
+      "genres": ["Jazz", "Traditional Pop"],
+      "label": "Capitol Records"
+    },
+    {
+      "artist_name": "Green Day",
+      "country_of_origin": "USA",
+      "age": 52,
+      "genres": ["Punk Rock", "Alternative Rock"],
+      "label": "Reprise Records"
+    },
+    {
+      "artist_name": "Guns N' Roses",
+      "country_of_origin": "USA",
+      "age": 62,
+      "genres": ["Hard Rock", "Heavy Metal"],
+      "label": "Geffen Records"
+    },
+    {
+      "artist_name": "Iron Maiden",
+      "country_of_origin": "UK",
+      "age": 68,
+      "genres": ["Metal", "Heavy Metal"],
+      "label": "EMI"
+    },
+    {
+      "artist_name": "Jay-Z",
+      "country_of_origin": "USA",
+      "age": 54,
+      "genres": ["Hip Hop", "Rap"],
+      "label": "Roc Nation"
+    },
+    {
+      "artist_name": "Johnny Cash",
+      "country_of_origin": "USA",
+      "age": 71,
+      "genres": ["Country", "Rock and Roll"],
+      "label": "Columbia Records"
+    },
+    {
+      "artist_name": "Lady Gaga",
+      "country_of_origin": "USA",
+      "age": 37,
+      "genres": ["Pop", "Dance Pop"],
+      "label": "Interscope Records"
+    },
+    {
+      "artist_name": "Led Zeppelin",
+      "country_of_origin": "UK",
+      "age": 75,
+      "genres": ["Rock", "Hard Rock"],
+      "label": "Atlantic Records"
+    },
+    {
+      "artist_name": "Madonna",
+      "country_of_origin": "USA",
+      "age": 65,
+      "genres": ["Pop", "Dance Pop"],
+      "label": "Warner Records"
+    },
+    {
+      "artist_name": "Metallica",
+      "country_of_origin": "USA",
+      "age": 62,
+      "genres": ["Metal", "Thrash Metal"],
+      "label": "Blackened Recordings"
+    },
+    {
+      "artist_name": "Michael Jackson",
+      "country_of_origin": "USA",
+      "age": 50,
+      "genres": ["Pop", "R&B"],
+      "label": "Epic Records"
+    },
+    {
+      "artist_name": "Miles Davis",
+      "country_of_origin": "USA",
+      "age": 65,
+      "genres": ["Jazz", "Cool Jazz"],
+      "label": "Columbia Records"
+    },
+    {
+      "artist_name": "Nirvana",
+      "country_of_origin": "USA",
+      "age": 27,
+      "genres": ["Grunge", "Alternative Rock"],
+      "label": "DGC Records"
+    },
+    {
+      "artist_name": "Oasis",
+      "country_of_origin": "UK",
+      "age": 53,
+      "genres": ["Rock", "Britpop"],
+      "label": "Creation Records"
+    },
+    {
+      "artist_name": "Pearl Jam",
+      "country_of_origin": "USA",
+      "age": 58,
+      "genres": ["Grunge", "Alternative Rock"],
+      "label": "Epic Records"
+    },
+    {
+      "artist_name": "Pink Floyd",
+      "country_of_origin": "UK",
+      "age": 77,
+      "genres": ["Progressive Rock", "Psychedelic Rock"],
+      "label": "EMI"
+    },
+    {
+      "artist_name": "Prince",
+      "country_of_origin": "USA",
+      "age": 57,
+      "genres": ["Pop", "Funk"],
+      "label": "Warner Records"
+    },
+    {
+      "artist_name": "Queen",
+      "country_of_origin": "UK",
+      "age": 75,
+      "genres": ["Rock", "Hard Rock"],
+      "label": "EMI"
+    },
+    {
+      "artist_name": "Radiohead",
+      "country_of_origin": "UK",
+      "age": 54,
+      "genres": ["Alternative Rock", "Art Rock"],
+      "label": "XL Recordings"
+    },
+    {
+      "artist_name": "Red Hot Chili Peppers",
+      "country_of_origin": "USA",
+      "age": 60,
+      "genres": ["Alternative Rock", "Funk Rock"],
+      "label": "Warner Records"
+    },
+    {
+      "artist_name": "Rolling Stones, The",
+      "country_of_origin": "UK",
+      "age": 80,
+      "genres": ["Rock", "Blues Rock"],
+      "label": "Rolling Stones Records"
+    },
+    {
+      "artist_name": "Taylor Swift",
+      "country_of_origin": "USA",
+      "age": 34,
+      "genres": ["Pop", "Country Pop"],
+      "label": "Republic Records"
+    },
+    {
+      "artist_name": "The Beach Boys",
+      "country_of_origin": "USA",
+      "age": 82,
+      "genres": ["Rock", "Pop Rock"],
+      "label": "Capitol Records"
+    },
+    {
+      "artist_name": "The Police",
+      "country_of_origin": "UK",
+      "age": 71,
+      "genres": ["Rock", "New Wave"],
+      "label": "A&M Records"
+    },
+    {
+      "artist_name": "The Smiths",
+      "country_of_origin": "UK",
+      "age": 63,
+      "genres": ["Alternative Rock", "Indie Rock"],
+      "label": "Rough Trade Records"
+    },
+    {
+      "artist_name": "The Who",
+      "country_of_origin": "UK",
+      "age": 79,
+      "genres": ["Rock", "Hard Rock"],
+      "label": "Polydor Records"
+    },
+    {
+      "artist_name": "Tom Petty",
+      "country_of_origin": "USA",
+      "age": 66,
+      "genres": ["Rock", "Heartland Rock"],
+      "label": "MCA Records"
+    },
+    {
+      "artist_name": "U2",
+      "country_of_origin": "Ireland",
+      "age": 63,
+      "genres": ["Rock", "Alternative Rock"],
+      "label": "Island Records"
+    },
+    {
+      "artist_name": "Van Halen",
+      "country_of_origin": "USA",
+      "age": 68,
+      "genres": ["Rock", "Hard Rock"],
+      "label": "Warner Records"
+    },
+    {
+      "artist_name": "Whitney Houston",
+      "country_of_origin": "USA",
+      "age": 48,
+      "genres": ["Pop", "R&B"],
+      "label": "Arista Records"
+    }
+  ]
+}
