@@ -81,3 +81,31 @@ def delete_artist(id):
         return jsonify({"error": "Artist not found"}), 404
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+@artist_bp.route("/artists/<id>", methods=["PATCH"])
+def edit_artist(id):
+    """ Endpoint for editing an artist """
+    try:
+        # reads the json from the request into a data collection obj
+        data = json.loads(request.data)
+
+        # Find the document that matches the id in that data collection obj
+        artist = Artist.objects(id=ObjectId(id)).first()
+
+        # Update it using the modify command call and pass it the json request object.
+        artist.modify(**data)
+        
+        return jsonify({
+            "artist_name": artist.artist_name,
+            "country_of_origin": artist.country_of_origin,
+            "age": artist.age,
+            "genres": artist.genres,
+            "label": artist.label,
+            "id": str(artist.id)
+        }), 201
+    except json.JSONDecodeError:
+        return jsonify({"error": "Invalid JSON format"}), 400
+    except ValidationError as e:
+        return jsonify({"error": str(e)}), 400
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500

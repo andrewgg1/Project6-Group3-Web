@@ -72,3 +72,28 @@ def delete_song(id):
         return jsonify({"error": "Song not found"}), 404
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+@song_bp.route("/songs/<id>", methods=["PATCH"])
+def edit_song(id):
+    """ Endpoint for editing a song """
+    try:
+        # reads the json from the request into a data collection obj
+        data = json.loads(request.data)
+
+        # Find the document that matches the id in that data collection obj
+        song = Song.objects(id=ObjectId(id)).first()
+
+        # Update it using the modify command call and pass it the json request object.
+        song.modify(**data)
+        
+        return jsonify({
+            "song_name": song.song_name,
+            "song_length": song.song_length,
+            "id": str(song.id)
+        }), 201
+    except json.JSONDecodeError:
+        return jsonify({"error": "Invalid JSON format"}), 400
+    except ValidationError as e:
+        return jsonify({"error": str(e)}), 400
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
