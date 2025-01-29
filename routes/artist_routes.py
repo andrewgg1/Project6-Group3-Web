@@ -69,12 +69,41 @@ def create_artist():
 @artist_bp.route("/artists/<id>", methods=["DELETE"])
 def delete_artist(id):
     """ Endpoint for deleting an artist """
+    from models.album import Album
+    from models.song import Song
+
     try:
         artist = Artist.objects(id=ObjectId(id)).first()
         if not artist:
             return jsonify({"error": "Artist not found"}), 404
+        
+        #find all albums that reference this artist
+        albums_with_artist = Album.objects(artists=artist)
+        for album in albums_with_artist:
+            #remove the artist from the album's artist list
+            album.update(pull__artists=artist)
+
+            #fetch the album object, to see updated artists list
+            updated_album = Album.objects(id=album.id).first()
+
+            #if no more artists in that album, delete the album
+            if not updated_album.artists:
+                #before deleting the album, remove it from all songs referencing it
+                songs_with_album = Song.objects(albums=album)
+                for song in songs_with_album:
+                    song.update(pull__albums=album)
+                    #fetch updated song, if now empty, delete the song
+                    updated_song = Song.objects(id=song.id).first()
+                    if not updated_song.albums:
+                        updated_song.delete()
+
+                #delete the album
+                updated_album.delete() 
+        
+        #delete the artist
         artist.delete()
-        return jsonify({"message": "Artist deleted successfully"}), 200
+        return jsonify({"message": f"Artist '{artist.artist_name}' deleted. Albums with no remaining artists also removed."}), 200
+
     except bson_errors.InvalidId:
         return jsonify({"error": "Invalid ID format"}), 400
     except DoesNotExist:
