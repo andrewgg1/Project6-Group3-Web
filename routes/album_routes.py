@@ -63,12 +63,28 @@ def create_album():
 @album_bp.route("/albums/<id>", methods=["DELETE"])
 def delete_album(id):
     """ Endpoint for deleting an album """
+    from models.song import Song
+
     try:
         album = Album.objects(id=ObjectId(id)).first()
         if not album:
             return jsonify({"error": "Album not found"}), 404
+        
+        #remove album from any songs that reference it
+        songs_with_album = Song.objects(albums=album)
+        for song in songs_with_album:
+            #pull album out of the song's albums list
+            song.update(pull__albums=album)
+            #fetch song, to see updated list
+            updated_song = Song.objects(id=song.id).first()
+            #if no more albums in that song's list, delete the song
+            if not updated_song.albums:
+                updated_song.delete()
+
+        #delete the album
         album.delete()
-        return jsonify({"message": "Album deleted successfully"}), 200
+        return jsonify({"message": f"Album '{album.album_name}' deleted. Songs with no remaining albums also removed."}), 200
+
     except bson_errors.InvalidId:
         return jsonify({"error": "Invalid ID format"}), 400
     except DoesNotExist:
