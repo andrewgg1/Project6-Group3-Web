@@ -3,6 +3,8 @@ import database
 from routes.artist_routes import artist_bp
 from routes.song_routes import song_bp
 from routes.album_routes import album_bp
+#for my html pages
+from flask import Flask, render_template
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
@@ -10,7 +12,7 @@ app.register_blueprint(artist_bp)
 app.register_blueprint(song_bp)
 app.register_blueprint(album_bp)
 
-@app.route('/', methods=['GET', 'OPTIONS'])
+#@app.route('/', methods=['GET', 'OPTIONS'])
 def options():
     return jsonify({
         "endpoints": {
@@ -64,5 +66,9 @@ def options():
         }
     }), 200
 
+#just testing my html pages opening
+@app.route('/', methods=['GET'])
+def home():
+    return render_template('home.html')
 if __name__ == "__main__":
     app.run()
