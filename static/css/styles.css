@@ -1,0 +1,17 @@
+/*home.html styles*/
+.homeBody {
+    font-family: 'Poppins', sans-serif;
+    background-image: url("/static/images/home background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+.homeH1 {
+    font-weight: 800;
+    color: black;
+}
+.homeP {
+    font-weight: 400;
+}
+.small-text {
+    font-weight: 300;
+}
