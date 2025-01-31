@@ -1,13 +1,17 @@
-from mongoengine import Document, StringField, IntField, ListField, ReferenceField
+from mongoengine import Document, StringField, IntField, ListField, ReferenceField, CASCADE
 
 class Artist(Document):
     artist_name = StringField(required=True)
     country_of_origin = StringField()
-    # songs_credited = ListField(ReferenceField('Song'), default=list)
-    # albums_credited = ListField(ReferenceField('Album'), default=list)
     age = IntField(default=35)
     genres = ListField(StringField(), default=list)
     label = StringField()
+    songs_credited = ListField(ReferenceField('Song'), 
+                               default=list, 
+                               reverse_delete_rule=CASCADE)
+    albums_credited = ListField(ReferenceField('Album'), 
+                                default=list, 
+                                reverse_delete_rule=CASCADE)
     meta = {
         'collection': 'artists'
     }

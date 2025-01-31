@@ -16,7 +16,8 @@ def import_data():
         
         # Process each JSON file
         for filename in os.listdir(data_dir):
-            if filename.endswith('.json'):
+            # if filename.endswith('.json'):
+            if filename.find('album_data.json') is not -1:
                 file_path = os.path.join(data_dir, filename)
                 print(f"\nProcessing {filename}...")
                 
@@ -27,25 +28,25 @@ def import_data():
                     if 'artists' in data:
                         for artist_data in data['artists']:
                             artist = Artist(**artist_data)
-                            artist.save()
-                            print(f"Added artist: {artist.artist_name}")
-                            processed += 1
+                            if artist.save(cascade=True):
+                                print(f"Added artist: {artist.artist_name}")
+                                processed += 1
                             
                     # Handle albums data
                     if 'albums' in data:
                         for album_data in data['albums']:
                             album = Album(**album_data)
-                            album.save()
-                            print(f"Added album: {album.album_name}")
-                            processed += 1
+                            if album.save(cascade=True):
+                                print(f"Added album: {album.album_name}")
+                                processed += 1
                             
                     # Handle songs data
                     if 'songs' in data:
                         for song_data in data['songs']:
                             song = Song(**song_data)
-                            song.save()
-                            print(f"Added song: {song.song_name}")
-                            processed += 1
+                            if song.save(cascade=True):
+                                print(f"Added song: {song.song_name}")
+                                processed += 1
                             
         print(f"\nImport completed successfully! Processed {processed} items.")
         

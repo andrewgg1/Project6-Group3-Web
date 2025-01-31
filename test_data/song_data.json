@@ -2,203 +2,27 @@
   "songs": [
     {
       "song_name": "Dancing Queen",
-      "song_length": 230
+      "song_length": 230,
+      "artists": [
+        {
+          "$ref": "artist",
+          "$id": {
+            "&oid": "679d01049974e22823d0af30"
+          }
+        }
+      ]
     },
     {
       "song_name": "Back in Black",
-      "song_length": 255
-    },
-    {
-      "song_name": "Hello",
-      "song_length": 295
-    },
-    {
-      "song_name": "Dream On",
-      "song_length": 268
-    },
-    {
-      "song_name": "Do I Wanna Know?",
-      "song_length": 272
-    },
-    {
-      "song_name": "Hey Jude",
-      "song_length": 431
-    },
-    {
-      "song_name": "Crazy in Love",
-      "song_length": 236
-    },
-    {
-      "song_name": "Iron Man",
-      "song_length": 353
-    },
-    {
-      "song_name": "Like a Rolling Stone",
-      "song_length": 373
-    },
-    {
-      "song_name": "No Woman, No Cry",
-      "song_length": 263
-    },
-    {
-      "song_name": "Yellow",
-      "song_length": 266
-    },
-    {
-      "song_name": "Space Oddity",
-      "song_length": 315
-    },
-    {
-      "song_name": "Personal Jesus",
-      "song_length": 295
-    },
-    {
-      "song_name": "Hotline Bling",
-      "song_length": 267
-    },
-    {
-      "song_name": "Shape of You",
-      "song_length": 233
-    },
-    {
-      "song_name": "Tiny Dancer",
-      "song_length": 377
-    },
-    {
-      "song_name": "Jailhouse Rock",
-      "song_length": 146
-    },
-    {
-      "song_name": "Lose Yourself",
-      "song_length": 326
-    },
-    {
-      "song_name": "Dreams",
-      "song_length": 257
-    },
-    {
-      "song_name": "Everlong",
-      "song_length": 250
-    },
-    {
-      "song_name": "My Way",
-      "song_length": 276
-    },
-    {
-      "song_name": "Basket Case",
-      "song_length": 193
-    },
-    {
-      "song_name": "Sweet Child O' Mine",
-      "song_length": 356
-    },
-    {
-      "song_name": "The Trooper",
-      "song_length": 252
-    },
-    {
-      "song_name": "99 Problems",
-      "song_length": 239
-    },
-    {
-      "song_name": "Ring of Fire",
-      "song_length": 156
-    },
-    {
-      "song_name": "Bad Romance",
-      "song_length": 294
-    },
-    {
-      "song_name": "Stairway to Heaven",
-      "song_length": 482
-    },
-    {
-      "song_name": "Like a Prayer",
-      "song_length": 341
-    },
-    {
-      "song_name": "Enter Sandman",
-      "song_length": 332
-    },
-    {
-      "song_name": "Billie Jean",
-      "song_length": 294
-    },
-    {
-      "song_name": "So What",
-      "song_length": 541
-    },
-    {
-      "song_name": "Smells Like Teen Spirit",
-      "song_length": 301
-    },
-    {
-      "song_name": "Wonderwall",
-      "song_length": 258
-    },
-    {
-      "song_name": "Black",
-      "song_length": 343
-    },
-    {
-      "song_name": "Comfortably Numb",
-      "song_length": 382
-    },
-    {
-      "song_name": "Purple Rain",
-      "song_length": 520
-    },
-    {
-      "song_name": "Bohemian Rhapsody",
-      "song_length": 354
-    },
-    {
-      "song_name": "Karma Police",
-      "song_length": 264
-    },
-    {
-      "song_name": "Under the Bridge",
-      "song_length": 264
-    },
-    {
-      "song_name": "Paint it Black",
-      "song_length": 226
-    },
-    {
-      "song_name": "Shake It Off",
-      "song_length": 219
-    },
-    {
-      "song_name": "Good Vibrations",
-      "song_length": 215
-    },
-    {
-      "song_name": "Every Breath You Take",
-      "song_length": 254
-    },
-    {
-      "song_name": "How Soon Is Now?",
-      "song_length": 406
-    },
-    {
-      "song_name": "Who Are You",
-      "song_length": 318
-    },
-    {
-      "song_name": "Free Fallin'",
-      "song_length": 255
-    },
-    {
-      "song_name": "With or Without You",
-      "song_length": 296
-    },
-    {
-      "song_name": "Jump",
-      "song_length": 241
-    },
-    {
-      "song_name": "I Will Always Love You",
-      "song_length": 273
+      "song_length": 255,
+      "artists": [
+        {
+          "$ref": "artist",
+          "$id": {
+            "&oid": "679d01049974e22823d0af31"
+          }
+        }
+      ]
     }
   ]
 }

@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from models import Album
+from models import Album, Song
 from bson import ObjectId, errors as bson_errors
 from mongoengine.errors import ValidationError, DoesNotExist
 import json
@@ -86,8 +86,11 @@ def edit_album(id):
         # Find the document that matches the id in that data collection obj
         album = Album.objects(id=ObjectId(id)).first()
 
+        songs = Song.objects(id=ObjectId(data.song_listing))
+
+        album.update(push__song_listing = songs)
         # Update it using the modify command call and pass it the json request object.
-        album.modify(**data)
+        album.update(**data)
 
         return jsonify({
             "album_name": album.album_name,
