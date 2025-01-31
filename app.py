@@ -3,6 +3,8 @@ import database
 from routes.artist_routes import artist_bp
 from routes.song_routes import song_bp
 from routes.album_routes import album_bp
+#for my html pages
+from flask import Flask, render_template
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
@@ -10,7 +12,8 @@ app.register_blueprint(artist_bp)
 app.register_blueprint(song_bp)
 app.register_blueprint(album_bp)
 
-@app.route('/', methods=['GET', 'OPTIONS'])
+#do something about options
+#@app.route('/', methods=['GET', 'OPTIONS'])
 def options():
     return jsonify({
         "endpoints": {
@@ -63,6 +66,31 @@ def options():
             "500": "Server Error"
         }
     }), 200
+
+#root route to homepage
+@app.route('/', methods=['GET'])
+def home():
+    artists = database.db.artists.find() #reads from database
+    return render_template('home.html', artists=artists) #sends list of artists to home.html
+
+#these are the 'add' routes that return a html page with a form for the user to fill
+#idk if these should be moved to the routes folder to their appropriate files
+@app.route('/add-artist', methods=['GET'])
+def Add_Artist(): #only this one has a button to trigger it on home.html
+    return render_template('artist.html')
+
+@app.route('/add-album', methods=['GET'])
+def Add_Album(): #no trigger
+    return render_template('album.html')
+
+@app.route('/add-song', methods=['GET'])
+def Add_Song(): #no trigger
+    return render_template('song.html')
+
+#To be deleted - for testing purposes
+@app.route('/profile', methods=['GET'])
+def Get_profile():
+    return render_template('profile.html') #place this in route/artist_route.py instead (/artists/<ID> GET aka get_artist(ID))
 
 if __name__ == "__main__":
     app.run()

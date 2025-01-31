@@ -1,0 +1,71 @@
+/*home.html styles*/
+.homeBody {
+    font-family: 'Poppins', sans-serif;
+    background-image: url("/static/images/home background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+.homeH1 {
+    font-weight: 800;
+    color: black;
+}
+.homeP {
+    font-weight: 400;
+}
+.small-text {
+    font-weight: 300;
+}
+a:link{
+    color:black;
+    text-decoration: none;
+}
+a:visited{
+    color:black;
+    text-decoration: none;
+}
+a:hover{
+    color: black;
+    background-color:whitesmoke;
+    text-decoration: none;
+}
+.List{
+    color: white;
+}
+.nextLink:link{
+    color: white;
+    text-decoration: underline;
+}
+.nextLink:visited{
+    color: white;
+    text-decoration:dashed;
+}
+.nextLink:hover{
+    color: white;
+    background-color: black;
+    text-decoration: underline;
+}
+
+/*base.html styles*/
+#baseBody {
+    font-family: 'Poppins', sans-serif;
+}
+#baseH1 {
+    font-weight: 800;
+    color: black;
+}
+
+/*profile.html styles*/
+.profileBody{
+    font-family: 'Poppins', sans-serif;
+    background-image: url("/static/images/profile-bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+.profileH1 {
+    font-weight: 800;
+    color: black;
+}
+#profileA{
+    color: black;
+    text-decoration: none;
+}
