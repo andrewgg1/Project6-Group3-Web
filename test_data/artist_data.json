@@ -5,350 +5,1429 @@
       "country_of_origin": "Sweden",
       "age": 72,
       "genres": ["Pop", "Disco"],
-      "label": "Polar Music"
+      "label": "Polar Music",
+      "albums": [
+        {
+          "album_name": "Arrival",
+          "release_year": 1976,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Dancing Queen",
+              "song_length": 230,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Money, Money, Money",
+              "song_length": 225,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Knowing Me, Knowing You",
+              "song_length": 242,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "That's Me",
+              "song_length": 215,
+              "genre": "Pop"
+            }
+          ]
+        },
+        {
+          "album_name": "Voulez-Vous",
+          "release_year": 1979,
+          "genre": "Disco",
+          "songs": [
+            {
+              "song_name": "Angeleyes",
+              "song_length": 240,
+              "genre": "Disco"
+            },
+            {
+              "song_name": "Voulez-Vous",
+              "song_length": 310,
+              "genre": "Disco"
+            },
+            {
+              "song_name": "Does Your Mother Know",
+              "song_length": 235,
+              "genre": "Disco"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "AC/DC",
-      "country_of_origin": "Australia",
-      "age": 73,
-      "genres": ["Rock", "Hard Rock"],
-      "label": "Columbia Records"
+      "artist_name": "The Beatles",
+      "country_of_origin": "United Kingdom",
+      "age": 60,
+      "genres": ["Rock", "Pop"],
+      "label": "Apple Records",
+      "albums": [
+        {
+          "album_name": "Abbey Road",
+          "release_year": 1969,
+          "genre": "Rock",
+          "songs": [
+            {
+              "song_name": "Come Together",
+              "song_length": 259,
+              "genre": "Rock"
+            },
+            {
+              "song_name": "Something",
+              "song_length": 182,
+              "genre": "Rock"
+            },
+            {
+              "song_name": "Here Comes the Sun",
+              "song_length": 185,
+              "genre": "Rock"
+            }
+          ]
+        },
+        {
+          "album_name": "Sgt. Pepper's Lonely Hearts Club Band",
+          "release_year": 1967,
+          "genre": "Rock",
+          "songs": [
+            {
+              "song_name": "Lucy in the Sky with Diamonds",
+              "song_length": 208,
+              "genre": "Rock"
+            },
+            {
+              "song_name": "With a Little Help from My Friends",
+              "song_length": 164,
+              "genre": "Rock"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Michael Jackson",
+      "country_of_origin": "United States",
+      "age": 50,
+      "genres": ["Pop", "R&B"],
+      "label": "Epic Records",
+      "albums": [
+        {
+          "album_name": "Thriller",
+          "release_year": 1982,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Thriller",
+              "song_length": 357,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Beat It",
+              "song_length": 258,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Billie Jean",
+              "song_length": 294,
+              "genre": "Pop"
+            }
+          ]
+        },
+        {
+          "album_name": "Bad",
+          "release_year": 1987,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Bad",
+              "song_length": 247,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Smooth Criminal",
+              "song_length": 258,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Queen",
+      "country_of_origin": "United Kingdom",
+      "age": 50,
+      "genres": ["Rock"],
+      "label": "EMI",
+      "albums": [
+        {
+          "album_name": "A Night at the Opera",
+          "release_year": 1975,
+          "genre": "Rock",
+          "songs": [
+            {
+              "song_name": "Bohemian Rhapsody",
+              "song_length": 354,
+              "genre": "Rock"
+            },
+            {
+              "song_name": "You're My Best Friend",
+              "song_length": 172,
+              "genre": "Rock"
+            }
+          ]
+        },
+        {
+          "album_name": "The Game",
+          "release_year": 1980,
+          "genre": "Rock",
+          "songs": [
+            {
+              "song_name": "Another One Bites the Dust",
+              "song_length": 215,
+              "genre": "Rock"
+            },
+            {
+              "song_name": "Crazy Little Thing Called Love",
+              "song_length": 163,
+              "genre": "Rock"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Taylor Swift",
+      "country_of_origin": "United States",
+      "age": 33,
+      "genres": ["Pop", "Country"],
+      "label": "Republic Records",
+      "albums": [
+        {
+          "album_name": "1989",
+          "release_year": 2014,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Shake It Off",
+              "song_length": 219,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Blank Space",
+              "song_length": 231,
+              "genre": "Pop"
+            }
+          ]
+        },
+        {
+          "album_name": "Folklore",
+          "release_year": 2020,
+          "genre": "Indie",
+          "songs": [
+            {
+              "song_name": "Cardigan",
+              "song_length": 239,
+              "genre": "Indie"
+            },
+            {
+              "song_name": "Exile",
+              "song_length": 285,
+              "genre": "Indie"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Kendrick Lamar",
+      "country_of_origin": "United States",
+      "age": 35,
+      "genres": ["Hip-Hop", "Rap"],
+      "label": "Top Dawg Entertainment",
+      "albums": [
+        {
+          "album_name": "DAMN.",
+          "release_year": 2017,
+          "genre": "Hip-Hop",
+          "songs": [
+            {
+              "song_name": "HUMBLE.",
+              "song_length": 177,
+              "genre": "Hip-Hop"
+            },
+            {
+              "song_name": "DNA.",
+              "song_length": 185,
+              "genre": "Hip-Hop"
+            }
+          ]
+        }
+      ]
     },
     {
       "artist_name": "Adele",
-      "country_of_origin": "UK",
-      "age": 35,
+      "country_of_origin": "United Kingdom",
+      "age": 34,
       "genres": ["Pop", "Soul"],
-      "label": "Columbia Records"
-    },
-    {
-      "artist_name": "Aerosmith",
-      "country_of_origin": "USA",
-      "age": 76,
-      "genres": ["Rock", "Hard Rock"],
-      "label": "Columbia Records"
-    },
-    {
-      "artist_name": "Arctic Monkeys",
-      "country_of_origin": "UK",
-      "age": 38,
-      "genres": ["Alternative Rock", "Indie Rock"],
-      "label": "Domino Recording Company"
-    },
-    {
-      "artist_name": "Beatles, The",
-      "country_of_origin": "UK",
-      "age": 84,
-      "genres": ["Rock", "Pop Rock"],
-      "label": "Apple Records"
-    },
-    {
-      "artist_name": "Beyoncé",
-      "country_of_origin": "USA",
-      "age": 42,
-      "genres": ["R&B", "Pop"],
-      "label": "Columbia Records"
-    },
-    {
-      "artist_name": "Black Sabbath",
-      "country_of_origin": "UK",
-      "age": 75,
-      "genres": ["Metal", "Heavy Metal"],
-      "label": "Warner Records"
-    },
-    {
-      "artist_name": "Bob Dylan",
-      "country_of_origin": "USA",
-      "age": 82,
-      "genres": ["Folk Rock", "Rock"],
-      "label": "Columbia Records"
-    },
-    {
-      "artist_name": "Bob Marley",
-      "country_of_origin": "Jamaica",
-      "age": 76,
-      "genres": ["Reggae", "Ska"],
-      "label": "Island Records"
-    },
-    {
-      "artist_name": "Coldplay",
-      "country_of_origin": "UK",
-      "age": 46,
-      "genres": ["Alternative Rock", "Pop Rock"],
-      "label": "Parlophone"
-    },
-    {
-      "artist_name": "David Bowie",
-      "country_of_origin": "UK",
-      "age": 69,
-      "genres": ["Rock", "Art Rock"],
-      "label": "RCA Records"
-    },
-    {
-      "artist_name": "Depeche Mode",
-      "country_of_origin": "UK",
-      "age": 64,
-      "genres": ["Electronic", "New Wave"],
-      "label": "Mute Records"
+      "label": "XL Recordings",
+      "albums": [
+        {
+          "album_name": "21",
+          "release_year": 2011,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Rolling in the Deep",
+              "song_length": 228,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Someone Like You",
+              "song_length": 285,
+              "genre": "Pop"
+            }
+          ]
+        },
+        {
+          "album_name": "25",
+          "release_year": 2015,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Hello",
+              "song_length": 295,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
     },
     {
       "artist_name": "Drake",
       "country_of_origin": "Canada",
-      "age": 37,
-      "genres": ["Hip Hop", "R&B"],
-      "label": "OVO Sound"
+      "age": 36,
+      "genres": ["Hip-Hop", "R&B"],
+      "label": "OVO Sound",
+      "albums": [
+        {
+          "album_name": "Take Care",
+          "release_year": 2011,
+          "genre": "Hip-Hop",
+          "songs": [
+            {
+              "song_name": "Marvins Room",
+              "song_length": 332,
+              "genre": "Hip-Hop"
+            },
+            {
+              "song_name": "Headlines",
+              "song_length": 221,
+              "genre": "Hip-Hop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Beyoncé",
+      "country_of_origin": "United States",
+      "age": 41,
+      "genres": ["R&B", "Pop"],
+      "label": "Parkwood Entertainment",
+      "albums": [
+        {
+          "album_name": "Lemonade",
+          "release_year": 2016,
+          "genre": "R&B",
+          "songs": [
+            {
+              "song_name": "Formation",
+              "song_length": 226,
+              "genre": "R&B"
+            },
+            {
+              "song_name": "Sorry",
+              "song_length": 235,
+              "genre": "R&B"
+            }
+          ]
+        }
+      ]
     },
     {
       "artist_name": "Ed Sheeran",
-      "country_of_origin": "UK",
-      "age": 33,
-      "genres": ["Pop", "Folk Pop"],
-      "label": "Atlantic Records"
+      "country_of_origin": "United Kingdom",
+      "age": 32,
+      "genres": ["Pop"],
+      "label": "Asylum Records",
+      "albums": [
+        {
+          "album_name": "÷",
+          "release_year": 2017,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Shape of You",
+              "song_length": 233,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Castle on the Hill",
+              "song_length": 261,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "Elton John",
-      "country_of_origin": "UK",
-      "age": 76,
-      "genres": ["Pop Rock", "Rock"],
-      "label": "Mercury Records"
+      "artist_name": "Coldplay",
+      "country_of_origin": "United Kingdom",
+      "age": 25,
+      "genres": ["Rock", "Pop"],
+      "label": "Parlophone",
+      "albums": [
+        {
+          "album_name": "Parachutes",
+          "release_year": 2000,
+          "genre": "Rock",
+          "songs": [
+            {
+              "song_name": "Yellow",
+              "song_length": 266,
+              "genre": "Rock"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "Elvis Presley",
-      "country_of_origin": "USA",
-      "age": 42,
-      "genres": ["Rock and Roll", "Pop"],
-      "label": "RCA Records"
-    },
-    {
-      "artist_name": "Eminem",
-      "country_of_origin": "USA",
-      "age": 51,
-      "genres": ["Hip Hop", "Rap"],
-      "label": "Aftermath Entertainment"
-    },
-    {
-      "artist_name": "Fleetwood Mac",
-      "country_of_origin": "UK",
-      "age": 78,
-      "genres": ["Rock", "Pop Rock"],
-      "label": "Warner Records"
-    },
-    {
-      "artist_name": "Foo Fighters",
-      "country_of_origin": "USA",
-      "age": 55,
-      "genres": ["Rock", "Alternative Rock"],
-      "label": "RCA Records"
-    },
-    {
-      "artist_name": "Frank Sinatra",
-      "country_of_origin": "USA",
-      "age": 82,
-      "genres": ["Jazz", "Traditional Pop"],
-      "label": "Capitol Records"
-    },
-    {
-      "artist_name": "Green Day",
-      "country_of_origin": "USA",
-      "age": 52,
-      "genres": ["Punk Rock", "Alternative Rock"],
-      "label": "Reprise Records"
-    },
-    {
-      "artist_name": "Guns N' Roses",
-      "country_of_origin": "USA",
-      "age": 62,
-      "genres": ["Hard Rock", "Heavy Metal"],
-      "label": "Geffen Records"
-    },
-    {
-      "artist_name": "Iron Maiden",
-      "country_of_origin": "UK",
-      "age": 68,
-      "genres": ["Metal", "Heavy Metal"],
-      "label": "EMI"
-    },
-    {
-      "artist_name": "Jay-Z",
-      "country_of_origin": "USA",
-      "age": 54,
-      "genres": ["Hip Hop", "Rap"],
-      "label": "Roc Nation"
-    },
-    {
-      "artist_name": "Johnny Cash",
-      "country_of_origin": "USA",
-      "age": 71,
-      "genres": ["Country", "Rock and Roll"],
-      "label": "Columbia Records"
+      "artist_name": "Bruno Mars",
+      "country_of_origin": "United States",
+      "age": 37,
+      "genres": ["Pop", "R&B"],
+      "label": "Atlantic Records",
+      "albums": [
+        {
+          "album_name": "24K Magic",
+          "release_year": 2016,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "24K Magic",
+              "song_length": 226,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "That's What I Like",
+              "song_length": 226,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
     },
     {
       "artist_name": "Lady Gaga",
-      "country_of_origin": "USA",
+      "country_of_origin": "United States",
       "age": 37,
-      "genres": ["Pop", "Dance Pop"],
-      "label": "Interscope Records"
+      "genres": ["Pop"],
+      "label": "Interscope Records",
+      "albums": [
+        {
+          "album_name": "The Fame",
+          "release_year": 2008,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Just Dance",
+              "song_length": 242,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Poker Face",
+              "song_length": 237,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "Led Zeppelin",
-      "country_of_origin": "UK",
-      "age": 75,
-      "genres": ["Rock", "Hard Rock"],
-      "label": "Atlantic Records"
-    },
-    {
-      "artist_name": "Madonna",
-      "country_of_origin": "USA",
-      "age": 65,
-      "genres": ["Pop", "Dance Pop"],
-      "label": "Warner Records"
-    },
-    {
-      "artist_name": "Metallica",
-      "country_of_origin": "USA",
-      "age": 62,
-      "genres": ["Metal", "Thrash Metal"],
-      "label": "Blackened Recordings"
-    },
-    {
-      "artist_name": "Michael Jackson",
-      "country_of_origin": "USA",
+      "artist_name": "Eminem",
+      "country_of_origin": "United States",
       "age": 50,
+      "genres": ["Hip-Hop", "Rap"],
+      "label": "Shady Records",
+      "albums": [
+        {
+          "album_name": "The Marshall Mathers LP",
+          "release_year": 2000,
+          "genre": "Hip-Hop",
+          "songs": [
+            {
+              "song_name": "Stan",
+              "song_length": 404,
+              "genre": "Hip-Hop"
+            },
+            {
+              "song_name": "The Real Slim Shady",
+              "song_length": 284,
+              "genre": "Hip-Hop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Ariana Grande",
+      "country_of_origin": "United States",
+      "age": 30,
       "genres": ["Pop", "R&B"],
-      "label": "Epic Records"
+      "label": "Republic Records",
+      "albums": [
+        {
+          "album_name": "Thank U, Next",
+          "release_year": 2019,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Thank U, Next",
+              "song_length": 207,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "7 Rings",
+              "song_length": 178,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "Miles Davis",
-      "country_of_origin": "USA",
-      "age": 65,
-      "genres": ["Jazz", "Cool Jazz"],
-      "label": "Columbia Records"
+      "artist_name": "The Weeknd",
+      "country_of_origin": "Canada",
+      "age": 33,
+      "genres": ["R&B", "Pop"],
+      "label": "XO",
+      "albums": [
+        {
+          "album_name": "After Hours",
+          "release_year": 2020,
+          "genre": "R&B",
+          "songs": [
+            {
+              "song_name": "Blinding Lights",
+              "song_length": 200,
+              "genre": "R&B"
+            },
+            {
+              "song_name": "Save Your Tears",
+              "song_length": 215,
+              "genre": "R&B"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "Nirvana",
-      "country_of_origin": "USA",
-      "age": 27,
-      "genres": ["Grunge", "Alternative Rock"],
-      "label": "DGC Records"
+      "artist_name": "Billie Eilish",
+      "country_of_origin": "United States",
+      "age": 21,
+      "genres": ["Pop"],
+      "label": "Darkroom",
+      "albums": [
+        {
+          "album_name": "When We All Fall Asleep, Where Do We Go?",
+          "release_year": 2019,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Bad Guy",
+              "song_length": 194,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Bury a Friend",
+              "song_length": 193,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "Oasis",
-      "country_of_origin": "UK",
-      "age": 53,
-      "genres": ["Rock", "Britpop"],
-      "label": "Creation Records"
+      "artist_name": "Post Malone",
+      "country_of_origin": "United States",
+      "age": 28,
+      "genres": ["Hip-Hop", "Pop"],
+      "label": "Republic Records",
+      "albums": [
+        {
+          "album_name": "Beerbongs & Bentleys",
+          "release_year": 2018,
+          "genre": "Hip-Hop",
+          "songs": [
+            {
+              "song_name": "Rockstar",
+              "song_length": 218,
+              "genre": "Hip-Hop"
+            },
+            {
+              "song_name": "Psycho",
+              "song_length": 221,
+              "genre": "Hip-Hop"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "Pearl Jam",
-      "country_of_origin": "USA",
-      "age": 58,
-      "genres": ["Grunge", "Alternative Rock"],
-      "label": "Epic Records"
+      "artist_name": "Dua Lipa",
+      "country_of_origin": "United Kingdom",
+      "age": 28,
+      "genres": ["Pop"],
+      "label": "Warner Records",
+      "albums": [
+        {
+          "album_name": "Future Nostalgia",
+          "release_year": 2020,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Don't Start Now",
+              "song_length": 183,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Levitating",
+              "song_length": 203,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "Pink Floyd",
-      "country_of_origin": "UK",
-      "age": 77,
-      "genres": ["Progressive Rock", "Psychedelic Rock"],
-      "label": "EMI"
+      "artist_name": "Kanye West",
+      "country_of_origin": "United States",
+      "age": 46,
+      "genres": ["Hip-Hop"],
+      "label": "GOOD Music",
+      "albums": [
+        {
+          "album_name": "My Beautiful Dark Twisted Fantasy",
+          "release_year": 2010,
+          "genre": "Hip-Hop",
+          "songs": [
+            {
+              "song_name": "Power",
+              "song_length": 292,
+              "genre": "Hip-Hop"
+            },
+            {
+              "song_name": "Runaway",
+              "song_length": 540,
+              "genre": "Hip-Hop"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "Prince",
-      "country_of_origin": "USA",
-      "age": 57,
-      "genres": ["Pop", "Funk"],
-      "label": "Warner Records"
+      "artist_name": "Lana Del Rey",
+      "country_of_origin": "United States",
+      "age": 38,
+      "genres": ["Pop"],
+      "label": "Interscope Records",
+      "albums": [
+        {
+          "album_name": "Born to Die",
+          "release_year": 2012,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Video Games",
+              "song_length": 282,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Summertime Sadness",
+              "song_length": 264,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "Queen",
-      "country_of_origin": "UK",
-      "age": 75,
-      "genres": ["Rock", "Hard Rock"],
-      "label": "EMI"
+      "artist_name": "Justin Bieber",
+      "country_of_origin": "Canada",
+      "age": 29,
+      "genres": ["Pop"],
+      "label": "Def Jam Recordings",
+      "albums": [
+        {
+          "album_name": "Purpose",
+          "release_year": 2015,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Sorry",
+              "song_length": 200,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Love Yourself",
+              "song_length": 233,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "Radiohead",
-      "country_of_origin": "UK",
-      "age": 54,
-      "genres": ["Alternative Rock", "Art Rock"],
-      "label": "XL Recordings"
+      "artist_name": "Travis Scott",
+      "country_of_origin": "United States",
+      "age": 32,
+      "genres": ["Hip-Hop"],
+      "label": "Cactus Jack Records",
+      "albums": [
+        {
+          "album_name": "Astroworld",
+          "release_year": 2018,
+          "genre": "Hip-Hop",
+          "songs": [
+            {
+              "song_name": "Sicko Mode",
+              "song_length": 312,
+              "genre": "Hip-Hop"
+            },
+            {
+              "song_name": "Stargazing",
+              "song_length": 261,
+              "genre": "Hip-Hop"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "Red Hot Chili Peppers",
-      "country_of_origin": "USA",
-      "age": 60,
-      "genres": ["Alternative Rock", "Funk Rock"],
-      "label": "Warner Records"
+      "artist_name": "Shawn Mendes",
+      "country_of_origin": "Canada",
+      "age": 25,
+      "genres": ["Pop"],
+      "label": "Island Records",
+      "albums": [
+        {
+          "album_name": "Shawn Mendes",
+          "release_year": 2018,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "In My Blood",
+              "song_length": 211,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Lost in Japan",
+              "song_length": 199,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "Rolling Stones, The",
-      "country_of_origin": "UK",
-      "age": 80,
-      "genres": ["Rock", "Blues Rock"],
-      "label": "Rolling Stones Records"
+      "artist_name": "Harry Styles",
+      "country_of_origin": "United Kingdom",
+      "age": 29,
+      "genres": ["Pop"],
+      "label": "Columbia Records",
+      "albums": [
+        {
+          "album_name": "Fine Line",
+          "release_year": 2019,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Adore You",
+              "song_length": 207,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Watermelon Sugar",
+              "song_length": 174,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "Taylor Swift",
-      "country_of_origin": "USA",
+      "artist_name": "Doja Cat",
+      "country_of_origin": "United States",
+      "age": 28,
+      "genres": ["Pop", "Hip-Hop"],
+      "label": "Kemosabe Records",
+      "albums": [
+        {
+          "album_name": "Hot Pink",
+          "release_year": 2019,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Say So",
+              "song_length": 237,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Juicy",
+              "song_length": 195,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Olivia Rodrigo",
+      "country_of_origin": "United States",
+      "age": 20,
+      "genres": ["Pop"],
+      "label": "Geffen Records",
+      "albums": [
+        {
+          "album_name": "SOUR",
+          "release_year": 2021,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Drivers License",
+              "song_length": 242,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Good 4 U",
+              "song_length": 178,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "BTS",
+      "country_of_origin": "South Korea",
+      "age": 10,
+      "genres": ["K-Pop"],
+      "label": "Big Hit Entertainment",
+      "albums": [
+        {
+          "album_name": "Map of the Soul: 7",
+          "release_year": 2020,
+          "genre": "K-Pop",
+          "songs": [
+            {
+              "song_name": "ON",
+              "song_length": 264,
+              "genre": "K-Pop"
+            },
+            {
+              "song_name": "Black Swan",
+              "song_length": 223,
+              "genre": "K-Pop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Blackpink",
+      "country_of_origin": "South Korea",
+      "age": 7,
+      "genres": ["K-Pop"],
+      "label": "YG Entertainment",
+      "albums": [
+        {
+          "album_name": "THE ALBUM",
+          "release_year": 2020,
+          "genre": "K-Pop",
+          "songs": [
+            {
+              "song_name": "How You Like That",
+              "song_length": 182,
+              "genre": "K-Pop"
+            },
+            {
+              "song_name": "Lovesick Girls",
+              "song_length": 199,
+              "genre": "K-Pop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Alicia Keys",
+      "country_of_origin": "United States",
+      "age": 42,
+      "genres": ["R&B", "Soul"],
+      "label": "RCA Records",
+      "albums": [
+        {
+          "album_name": "Songs in A Minor",
+          "release_year": 2001,
+          "genre": "R&B",
+          "songs": [
+            {
+              "song_name": "Fallin'",
+              "song_length": 213,
+              "genre": "R&B"
+            },
+            {
+              "song_name": "A Woman's Worth",
+              "song_length": 312,
+              "genre": "R&B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "John Legend",
+      "country_of_origin": "United States",
+      "age": 44,
+      "genres": ["R&B", "Soul"],
+      "label": "Columbia Records",
+      "albums": [
+        {
+          "album_name": "Get Lifted",
+          "release_year": 2004,
+          "genre": "R&B",
+          "songs": [
+            {
+              "song_name": "Ordinary People",
+              "song_length": 259,
+              "genre": "R&B"
+            },
+            {
+              "song_name": "Used to Love U",
+              "song_length": 213,
+              "genre": "R&B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Sia",
+      "country_of_origin": "Australia",
+      "age": 47,
+      "genres": ["Pop"],
+      "label": "Monkey Puzzle",
+      "albums": [
+        {
+          "album_name": "This Is Acting",
+          "release_year": 2016,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Cheap Thrills",
+              "song_length": 209,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "The Greatest",
+              "song_length": 224,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Katy Perry",
+      "country_of_origin": "United States",
+      "age": 38,
+      "genres": ["Pop"],
+      "label": "Capitol Records",
+      "albums": [
+        {
+          "album_name": "Teenage Dream",
+          "release_year": 2010,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "California Gurls",
+              "song_length": 234,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Firework",
+              "song_length": 227,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Maroon 5",
+      "country_of_origin": "United States",
+      "age": 24,
+      "genres": ["Pop", "Rock"],
+      "label": "Interscope Records",
+      "albums": [
+        {
+          "album_name": "Songs About Jane",
+          "release_year": 2002,
+          "genre": "Rock",
+          "songs": [
+            {
+              "song_name": "This Love",
+              "song_length": 231,
+              "genre": "Rock"
+            },
+            {
+              "song_name": "She Will Be Loved",
+              "song_length": 257,
+              "genre": "Rock"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Imagine Dragons",
+      "country_of_origin": "United States",
+      "age": 15,
+      "genres": ["Rock"],
+      "label": "Interscope Records",
+      "albums": [
+        {
+          "album_name": "Night Visions",
+          "release_year": 2012,
+          "genre": "Rock",
+          "songs": [
+            {
+              "song_name": "Radioactive",
+              "song_length": 187,
+              "genre": "Rock"
+            },
+            {
+              "song_name": "Demons",
+              "song_length": 177,
+              "genre": "Rock"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Sam Smith",
+      "country_of_origin": "United Kingdom",
+      "age": 31,
+      "genres": ["Pop", "Soul"],
+      "label": "Capitol Records",
+      "albums": [
+        {
+          "album_name": "In the Lonely Hour",
+          "release_year": 2014,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Stay With Me",
+              "song_length": 172,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "I'm Not the Only One",
+              "song_length": 239,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Halsey",
+      "country_of_origin": "United States",
+      "age": 29,
+      "genres": ["Pop"],
+      "label": "Capitol Records",
+      "albums": [
+        {
+          "album_name": "Badlands",
+          "release_year": 2015,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Colors",
+              "song_length": 246,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Castle",
+              "song_length": 267,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Zayn",
+      "country_of_origin": "United Kingdom",
+      "age": 30,
+      "genres": ["Pop", "R&B"],
+      "label": "RCA Records",
+      "albums": [
+        {
+          "album_name": "Mind of Mine",
+          "release_year": 2016,
+          "genre": "R&B",
+          "songs": [
+            {
+              "song_name": "Pillowtalk",
+              "song_length": 204,
+              "genre": "R&B"
+            },
+            {
+              "song_name": "Like I Would",
+              "song_length": 198,
+              "genre": "R&B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Selena Gomez",
+      "country_of_origin": "United States",
+      "age": 31,
+      "genres": ["Pop"],
+      "label": "Interscope Records",
+      "albums": [
+        {
+          "album_name": "Rare",
+          "release_year": 2020,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Lose You to Love Me",
+              "song_length": 210,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Rare",
+              "song_length": 189,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Cardi B",
+      "country_of_origin": "United States",
+      "age": 31,
+      "genres": ["Hip-Hop"],
+      "label": "Atlantic Records",
+      "albums": [
+        {
+          "album_name": "Invasion of Privacy",
+          "release_year": 2018,
+          "genre": "Hip-Hop",
+          "songs": [
+            {
+              "song_name": "Bodak Yellow",
+              "song_length": 218,
+              "genre": "Hip-Hop"
+            },
+            {
+              "song_name": "I Like It",
+              "song_length": 253,
+              "genre": "Hip-Hop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Nicki Minaj",
+      "country_of_origin": "Trinidad and Tobago",
+      "age": 40,
+      "genres": ["Hip-Hop"],
+      "label": "Young Money Entertainment",
+      "albums": [
+        {
+          "album_name": "The Pinkprint",
+          "release_year": 2014,
+          "genre": "Hip-Hop",
+          "songs": [
+            {
+              "song_name": "Anaconda",
+              "song_length": 260,
+              "genre": "Hip-Hop"
+            },
+            {
+              "song_name": "Only",
+              "song_length": 305,
+              "genre": "Hip-Hop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Lorde",
+      "country_of_origin": "New Zealand",
+      "age": 26,
+      "genres": ["Pop"],
+      "label": "Universal Music",
+      "albums": [
+        {
+          "album_name": "Pure Heroine",
+          "release_year": 2013,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Royals",
+              "song_length": 190,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Team",
+              "song_length": 194,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artist_name": "Adele",
+      "country_of_origin": "United Kingdom",
       "age": 34,
-      "genres": ["Pop", "Country Pop"],
-      "label": "Republic Records"
+      "genres": ["Pop", "Soul"],
+      "label": "XL Recordings",
+      "albums": [
+        {
+          "album_name": "21",
+          "release_year": 2011,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Rolling in the Deep",
+              "song_length": 228,
+              "genre": "Pop"
+            },
+            {
+              "song_name": "Someone Like You",
+              "song_length": 285,
+              "genre": "Pop"
+            }
+          ]
+        },
+        {
+          "album_name": "25",
+          "release_year": 2015,
+          "genre": "Pop",
+          "songs": [
+            {
+              "song_name": "Hello",
+              "song_length": 295,
+              "genre": "Pop"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "The Beach Boys",
-      "country_of_origin": "USA",
-      "age": 82,
-      "genres": ["Rock", "Pop Rock"],
-      "label": "Capitol Records"
+      "artist_name": "The Chainsmokers",
+      "country_of_origin": "United States",
+      "age": 10,
+      "genres": ["EDM", "Pop"],
+      "label": "Disruptor Records",
+      "albums": [
+        {
+          "album_name": "Memories...Do Not Open",
+          "release_year": 2017,
+          "genre": "EDM",
+          "songs": [
+            {
+              "song_name": "Closer",
+              "song_length": 244,
+              "genre": "EDM"
+            },
+            {
+              "song_name": "Something Just Like This",
+              "song_length": 247,
+              "genre": "EDM"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "The Police",
-      "country_of_origin": "UK",
-      "age": 71,
-      "genres": ["Rock", "New Wave"],
-      "label": "A&M Records"
+      "artist_name": "Calvin Harris",
+      "country_of_origin": "United Kingdom",
+      "age": 39,
+      "genres": ["EDM"],
+      "label": "Columbia Records",
+      "albums": [
+        {
+          "album_name": "Motion",
+          "release_year": 2014,
+          "genre": "EDM",
+          "songs": [
+            {
+              "song_name": "Summer",
+              "song_length": 223,
+              "genre": "EDM"
+            },
+            {
+              "song_name": "Blame",
+              "song_length": 214,
+              "genre": "EDM"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "The Smiths",
-      "country_of_origin": "UK",
-      "age": 63,
-      "genres": ["Alternative Rock", "Indie Rock"],
-      "label": "Rough Trade Records"
+      "artist_name": "Avicii",
+      "country_of_origin": "Sweden",
+      "age": 32,
+      "genres": ["EDM"],
+      "label": "Universal Music",
+      "albums": [
+        {
+          "album_name": "True",
+          "release_year": 2013,
+          "genre": "EDM",
+          "songs": [
+            {
+              "song_name": "Wake Me Up",
+              "song_length": 247,
+              "genre": "EDM"
+            },
+            {
+              "song_name": "Hey Brother",
+              "song_length": 254,
+              "genre": "EDM"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "The Who",
-      "country_of_origin": "UK",
-      "age": 79,
-      "genres": ["Rock", "Hard Rock"],
-      "label": "Polydor Records"
+      "artist_name": "Kygo",
+      "country_of_origin": "Norway",
+      "age": 32,
+      "genres": ["EDM"],
+      "label": "Sony Music",
+      "albums": [
+        {
+          "album_name": "Cloud Nine",
+          "release_year": 2016,
+          "genre": "EDM",
+          "songs": [
+            {
+              "song_name": "Firestone",
+              "song_length": 285,
+              "genre": "EDM"
+            },
+            {
+              "song_name": "Stole the Show",
+              "song_length": 231,
+              "genre": "EDM"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "Tom Petty",
-      "country_of_origin": "USA",
-      "age": 66,
-      "genres": ["Rock", "Heartland Rock"],
-      "label": "MCA Records"
+      "artist_name": "Marshmello",
+      "country_of_origin": "United States",
+      "age": 31,
+      "genres": ["EDM"],
+      "label": "Joytime Collective",
+      "albums": [
+        {
+          "album_name": "Joytime",
+          "release_year": 2016,
+          "genre": "EDM",
+          "songs": [
+            {
+              "song_name": "Alone",
+              "song_length": 204,
+              "genre": "EDM"
+            },
+            {
+              "song_name": "Keep It Mello",
+              "song_length": 231,
+              "genre": "EDM"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "U2",
-      "country_of_origin": "Ireland",
-      "age": 63,
-      "genres": ["Rock", "Alternative Rock"],
-      "label": "Island Records"
+      "artist_name": "Zedd",
+      "country_of_origin": "Germany",
+      "age": 34,
+      "genres": ["EDM"],
+      "label": "Interscope Records",
+      "albums": [
+        {
+          "album_name": "Clarity",
+          "release_year": 2012,
+          "genre": "EDM",
+          "songs": [
+            {
+              "song_name": "Clarity",
+              "song_length": 270,
+              "genre": "EDM"
+            },
+            {
+              "song_name": "Stay the Night",
+              "song_length": 213,
+              "genre": "EDM"
+            }
+          ]
+        }
+      ]
     },
     {
-      "artist_name": "Van Halen",
-      "country_of_origin": "USA",
-      "age": 68,
-      "genres": ["Rock", "Hard Rock"],
-      "label": "Warner Records"
-    },
-    {
-      "artist_name": "Whitney Houston",
-      "country_of_origin": "USA",
-      "age": 48,
-      "genres": ["Pop", "R&B"],
-      "label": "Arista Records"
+      "artist_name": "Martin Garrix",
+      "country_of_origin": "Netherlands",
+      "age": 27,
+      "genres": ["EDM"],
+      "label": "STMPD RCRDS",
+      "albums": [
+        {
+          "album_name": "Sentio",
+          "release_year": 2022,
+          "genre": "EDM",
+          "songs": [
+            {
+              "song_name": "Starlight",
+              "song_length": 210,
+              "genre": "EDM"
+            },
+            {
+              "song_name": "Follow",
+              "song_length": 215,
+              "genre": "EDM"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
