@@ -28,3 +28,16 @@ a:hover{
     background-color:whitesmoke;
     text-decoration: none;
 }
+
+/*atrist.html styles*/
+.artistBody {
+    font-family: 'Poppins', sans-serif;
+}
+
+.artistH1 {
+    font-weight: 800;
+    color: black;
+}
+.artistP {
+    font-weight: 400;
+}
