@@ -1,20 +1,26 @@
 <!--the form page to add an artist-->
 {% extends 'base.html' %}
-{% block title %} Artist {% endblock %}
+{% block title %} artist {% endblock %}
 
 {% block formContent %}
-    <div class="form-group w-50">
-        <label for="name">Name:</label>
-        <input type="text" class="form-control" id="name">
+    <div class="row">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name">
+        </div>
     </div>
 
-    <div class="form-group w-50">
-        <label for="co">Country of Origin:</label>
-        <input type="text" class="form-control" id="co">
+    <div class="row">
+        <div class="form-group">
+            <label for="co">Country of Origin:</label>
+            <input type="text" class="form-control" id="co">
+        </div>
     </div>
-
-    <div class="form-group w-50">
-        <label for="genre">Genre:</label>
-        <input type="text" class="form-control" id="genre">
-    </div>
+    
+    <div class="row">
+        <div class="form-group">
+            <label for="genre">Genre:</label>
+            <input type="text" class="form-control" id="genre">
+        </div>
+    </div> 
 {% endblock %}
