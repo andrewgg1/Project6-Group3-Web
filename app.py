@@ -70,5 +70,10 @@ def options():
 @app.route('/', methods=['GET'])
 def home():
     return render_template('home.html')
+
+@app.route('/add-artist', methods=['GET', 'POST'])
+def Add_Artist():
+    return render_template('artist.html')
+
 if __name__ == "__main__":
     app.run()
