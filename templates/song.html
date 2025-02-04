@@ -1,1 +1,45 @@
 <!--the form page to add a song-->
+{% extends 'base.html' %}
+{% block title %} song {% endblock %}
+
+{% block formContent %}
+
+<form action="" method="post">
+    <div class="container pt-4 pb-5 bg-light border">
+        <div class="row">
+            <div class="form-group">
+                <label for="songName">Song Name:</label>
+                <input required type="text" class="form-control" id="songName">
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="form-group">
+                <label for="artist2">Artists:</label> <!--make a list and do the same in album.html (songs and artists input field)-->
+                <input required type="text" class="form-control" id="artist2">
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="form-group">
+                <label for="album">Album:</label> <!--make a list also probably-->
+                <input required type="text" class="form-control" id="album">
+            </div>
+        </div> 
+
+        <div class="row">
+            <div class="form-group">
+                <label for="songLen">Song Length:</label>
+                <input required type="number" class="form-control" id="songLen">
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="mt-3 d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary mx-auto">Save</button>
+        <a href="{{ url_for('home') }}" class="btn btn-danger mx-auto">Cancel</a>
+    </div>
+</form>
+
+{% endblock %}

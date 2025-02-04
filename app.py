@@ -79,5 +79,9 @@ def Add_Artist():
 def Add_Album():
     return render_template('album.html')
 
+@app.route('/add-song', methods=['GET', 'POST'])
+def Add_Song():
+    return render_template('song.html')
+
 if __name__ == "__main__":
     app.run()
