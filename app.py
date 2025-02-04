@@ -75,5 +75,9 @@ def home():
 def Add_Artist():
     return render_template('artist.html')
 
+@app.route('/add-album', methods=['GET', 'POST'])
+def Add_Album():
+    return render_template('album.html')
+
 if __name__ == "__main__":
     app.run()
