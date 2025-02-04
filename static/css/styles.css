@@ -29,15 +29,15 @@ a:hover{
     text-decoration: none;
 }
 
-/*atrist.html styles*/
-.artistBody {
+/*base.html styles*/
+#baseBody {
     font-family: 'Poppins', sans-serif;
 }
 
-.artistH1 {
+#baseH1 {
     font-weight: 800;
     color: black;
 }
-.artistP {
+#baseP {
     font-weight: 400;
 }
