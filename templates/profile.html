@@ -37,16 +37,15 @@
                                 <ul class="list-group" style="list-style-type:none;">
                                     <!--loop through songs-->
                                     <li>
-                                        <a class="list-group-item"> Song 1</a>
-
+                                        <a class="list-group-item btn btn-link" data-bs-toggle="collapse" data-bs-target="#song1" > <!--replace target with jinja-->
+                                            Song 1
+                                            <i class="bi bi-three-dots-vertical"></i> 
+                                        </a>
                                         <!--include delete/edit menu item-->
-                                        <div class="dropdown">
-                                            <button class="btn btn-sm btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                                <i class="bi bi-three-dots-vertical"></i> 
-                                                
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                        <div class="collapse" id="song1"> <!--replace id with jinja-->
+                                            <ul class="list-group" style="list-style-type:none;">
+                                                <li><button class="list-group-item">Edit</button></li>
+                                                <li><button class="list-group-item text-danger">Delete</button></li>
                                             </ul>
                                         </div>
                                     </li>
