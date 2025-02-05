@@ -36,6 +36,21 @@
                 <a href="{{ url_for('Add_Artist') }}" class="fs-3"><i class="bi bi-plus-circle-fill fs-1"></i> Add an artist</a>
                 </div>
             </div>
+
+            <!--Display artists-->
+            <div class="container"> 
+                <div class="row">
+                    {% for artist in artists %}
+                    <div class="col-md-3 mb-4">
+                        <div class="card p-3 shadow-sm bg-dark">
+                            <h5 class="List">{{ artist.artist_name }}</h5>
+                            <p class="List">Genre: {{ artist.genres|join(", ") }}</p>
+                            <p class="List">Record Label: {{ artist.label }}</p>
+                        </div>               
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </body>
 </html>

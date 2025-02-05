@@ -69,7 +69,8 @@ def options():
 #just testing my html pages opening
 @app.route('/', methods=['GET'])
 def home():
-    return render_template('home.html')
+    artists = database.db.artists.find() #reads from database
+    return render_template('home.html', artists=artists) #sends list of artists to home.html
 
 @app.route('/add-artist', methods=['GET', 'POST'])
 def Add_Artist():
