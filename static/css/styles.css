@@ -28,17 +28,25 @@ a:hover{
     background-color:whitesmoke;
     text-decoration: none;
 }
+.List{
+    color: white;
+}
+.nextLink:link{
+    text-decoration: underline;
+}
+.nextLink:visited{
+    text-decoration:dashed;
+}
+.nextLink:hover{
+    background-color:cornsilk;
+    text-decoration: underline;
+}
 
 /*base.html styles*/
 #baseBody {
     font-family: 'Poppins', sans-serif;
 }
-
 #baseH1 {
     font-weight: 800;
     color: black;
-}
-
-.List{
-    color: white;
 }
