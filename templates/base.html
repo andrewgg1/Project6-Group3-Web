@@ -1,4 +1,4 @@
-<!--This will follow jinja templates inheritance where other html files will inherit the base structure of this file and customize it with their own data-->
+<!--This will follow jinja templates inheritance where other form html files will inherit the base structure of this file and customize it with their own data-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,7 +12,7 @@
     </head>
     <body id="baseBody">
         <h1 id="baseH1" class="mt-4 mb-4 text-center">Fill the form to add the {{self.title()}}</h1>
-     
+        <!--child html files will fill their content within the block-->
         {% block formContent %} {% endblock%}
  
     </body>

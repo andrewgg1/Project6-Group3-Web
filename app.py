@@ -12,6 +12,7 @@ app.register_blueprint(artist_bp)
 app.register_blueprint(song_bp)
 app.register_blueprint(album_bp)
 
+#do something about options
 #@app.route('/', methods=['GET', 'OPTIONS'])
 def options():
     return jsonify({
@@ -66,22 +67,24 @@ def options():
         }
     }), 200
 
-#just testing my html pages opening
+#root route to homepage
 @app.route('/', methods=['GET'])
 def home():
     artists = database.db.artists.find() #reads from database
     return render_template('home.html', artists=artists) #sends list of artists to home.html
 
-@app.route('/add-artist', methods=['GET', 'POST'])
-def Add_Artist():
+#these are the 'add' routes that return a html page with a form for the user to fill
+#idk if these should be moved to the routes folder to their appropriate files
+@app.route('/add-artist', methods=['GET'])
+def Add_Artist(): #only this one has a button to trigger it on home.html
     return render_template('artist.html')
 
-@app.route('/add-album', methods=['GET', 'POST'])
-def Add_Album():
+@app.route('/add-album', methods=['GET'])
+def Add_Album(): #no trigger
     return render_template('album.html')
 
-@app.route('/add-song', methods=['GET', 'POST'])
-def Add_Song():
+@app.route('/add-song', methods=['GET'])
+def Add_Song(): #no trigger
     return render_template('song.html')
 
 if __name__ == "__main__":

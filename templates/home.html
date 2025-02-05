@@ -20,6 +20,7 @@
             <div class="row mt-5">
                 <form>
                     <div class="input-group w-50 col-6 mx-auto">
+                        <!--make the search work-->
                       <input type="text" class="form-control" placeholder="Search">
                       <span>
                         <div class="input-group-text">
@@ -33,6 +34,7 @@
             </div>
             <div>
                 <div class="text-center mt-2">
+                    <!--redirects to artist.html where the form is-->
                 <a href="{{ url_for('Add_Artist') }}" class="fs-3"><i class="bi bi-plus-circle-fill fs-1"></i> Add an artist</a>
                 </div>
             </div>
@@ -40,12 +42,13 @@
             <!--Display artists-->
             <div class="container"> 
                 <div class="row">
-                    {% for artist in artists %}
+                    {% for artist in artists %} <!--loop through artists in database-->
                     <div class="col-md-3 mb-4">
                         <div class="card p-3 shadow-sm bg-dark">
                             <h5 class="List">{{ artist.artist_name }}</h5>
                             <p class="List">Genre: {{ artist.genres|join(", ") }}</p>
                             <p class="List">Record Label: {{ artist.label }}</p>
+                            <!--link that redirects to artist_routes.py and uses the artist blueprint to use the 'get_artist' function & route-->
                             <a href="{{ url_for('artist.get_artist', ID = artist._id) }}" class="nextLink">See more...</a>
                         </div>               
                     </div>
