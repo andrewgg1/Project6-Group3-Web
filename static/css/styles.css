@@ -32,13 +32,16 @@ a:hover{
     color: white;
 }
 .nextLink:link{
+    color: white;
     text-decoration: underline;
 }
 .nextLink:visited{
+    color: white;
     text-decoration:dashed;
 }
 .nextLink:hover{
-    background-color:cornsilk;
+    color: white;
+    background-color: black;
     text-decoration: underline;
 }
 
