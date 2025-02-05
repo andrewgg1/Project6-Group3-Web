@@ -87,5 +87,10 @@ def Add_Album(): #no trigger
 def Add_Song(): #no trigger
     return render_template('song.html')
 
+#To be deleted - for testing purposes
+@app.route('/profile', methods=['GET'])
+def Get_profile():
+    return render_template('profile.html') #place this in route/artist_route.py instead (/artists/<ID> GET aka get_artist(ID))
+
 if __name__ == "__main__":
     app.run()
