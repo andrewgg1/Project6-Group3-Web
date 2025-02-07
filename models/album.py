@@ -2,10 +2,14 @@ from mongoengine import Document, StringField, IntField, ReferenceField, ListFie
 
 class Album(Document):
     album_name = StringField(required=True)
-    # artists = ListField(ReferenceField('Artist'), default=list)
+    artists = ListField(ReferenceField('Artist'), default=list)
     release_year = IntField(default=2020)
-    # song_listing = ListField(ReferenceField('Song'), default=list)
+    song_listing = ListField(ReferenceField('Song'), default=list)
     genre = StringField(default='rock')
     meta = {
         'collection': 'albums'
     }
+
+
+
+#print("Album model loaded:", Album._fields)

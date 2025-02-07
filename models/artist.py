@@ -5,7 +5,7 @@ class Artist(Document):
     country_of_origin = StringField()
     # songs_credited = ListField(ReferenceField('Song'), default=list)
     # albums_credited = ListField(ReferenceField('Album'), default=list)
-    age = IntField()
+    age = IntField(default=35)
     genre = StringField()
     label = StringField()
     meta = {
