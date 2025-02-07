@@ -45,8 +45,12 @@ def get_album(ID):
 def create_album():
     """ Endpoint for creating album """
     try:
-        data = json.loads(request.data)
-        album = Album(**data).save()
+        album = Album(
+            album_name = request.form['album_name'],
+            release_year = request.form['release_year'],
+            genre = request.form['genre']
+        ).save()
+
         return jsonify({
             "album_name": album.album_name,
             "release_year": album.release_year,

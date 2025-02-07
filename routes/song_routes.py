@@ -43,8 +43,11 @@ def get_song(ID):
 def create_song():
     """ Endpoint for creating song """
     try:
-        data = json.loads(request.data)
-        song = Song(**data).save()
+        song = Song(
+            song_name = request.form['song_name'],
+            song_length = request.form['song_length']
+        ).save()
+
         return jsonify({
             "song_name": song.song_name,
             "song_length": song.song_length,

@@ -80,11 +80,11 @@ def Add_Artist(): #only this one has a button to trigger it on home.html
     return render_template('artist.html')
 
 @app.route('/add-album', methods=['GET'])
-def Add_Album(): #no trigger
+def Add_Album(): #trigger in profile.html
     return render_template('album.html')
 
 @app.route('/add-song', methods=['GET'])
-def Add_Song(): #no trigger
+def Add_Song(): #trigger in profile.html
     return render_template('song.html')
 
 #To be deleted - for testing purposes
