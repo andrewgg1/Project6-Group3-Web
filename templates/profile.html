@@ -11,11 +11,11 @@
     </head>
     <body class="profileBody">
         <div class="container">
-            <h1 class="profileH1 mt-3">Name here</h4>
-            <p>Country of Origin: </p>
-            <p>Age:</p>
-            <p>Genre:</p>
-            <p>Record Label:</p>
+            <h1 class="profileH1 mt-3">{{ artist.artist_name }}</h4>
+            <p>Country of Origin: {{ artist.country_of_origin }}</p>
+            <p>Age: {{ artist.age }}</p>
+            <p>Genre: {{ artist.genre }}</p>
+            <p>Record Label: {{ artist.label }}</p>
         </div>
 
         <div class="container mt-5">

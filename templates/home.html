@@ -50,7 +50,7 @@
                             <p class="List">Record Label: {{ artist.label }}</p>
                             <!--link that redirects to artist_routes.py and uses the artist blueprint to use the 'get_artist' function & route-->
                             <!-- <a href="{{ url_for('artist.get_artist', ID = artist._id) }}" class="nextLink">See more...</a> -->
-                            <a href="{{ url_for('Get_profile') }}" class="nextLink">See more...</a>
+                            <a href="{{ url_for('Get_profile', ID=artist.id) }}" class="nextLink">See more...</a>
                         </div>               
                     </div>
                     {% endfor %}

@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 import database
-from routes.artist_routes import artist_bp
+from routes.artist_routes import artist_bp, get_artist
 from routes.song_routes import song_bp
 from routes.album_routes import album_bp
 #for my html pages
@@ -78,7 +78,7 @@ def home():
 #idk if these should be moved to the routes folder to their appropriate files
 @app.route('/add-artist', methods=['GET'])
 def Add_Artist(): #only this one has a button to trigger it on home.html
-    return render_template('artist.html')
+    return render_template('artist.html', )
 
 @app.route('/add-album', methods=['GET'])
 def Add_Album(): #trigger in profile.html
@@ -89,9 +89,10 @@ def Add_Song(): #trigger in profile.html
     return render_template('song.html')
 
 #To be deleted - for testing purposes
-@app.route('/profile', methods=['GET'])
-def Get_profile():
-    return render_template('profile.html') #place this in route/artist_route.py instead (/artists/<ID> GET aka get_artist(ID))
+@app.route('/profile/<ID>', methods=['GET'])
+def Get_profile(ID):
+    artist = get_artist(ID)[0].json
+    return render_template('profile.html', artist=artist) #place this in route/artist_route.py instead (/artists/<ID> GET aka get_artist(ID))
 
 if __name__ == "__main__":
     app.run()
