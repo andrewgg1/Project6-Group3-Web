@@ -15,7 +15,7 @@ def get_artists():
             "artist_name": artist.artist_name,
             "country_of_origin": artist.country_of_origin,
             "age": artist.age,
-            "genres": artist.genres,
+            "genre": artist.genre,
             "label": artist.label,
             "id": str(artist.id)
         } for artist in all_artists]
@@ -34,7 +34,7 @@ def get_artist(ID):
             "artist_name": artist.artist_name,
             "country_of_origin": artist.country_of_origin,
             "age": artist.age,
-            "genres": artist.genres,
+            "genre": artist.genre,
             "label": artist.label,
             "id": str(artist.id)
         }), 200
