@@ -5,6 +5,7 @@ from routes.song_routes import song_bp
 from routes.album_routes import album_bp
 #for my html pages
 from flask import Flask, render_template
+from models import Artist
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
@@ -70,7 +71,7 @@ def options():
 #root route to homepage
 @app.route('/', methods=['GET'])
 def home():
-    artists = database.db.artists.find() #reads from database
+    artists = Artist.objects() #reads from database
     return render_template('home.html', artists=artists) #sends list of artists to home.html
 
 #these are the 'add' routes that return a html page with a form for the user to fill
