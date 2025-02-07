@@ -4,43 +4,43 @@
 
 {% block formContent %}
 
-<form action="" method="post"> <!--Add form action from the album_routes.py-->
+<form action="{{ url_for('album.create_album') }}" method="post"> <!--Add form action from the album_routes.py-->
     <div class="container pt-4 pb-5 bg-light border">
         <div class="row">
             <div class="form-group">
                 <label for="albumName">Album Name:</label>
-                <input required type="text" class="form-control" id="albumName">
+                <input required type="text" class="form-control" id="albumName" name="album_name">
             </div>
         </div>
     
-        <div class="row">
+        <!-- <div class="row">
             <div class="form-group">
-                <label for="artist">Artists:</label> <!--make a dropdown to add existing artists-->
-                <input required type="text" class="form-control" id="artist">
+                <label for="artist">Artists:</label> make a dropdown to add existing artists-->
+               <!-- <input required type="text" class="form-control" id="artist" name="artist_name">
             </div>
-        </div>
+        </div> -->
     
         <div class="row">
             <div class="form-group">
                 <label for="releaseYear">Year of Release:</label>
-                <input required type="number" class="form-control" id="releaseYear">
+                <input required type="number" class="form-control" id="releaseYear" name="release_year">
             </div>
         </div>
         
         <div class="row">
             <div class="form-group">
                 <label for="genre2">Genre:</label>
-                <input required type="text" class="form-control" id="genre2">
+                <input required type="text" class="form-control" id="genre2" name="genre">
             </div>
         </div> 
     
-        <div class="row">
+        <!-- <div class="row">
             <div class="form-group">
-                <label for="songs">Songs:</label> <!--make a dropdown to simply add songs-->
-                <input required type="text" class="form-control" id="songs">
+                <label for="songs">Songs:</label> make a dropdown to simply add songs-->
+               <!-- <input required type="text" class="form-control" id="songs">
             </div>
         </div>
-    </div>
+    </div> -->
     
     <div class="mt-3 d-flex justify-content-end">
         <button type="submit" class="btn btn-primary mx-auto">Save</button>
