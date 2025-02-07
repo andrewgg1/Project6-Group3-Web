@@ -66,6 +66,7 @@ def delete_song(id):
             return jsonify({"error": "Song not found"}), 404
         song.delete()
         return jsonify({"message": "Song deleted successfully"}), 200
+    
     except bson_errors.InvalidId:
         return jsonify({"error": "Invalid ID format"}), 400
     except DoesNotExist:
@@ -83,6 +84,9 @@ def edit_song(id):
         # Find the document that matches the id in that data collection obj
         song = Song.objects(id=ObjectId(id)).first()
 
+        if not song:
+            return jsonify({"error": "Song not found"}), 404
+        
         # Update it using the modify command call and pass it the json request object.
         song.modify(**data)
         

@@ -83,28 +83,28 @@ def delete_artist(id):
         if not artist:
             return jsonify({"error": "Artist not found"}), 404
         
-        #find all albums that reference this artist
-        albums_with_artist = Album.objects(artists=artist)
-        for album in albums_with_artist:
-            #remove the artist from the album's artist list
-            album.update(pull__artists=artist)
+        # #find all albums that reference this artist
+        # albums_with_artist = Album.objects(artists=artist)
+        # for album in albums_with_artist:
+        #     #remove the artist from the album's artist list
+        #     album.update(pull__artists=artist)
 
-            #fetch the album object, to see updated artists list
-            updated_album = Album.objects(id=album.id).first()
+        #     #fetch the album object, to see updated artists list
+        #     updated_album = Album.objects(id=album.id).first()
 
-            #if no more artists in that album, delete the album
-            if not updated_album.artists:
-                #before deleting the album, remove it from all songs referencing it
-                songs_with_album = Song.objects(albums=album)
-                for song in songs_with_album:
-                    song.update(pull__albums=album)
-                    #fetch updated song, if now empty, delete the song
-                    updated_song = Song.objects(id=song.id).first()
-                    if not updated_song.albums:
-                        updated_song.delete()
+        #     #if no more artists in that album, delete the album
+        #     if not updated_album.artists:
+        #         #before deleting the album, remove it from all songs referencing it
+        #         songs_with_album = Song.objects(albums=album)
+        #         for song in songs_with_album:
+        #             song.update(pull__albums=album)
+        #             #fetch updated song, if now empty, delete the song
+        #             updated_song = Song.objects(id=song.id).first()
+        #             if not updated_song.albums:
+        #                 updated_song.delete()
 
-                #delete the album
-                updated_album.delete() 
+        #         #delete the album
+        #         updated_album.delete() 
         
         #delete the artist
         artist.delete()
@@ -127,6 +127,9 @@ def edit_artist(id):
         # Find the document that matches the id in that data collection obj
         artist = Artist.objects(id=ObjectId(id)).first()
 
+        if not artist:
+            return jsonify({"error": "Artist not found"}), 404
+        
         # Update it using the modify command call and pass it the json request object.
         artist.modify(**data)
         
@@ -134,7 +137,7 @@ def edit_artist(id):
             "artist_name": artist.artist_name,
             "country_of_origin": artist.country_of_origin,
             "age": artist.age,
-            "genres": artist.genres,
+            "genre": artist.genre,
             "label": artist.label,
             "id": str(artist.id)
         }), 201
