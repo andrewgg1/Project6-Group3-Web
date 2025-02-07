@@ -49,13 +49,19 @@ def get_artist(ID):
 def create_artist():
     """ Endpoint for creating artist """
     try:
-        data = json.loads(request.data)
-        artist = Artist(**data).save()
+        artist = Artist(
+            artist_name = request.form['artist_name'],
+            country_of_origin = request.form['country_of_origin'],
+            age = request.form['age'],
+            genre = request.form['genre'],
+            label = request.form['label']
+        ).save()
+
         return jsonify({
             "artist_name": artist.artist_name,
             "country_of_origin": artist.country_of_origin,
             "age": artist.age,
-            "genres": artist.genres,
+            "genre": artist.genre,
             "label": artist.label,
             "id": str(artist.id)
         }), 201

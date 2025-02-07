@@ -46,7 +46,7 @@
                     <div class="col-md-3 mb-4">
                         <div class="card p-3 shadow-sm bg-dark">
                             <h5 class="List">{{ artist.artist_name }}</h5>
-                            <p class="List">Genre: {{ artist.genres|join(", ") }}</p>
+                            <p class="List">Genre: {{ artist.genre }}</p>
                             <p class="List">Record Label: {{ artist.label }}</p>
                             <!--link that redirects to artist_routes.py and uses the artist blueprint to use the 'get_artist' function & route-->
                             <!-- <a href="{{ url_for('artist.get_artist', ID = artist._id) }}" class="nextLink">See more...</a> -->
