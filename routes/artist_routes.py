@@ -49,13 +49,21 @@ def get_artist(ID):
 def create_artist():
     """ Endpoint for creating artist """
     try:
-        artist = Artist(
-            artist_name = request.form['artist_name'],
-            country_of_origin = request.form['country_of_origin'],
-            age = request.form['age'],
-            genre = request.form['genre'],
-            label = request.form['label']
-        ).save()
+        # creating artist directly with HTTP POST request
+        if request.content_type == 'application/json':
+            data = json.loads(request.data)
+            artist = Artist(**data).save()
+        # creating artist with form submit
+        elif request.content_type == 'application/x-www-form-urlencoded':
+            artist = Artist(
+                artist_name = request.form['artist_name'],
+                country_of_origin = request.form['country_of_origin'],
+                age = request.form['age'],
+                genre = request.form['genre'],
+                label = request.form['label']
+            ).save()
+        else:
+            return jsonify({"error": "Invalid request type"}), 400
 
         return jsonify({
             "artist_name": artist.artist_name,
