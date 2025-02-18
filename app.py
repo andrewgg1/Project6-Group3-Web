@@ -74,27 +74,17 @@ def home():
     song_list = get_songs()[0].json
     return render_template('home.html', song_list=song_list) #sends list of songs to home.html
 
-#these are the 'add' routes that return a html page with a form for the user to fill
-#idk if these should be moved to the routes folder to their appropriate files
-@app.route('/add-artist', methods=['GET'])
-def Add_Artist(): #only this one has a button to trigger it on home.html
-    return render_template('artist.html', )
-
 #edit song
 @app.route('/edit/<ID>', methods=['GET'])
 def Edit_Song(ID): 
-    song = get_song(ID)[0].json
+    song = get_song(ID)[0].json #get specific song and send to editSong.html
     return render_template('editSong.html', song=song)
 
+#add/create a song
 @app.route('/add-song', methods=['GET'])
-def Add_Song(): #trigger in profile.html
+def Add_Song():
     return render_template('addSong.html')
 
-#To be deleted - for testing purposes
-@app.route('/profile/<ID>', methods=['GET'])
-def Get_profile(ID):
-    artist = get_artist(ID)[0].json
-    return render_template('profile.html', artist=artist) #place this in route/artist_route.py instead (/artists/<ID> GET aka get_artist(ID))
 
 if __name__ == "__main__":
     app.run()

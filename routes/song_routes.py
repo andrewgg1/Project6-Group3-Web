@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify, redirect, url_for
+from flask import Blueprint, request, jsonify
 from models import Song
 from bson import ObjectId, errors as bson_errors
 from mongoengine.errors import ValidationError, DoesNotExist
@@ -53,7 +53,6 @@ def create_song():
             "song_length": song.song_length,
             "id": str(song.id)
         }), 201
-        #return redirect(url_for("home"))
     except json.JSONDecodeError:
         return jsonify({"error": "Invalid JSON format"}), 400
     except ValidationError as e:
@@ -61,13 +60,18 @@ def create_song():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@song_bp.route("/songs/<id>", methods=["DELETE", "POST"])
+# I changed the app.route from "/songs/<ID>" because it caused conflicts 
+# with the edit_song(id) app.route
+# I also added a POST method bc that was the only way i could think of to
+# directly call the delete_song(id) function without making a new html page & 
+# ultimately a new function in app.py
+@song_bp.route("/del-song/<id>", methods=["DELETE", "POST"])
 def delete_song(id):
     """ Endpoint for deleting a song """
     try:
-        if request.method == "POST":
+        if request.method == "POST": #checks for POST method
             song = Song.objects(id=ObjectId(id)).first()
-        elif request.method == "DELETE":
+        elif request.method == "DELETE": #relevant mostly for jmeter tests, which means to trigger this function, you can call the DELETE method directly
             song = Song.objects(id=ObjectId(id)).first()
         if not song:
             return jsonify({"error": "Song not found"}), 404
@@ -81,14 +85,15 @@ def delete_song(id):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+# I added a POST method bc the html <form> tag from editSong.html only works with POST and GET methods
 @song_bp.route("/songs/<id>", methods=["POST", "PATCH"])
 def edit_song(id):
     """ Endpoint for editing a song """
     try:
         # reads the json from the request into a data collection obj
-        if request.method == 'POST':
-            data = form_to_json(request.form)
-        elif request.method == 'PATCH':
+        if request.method == 'POST': #checks for POST method
+            data = form_to_json(request.form) #turns <form> data to json
+        elif request.method == 'PATCH': #relevant mostly for jmeter tests, which means to trigger this function, you can call the PATCH method directly
             data = json.loads(request.data)
 
         # Find the document that matches the id in that data collection obj
@@ -105,21 +110,20 @@ def edit_song(id):
             "song_length": song.song_length,
             "id": str(song.id)
         }), 201
-        #return redirect(url_for("home"))
     except json.JSONDecodeError:
         return jsonify({"error": "Invalid JSON format"}), 400
     except ValidationError as e:
         return jsonify({"error": str(e)}), 400
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-    
+
+#turns <form> data to json dictionary
 def form_to_json(form_data):
-    """ Converts form data to a JSON-like dictionary """
     return {
         "song_name": form_data["song_name"],
-        # "artist": form_data.get("artist"),
-        # "album": form_data.get("album"),
+        # "artist": form_data["artist"],
+        # "album": form_data["album"],
         "song_length": form_data["song_length"]
-        # "genre": form_data.get("genre"),
-        # "release_year": form_data.get("release_year")
+        # "genre": form_data["genre"],
+        # "release_year": form_data["release_year"]
     }

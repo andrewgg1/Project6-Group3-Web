@@ -52,19 +52,3 @@ a:hover{
     font-weight: 800;
     color: black;
 }
-
-/*profile.html styles*/
-.profileBody{
-    font-family: 'Poppins', sans-serif;
-    background-image: url("/static/images/profile-bg.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-}
-.profileH1 {
-    font-weight: 800;
-    color: black;
-}
-#profileA{
-    color: black;
-    text-decoration: none;
-}
