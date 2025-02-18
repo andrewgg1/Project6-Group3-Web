@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, redirect, url_for
 from models import Song
 from bson import ObjectId, errors as bson_errors
 from mongoengine.errors import ValidationError, DoesNotExist
@@ -53,6 +53,7 @@ def create_song():
             "song_length": song.song_length,
             "id": str(song.id)
         }), 201
+        #return redirect(url_for("home"))
     except json.JSONDecodeError:
         return jsonify({"error": "Invalid JSON format"}), 400
     except ValidationError as e:
@@ -60,11 +61,14 @@ def create_song():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@song_bp.route("/songs/<id>", methods=["DELETE"])
+@song_bp.route("/songs/<id>", methods=["DELETE", "POST"])
 def delete_song(id):
     """ Endpoint for deleting a song """
     try:
-        song = Song.objects(id=ObjectId(id)).first()
+        if request.method == "POST":
+            song = Song.objects(id=ObjectId(id)).first()
+        elif request.method == "DELETE":
+            song = Song.objects(id=ObjectId(id)).first()
         if not song:
             return jsonify({"error": "Song not found"}), 404
         song.delete()
@@ -77,12 +81,15 @@ def delete_song(id):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@song_bp.route("/songs/<id>", methods=["PATCH"])
+@song_bp.route("/songs/<id>", methods=["POST", "PATCH"])
 def edit_song(id):
     """ Endpoint for editing a song """
     try:
         # reads the json from the request into a data collection obj
-        data = json.loads(request.data)
+        if request.method == 'POST':
+            data = form_to_json(request.form)
+        elif request.method == 'PATCH':
+            data = json.loads(request.data)
 
         # Find the document that matches the id in that data collection obj
         song = Song.objects(id=ObjectId(id)).first()
@@ -98,9 +105,21 @@ def edit_song(id):
             "song_length": song.song_length,
             "id": str(song.id)
         }), 201
+        #return redirect(url_for("home"))
     except json.JSONDecodeError:
         return jsonify({"error": "Invalid JSON format"}), 400
     except ValidationError as e:
         return jsonify({"error": str(e)}), 400
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+def form_to_json(form_data):
+    """ Converts form data to a JSON-like dictionary """
+    return {
+        "song_name": form_data["song_name"],
+        # "artist": form_data.get("artist"),
+        # "album": form_data.get("album"),
+        "song_length": form_data["song_length"]
+        # "genre": form_data.get("genre"),
+        # "release_year": form_data.get("release_year")
+    }

@@ -57,7 +57,12 @@
                     <tbody>
                         {% for song in song_list %}
                         <tr>
-                            <td><a class="Link" href="{{ url_for('Edit_Song', ID=song.id) }}">Edit</a> | <a>Delete</a></td>
+                            <td><a class="Link" href="{{ url_for('Edit_Song', ID=song.id) }}">Edit</a> |
+                                <form action="{{ url_for('song.delete_song', id=song.id) }}" method="POST" style="display:inline;">
+                                    <input type="hidden">
+                                    <button type="submit" class="btn btn-link Link">Delete</button>
+                                </form>
+                            </td>
                             <td>{{song.song_name}}</td>
                             <td>Artist</td>
                             <td>Album</td>

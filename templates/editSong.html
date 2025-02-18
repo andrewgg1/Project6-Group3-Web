@@ -1,4 +1,4 @@
-<!--the form page to add a song-->
+<!--the form page to edit a song-->
 {% extends 'base.html' %}
 {% block title %} Edit a song {% endblock %}
 
@@ -9,14 +9,14 @@
         <div class="row">
             <div class="form-group">
                 <label for="songName">Song Name:</label>
-                <input required type="text" class="form-control" id="songName" name="song_name">
+                <input required type="text" class="form-control" id="songName" name="song_name" value="{{song.song_name}}">
             </div>
         </div>
     
         <div class="row">
             <div class="form-group">
                 <label for="artist2">Artist:</label>
-                <!--add name attribute to input tag-->
+                <!--add name & value attribute to input tag-->
                <input required type="text" class="form-control" id="artist2">
             </div>
         </div>
@@ -24,7 +24,7 @@
         <div class="row">
             <div class="form-group">
                 <label for="album">Album:</label>
-                <!--add name attribute to input tag-->
+                <!--add name & value attribute to input tag-->
                <input required type="text" class="form-control" id="album">
             </div>
         </div> 
@@ -32,14 +32,14 @@
         <div class="row">
             <div class="form-group">
                 <label for="songLen">Song length:</label> 
-                <input required type="number" class="form-control" id="songLen" name="song_length">
+                <input required type="number" class="form-control" id="songLen" name="song_length" value="{{song.song_length}}">
             </div>
         </div>
 
         <div class="row">
             <div class="form-group">
                 <label for="genre">Genre:</label> 
-                <!--add name attribute to input tag-->
+                <!--add name & value attribute to input tag-->
                 <input required type="text" class="form-control" id="genre">
             </div>
         </div>
@@ -47,7 +47,7 @@
         <div class="row">
             <div class="form-group">
                 <label for="release_year">Realease year:</label> 
-                <!--add name attribute to input tag-->
+                <!--add name & value attribute to input tag-->
                 <input required type="number" class="form-control" id="release_year">
             </div>
         </div>
