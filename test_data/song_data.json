@@ -2,203 +2,403 @@
   "songs": [
     {
       "song_name": "Dancing Queen",
-      "song_length": 230
+      "artist": "ABBA",
+      "album": "Arrival",
+      "song_length": 230,
+      "genre": "Pop",
+      "release_year": 1976
     },
     {
       "song_name": "Back in Black",
-      "song_length": 255
+      "artist": "AC/DC",
+      "album": "Back in Black",
+      "song_length": 255,
+      "genre": "Hard Rock",
+      "release_year": 1980
     },
     {
       "song_name": "Hello",
-      "song_length": 295
+      "artist": "Adele",
+      "album": "25",
+      "song_length": 295,
+      "genre": "Pop",
+      "release_year": 2015
     },
     {
       "song_name": "Dream On",
-      "song_length": 268
+      "artist": "Aerosmith",
+      "album": "Toys in the Attic",
+      "song_length": 268,
+      "genre": "Rock",
+      "release_year": 1975
     },
     {
       "song_name": "Do I Wanna Know?",
-      "song_length": 272
+      "artist": "Arctic Monkeys",
+      "album": "AM",
+      "song_length": 272,
+      "genre": "Indie Rock",
+      "release_year": 2013
     },
     {
       "song_name": "Hey Jude",
-      "song_length": 431
+      "artist": "The Beatles",
+      "album": "Abbey Road",
+      "song_length": 431,
+      "genre": "Rock",
+      "release_year": 1969
     },
     {
       "song_name": "Crazy in Love",
-      "song_length": 236
+      "artist": "Beyoncé",
+      "album": "Lemonade",
+      "song_length": 236,
+      "genre": "R&B",
+      "release_year": 2016
     },
     {
       "song_name": "Iron Man",
-      "song_length": 353
+      "artist": "Black Sabbath",
+      "album": "Paranoid",
+      "song_length": 353,
+      "genre": "Metal",
+      "release_year": 1970
     },
     {
       "song_name": "Like a Rolling Stone",
-      "song_length": 373
+      "artist": "Bob Dylan",
+      "album": "Highway 61 Revisited",
+      "song_length": 373,
+      "genre": "Folk Rock",
+      "release_year": 1965
     },
     {
       "song_name": "No Woman, No Cry",
-      "song_length": 263
+      "artist": "Bob Marley",
+      "album": "Exodus",
+      "song_length": 263,
+      "genre": "Reggae",
+      "release_year": 1977
     },
     {
       "song_name": "Yellow",
-      "song_length": 266
+      "artist": "Coldplay",
+      "album": "Parachutes",
+      "song_length": 266,
+      "genre": "Alternative Rock",
+      "release_year": 2000
     },
     {
       "song_name": "Space Oddity",
-      "song_length": 315
+      "artist": "David Bowie",
+      "album": "The Rise and Fall of Ziggy Stardust",
+      "song_length": 315,
+      "genre": "Rock",
+      "release_year": 1972
     },
     {
       "song_name": "Personal Jesus",
-      "song_length": 295
+      "artist": "Depeche Mode",
+      "album": "Violator",
+      "song_length": 295,
+      "genre": "Electronic",
+      "release_year": 1990
     },
     {
       "song_name": "Hotline Bling",
-      "song_length": 267
+      "artist": "Drake",
+      "album": "Views",
+      "song_length": 267,
+      "genre": "Hip Hop",
+      "release_year": 2016
     },
     {
       "song_name": "Shape of You",
-      "song_length": 233
+      "artist": "Ed Sheeran",
+      "album": "÷ (Divide)",
+      "song_length": 233,
+      "genre": "Pop",
+      "release_year": 2017
     },
     {
       "song_name": "Tiny Dancer",
-      "song_length": 377
+      "artist": "Elton John",
+      "album": "Goodbye Yellow Brick Road",
+      "song_length": 377,
+      "genre": "Rock",
+      "release_year": 1973
     },
     {
       "song_name": "Jailhouse Rock",
-      "song_length": 146
+      "artist": "Elvis Presley",
+      "album": "The Sun Sessions",
+      "song_length": 146,
+      "genre": "Rock and Roll",
+      "release_year": 1976
     },
     {
       "song_name": "Lose Yourself",
-      "song_length": 326
+      "artist": "Eminem",
+      "album": "The Marshall Mathers LP",
+      "song_length": 326,
+      "genre": "Hip Hop",
+      "release_year": 2000
     },
     {
       "song_name": "Dreams",
-      "song_length": 257
+      "artist": "Fleetwood Mac",
+      "album": "Rumours",
+      "song_length": 257,
+      "genre": "Rock",
+      "release_year": 1977
     },
     {
       "song_name": "Everlong",
-      "song_length": 250
+      "artist": "Foo Fighters",
+      "album": "The Colour and the Shape",
+      "song_length": 250,
+      "genre": "Alternative Rock",
+      "release_year": 1997
     },
     {
       "song_name": "My Way",
-      "song_length": 276
+      "artist": "Frank Sinatra",
+      "album": "Sinatra's Reprise: A Very Good Year",
+      "song_length": 276,
+      "genre": "Jazz",
+      "release_year": 1998
     },
     {
       "song_name": "Basket Case",
-      "song_length": 193
+      "artist": "Green Day",
+      "album": "Dookie",
+      "song_length": 193,
+      "genre": "Punk Rock",
+      "release_year": 1994
     },
     {
       "song_name": "Sweet Child O' Mine",
-      "song_length": 356
+      "artist": "Guns N' Roses",
+      "album": "Appetite for Destruction",
+      "song_length": 356,
+      "genre": "Hard Rock",
+      "release_year": 1987
     },
     {
       "song_name": "The Trooper",
-      "song_length": 252
+      "artist": "Iron Maiden",
+      "album": "Piece of Mind",
+      "song_length": 252,
+      "genre": "Metal",
+      "release_year": 1983
     },
     {
       "song_name": "99 Problems",
-      "song_length": 239
+      "artist": "Jay-Z",
+      "album": "The Black Album",
+      "song_length": 239,
+      "genre": "Hip Hop",
+      "release_year": 2003
     },
     {
       "song_name": "Ring of Fire",
-      "song_length": 156
+      "artist": "Johnny Cash",
+      "album": "Ring of Fire: The Best of Johnny Cash",
+      "song_length": 156,
+      "genre": "Country",
+      "release_year": 1963
     },
     {
       "song_name": "Bad Romance",
-      "song_length": 294
+      "artist": "Lady Gaga",
+      "album": "The Fame Monster",
+      "song_length": 294,
+      "genre": "Pop",
+      "release_year": 2009
     },
     {
       "song_name": "Stairway to Heaven",
-      "song_length": 482
+      "artist": "Led Zeppelin",
+      "album": "Led Zeppelin IV",
+      "song_length": 482,
+      "genre": "Rock",
+      "release_year": 1971
     },
     {
       "song_name": "Like a Prayer",
-      "song_length": 341
+      "artist": "Madonna",
+      "album": "Like a Prayer",
+      "song_length": 341,
+      "genre": "Pop",
+      "release_year": 1989
     },
     {
       "song_name": "Enter Sandman",
-      "song_length": 332
+      "artist": "Metallica",
+      "album": "Metallica",
+      "song_length": 332,
+      "genre": "Metal",
+      "release_year": 1991
     },
     {
       "song_name": "Billie Jean",
-      "song_length": 294
+      "artist": "Michael Jackson",
+      "album": "Thriller",
+      "song_length": 294,
+      "genre": "Pop",
+      "release_year": 1982
     },
     {
       "song_name": "So What",
-      "song_length": 541
+      "artist": "Miles Davis",
+      "album": "Kind of Blue",
+      "song_length": 541,
+      "genre": "Jazz",
+      "release_year": 1959
     },
     {
       "song_name": "Smells Like Teen Spirit",
-      "song_length": 301
+      "artist": "Nirvana",
+      "album": "Nevermind",
+      "song_length": 301,
+      "genre": "Grunge",
+      "release_year": 1991
     },
     {
       "song_name": "Wonderwall",
-      "song_length": 258
+      "artist": "Oasis",
+      "album": "(What's the Story) Morning Glory?",
+      "song_length": 258,
+      "genre": "Rock",
+      "release_year": 1995
     },
     {
       "song_name": "Black",
-      "song_length": 343
+      "artist": "Pearl Jam",
+      "album": "Ten",
+      "song_length": 343,
+      "genre": "Grunge",
+      "release_year": 1991
     },
     {
       "song_name": "Comfortably Numb",
-      "song_length": 382
+      "artist": "Pink Floyd",
+      "album": "The Wall",
+      "song_length": 382,
+      "genre": "Progressive Rock",
+      "release_year": 1979
     },
     {
       "song_name": "Purple Rain",
-      "song_length": 520
+      "artist": "Prince",
+      "album": "Purple Rain",
+      "song_length": 520,
+      "genre": "Pop",
+      "release_year": 1984
     },
     {
       "song_name": "Bohemian Rhapsody",
-      "song_length": 354
+      "artist": "Queen",
+      "album": "A Night at the Opera",
+      "song_length": 354,
+      "genre": "Rock",
+      "release_year": 1975
     },
     {
       "song_name": "Karma Police",
-      "song_length": 264
+      "artist": "Radiohead",
+      "album": "OK Computer",
+      "song_length": 264,
+      "genre": "Alternative Rock",
+      "release_year": 1997
     },
     {
       "song_name": "Under the Bridge",
-      "song_length": 264
+      "artist": "Red Hot Chili Peppers",
+      "album": "Blood Sugar Sex Magik",
+      "song_length": 264,
+      "genre": "Alternative Rock",
+      "release_year": 1991
     },
     {
       "song_name": "Paint it Black",
-      "song_length": 226
+      "artist": "The Rolling Stones",
+      "album": "Aftermath",
+      "song_length": 226,
+      "genre": "Rock",
+      "release_year": 1966
     },
     {
       "song_name": "Shake It Off",
-      "song_length": 219
+      "artist": "Taylor Swift",
+      "album": "1989",
+      "song_length": 219,
+      "genre": "Pop",
+      "release_year": 2014
     },
     {
       "song_name": "Good Vibrations",
-      "song_length": 215
+      "artist": "The Beach Boys",
+      "album": "Pet Sounds",
+      "song_length": 215,
+      "genre": "Rock",
+      "release_year": 1966
     },
     {
       "song_name": "Every Breath You Take",
-      "song_length": 254
+      "artist": "The Police",
+      "album": "Synchronicity",
+      "song_length": 254,
+      "genre": "Rock",
+      "release_year": 1983
     },
     {
       "song_name": "How Soon Is Now?",
-      "song_length": 406
+      "artist": "The Smiths",
+      "album": "Meat Is Murder",
+      "song_length": 406,
+      "genre": "Alternative Rock",
+      "release_year": 1985
     },
     {
       "song_name": "Who Are You",
-      "song_length": 318
+      "artist": "The Who",
+      "album": "Who Are You",
+      "song_length": 318,
+      "genre": "Rock",
+      "release_year": 1978
     },
     {
       "song_name": "Free Fallin'",
-      "song_length": 255
+      "artist": "Tom Petty",
+      "album": "Full Moon Fever",
+      "song_length": 255,
+      "genre": "Rock",
+      "release_year": 1989
     },
     {
       "song_name": "With or Without You",
-      "song_length": 296
+      "artist": "U2",
+      "album": "The Joshua Tree",
+      "song_length": 296,
+      "genre": "Rock",
+      "release_year": 1987
     },
     {
       "song_name": "Jump",
-      "song_length": 241
+      "artist": "Van Halen",
+      "album": "1984",
+      "song_length": 241,
+      "genre": "Rock",
+      "release_year": 1983
     },
     {
       "song_name": "I Will Always Love You",
-      "song_length": 273
+      "artist": "Whitney Houston",
+      "album": "The Bodyguard",
+      "song_length": 273,
+      "genre": "Pop",
+      "release_year": 1992
     }
   ]
 }
