@@ -1,17 +1,10 @@
-from flask import Flask, jsonify
-import database
-# from routes.artist_routes import artist_bp, get_artist
+from flask import Flask, jsonify, request, render_template
 from routes.song_routes import song_bp, get_songs, get_song
-# from routes.album_routes import album_bp
-#for my html pages
-from flask import Flask, render_template
-from models import Artist
+import database
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
-# app.register_blueprint(artist_bp)
 app.register_blueprint(song_bp)
-# app.register_blueprint(album_bp)
 
 #do something about options
 #@app.route('/', methods=['GET', 'OPTIONS'])
@@ -72,7 +65,8 @@ def options():
 @app.route('/', methods=['GET'])
 def home():
     song_list = get_songs()[0].json
-    return render_template('home.html', song_list=song_list) #sends list of songs to home.html
+    search_term = request.args.get('search') if request.args.get('search') != None else ''
+    return render_template('home.html', song_list=song_list, search_term=search_term)
 
 #edit song
 @app.route('/edit/<ID>', methods=['GET'])

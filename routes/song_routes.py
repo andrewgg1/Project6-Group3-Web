@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, redirect, url_for
 from models import Song
 from bson import ObjectId, errors as bson_errors
 from mongoengine.errors import ValidationError, DoesNotExist
@@ -10,7 +10,23 @@ song_bp = Blueprint('song', __name__)
 def get_songs():
     """ Endpoint for getting all songs """
     try:
-        all_songs = Song.objects
+        search_term = request.args.get('search')
+        
+        if search_term:
+            # Use a case-insensitive search on multiple fields
+            all_songs = Song.objects.filter(
+                __raw__={
+                    "$or": [
+                        {"song_name": {"$regex": search_term, "$options": "i"}},
+                        {"artist": {"$regex": search_term, "$options": "i"}},
+                        {"album": {"$regex": search_term, "$options": "i"}},
+                        {"genre": {"$regex": search_term, "$options": "i"}}
+                    ]
+                }
+            )
+        else:
+            all_songs = Song.objects
+
         songs_output = [{
             "song_name": song.song_name,
             "artist": song.artist,
@@ -129,15 +145,9 @@ def edit_song(id):
         # Update it using the modify command call and pass it the json request object.
         song.modify(**data)
         
-        return jsonify({
-            "song_name": song.song_name,
-            "artist": song.artist,
-            "album": song.album,
-            "song_length": song.song_length,
-            "genre": song.genre,
-            "release_year": song.release_year,
-            "id": str(song.id)
-        }), 201
+        # Redirect to home page after successful edit
+        return redirect(url_for('home'))
+
     except json.JSONDecodeError:
         return jsonify({"error": "Invalid JSON format"}), 400
     except ValidationError as e:

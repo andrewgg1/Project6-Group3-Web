@@ -18,10 +18,10 @@
                 </div>
             </div>
             <div class="row mt-5">
-                <form>
+                <form action="{{ url_for('home')}}">
                     <div class="input-group w-50 col-6 mx-auto">
                         <!--make the search work-->
-                      <input type="text" class="form-control" placeholder="Search">
+                      <input type="text" class="form-control" placeholder="Search" id="search" name="search" value="{{search_term}}" autofocus>
                       <span>
                         <div class="input-group-text">
                             <button class="btn btn-default" type="submit">
@@ -29,6 +29,11 @@
                             </button>
                         </div>
                       </span>
+                      <div class="input-group-text">
+                        <button class="btn btn-default" type="submit" onclick="document.getElementById('search').value = '';">
+                            Reset
+                        </button>
+                    </div>
                     </div>
                   </form>
             </div>
