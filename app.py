@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
 import database
 from routes.artist_routes import artist_bp, get_artist
-from routes.song_routes import song_bp
+from routes.song_routes import song_bp, get_songs
 from routes.album_routes import album_bp
 #for my html pages
 from flask import Flask, render_template
@@ -71,8 +71,8 @@ def options():
 #root route to homepage
 @app.route('/', methods=['GET'])
 def home():
-    artists = Artist.objects() #reads from database
-    return render_template('home.html', artists=artists) #sends list of artists to home.html
+    song_list = get_songs()[0].json
+    return render_template('home.html', song_list=song_list) #sends list of songs to home.html
 
 #these are the 'add' routes that return a html page with a form for the user to fill
 #idk if these should be moved to the routes folder to their appropriate files
@@ -86,7 +86,7 @@ def Add_Album(): #trigger in profile.html
 
 @app.route('/add-song', methods=['GET'])
 def Add_Song(): #trigger in profile.html
-    return render_template('song.html')
+    return render_template('addSong.html')
 
 #To be deleted - for testing purposes
 @app.route('/profile/<ID>', methods=['GET'])

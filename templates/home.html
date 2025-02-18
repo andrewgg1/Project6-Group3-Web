@@ -35,26 +35,39 @@
             <div>
                 <div class="text-center mt-2">
                     <!--redirects to artist.html where the form is-->
-                <a href="{{ url_for('Add_Artist') }}" class="fs-3"><i class="bi bi-plus-circle-fill fs-1"></i> Add an artist</a>
+                <a href="{{ url_for('Add_Song') }}" class="fs-3"><i class="bi bi-plus-circle-fill fs-1"></i> Add a Song</a>
                 </div>
             </div>
 
-            <!--Display artists-->
+            <!--Display songs in table-->
             <div class="container"> 
-                <div class="row">
-                    {% for artist in artists %} <!--loop through artists in database-->
-                    <div class="col-md-3 mb-4">
-                        <div class="card p-3 shadow-sm bg-dark">
-                            <h5 class="List">{{ artist.artist_name }}</h5>
-                            <p class="List">Genre: {{ artist.genre }}</p>
-                            <p class="List">Record Label: {{ artist.label }}</p>
-                            <!--link that redirects to artist_routes.py and uses the artist blueprint to use the 'get_artist' function & route-->
-                            <!-- <a href="{{ url_for('artist.get_artist', ID = artist._id) }}" class="nextLink">See more...</a> -->
-                            <a href="{{ url_for('Get_profile', ID=artist.id) }}" class="nextLink">See more...</a>
-                        </div>               
-                    </div>
-                    {% endfor %}
-                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Song name</th>
+                            <th>Artist</th>
+                            <th>Album</th>
+                            <th>Song length</th>
+                            <th>Genre</th>
+                            <th>Release year</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for song in song_list %}
+                        <tr>
+                            <td><a>Edit</a> | <a>Delete</a></td>
+                            <td>{{song.song_name}}</td>
+                            <td>Artist</td>
+                            <td>Album</td>
+                            <td>{{song.song_length}}</td>
+                            <td>Genre</td>
+                            <td>Release year</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
     </body>
