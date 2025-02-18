@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
 import database
 from routes.artist_routes import artist_bp, get_artist
-from routes.song_routes import song_bp, get_songs
+from routes.song_routes import song_bp, get_songs, get_song
 from routes.album_routes import album_bp
 #for my html pages
 from flask import Flask, render_template
@@ -80,9 +80,11 @@ def home():
 def Add_Artist(): #only this one has a button to trigger it on home.html
     return render_template('artist.html', )
 
-@app.route('/add-album', methods=['GET'])
-def Add_Album(): #trigger in profile.html
-    return render_template('album.html')
+#edit song
+@app.route('/edit/<ID>', methods=['GET'])
+def Edit_Song(ID): 
+    song = get_song(ID)[0].json
+    return render_template('editSong.html', song=song)
 
 @app.route('/add-song', methods=['GET'])
 def Add_Song(): #trigger in profile.html

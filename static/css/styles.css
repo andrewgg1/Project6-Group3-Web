@@ -31,17 +31,16 @@ a:hover{
 .List{
     color: white;
 }
-.nextLink:link{
-    color: white;
+.Link:link{
+    color:blue;
     text-decoration: underline;
 }
-.nextLink:visited{
-    color: white;
+.Link:visited{
+    color:blue;
     text-decoration:dashed;
 }
-.nextLink:hover{
-    color: white;
-    background-color: black;
+.Link:hover{
+    background-color:aliceblue;
     text-decoration: underline;
 }
 

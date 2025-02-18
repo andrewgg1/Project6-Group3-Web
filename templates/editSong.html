@@ -1,46 +1,58 @@
-<!--the form page to edit a song-->
+<!--the form page to add a song-->
 {% extends 'base.html' %}
-{% block title %} album {% endblock %}
+{% block title %} Edit a song {% endblock %}
 
 {% block formContent %}
 
-<form action="{{ url_for('album.create_album') }}" method="post"> <!--Add form action from the album_routes.py-->
+<form action="{{ url_for('song.edit_song', id=song.id) }}" method="post"> <!--Add form action from the song_routes.py-->
     <div class="container pt-4 pb-5 bg-light border">
         <div class="row">
             <div class="form-group">
-                <label for="albumName">Album Name:</label>
-                <input required type="text" class="form-control" id="albumName" name="album_name">
+                <label for="songName">Song Name:</label>
+                <input required type="text" class="form-control" id="songName" name="song_name">
             </div>
         </div>
     
-        <!-- <div class="row">
+        <div class="row">
             <div class="form-group">
-                <label for="artist">Artists:</label> make a dropdown to add existing artists-->
-               <!-- <input required type="text" class="form-control" id="artist" name="artist_name">
+                <label for="artist2">Artist:</label>
+                <!--add name attribute to input tag-->
+               <input required type="text" class="form-control" id="artist2">
             </div>
-        </div> -->
+        </div>
     
         <div class="row">
             <div class="form-group">
-                <label for="releaseYear">Year of Release:</label>
-                <input required type="number" class="form-control" id="releaseYear" name="release_year">
+                <label for="album">Album:</label>
+                <!--add name attribute to input tag-->
+               <input required type="text" class="form-control" id="album">
+            </div>
+        </div> 
+
+        <div class="row">
+            <div class="form-group">
+                <label for="songLen">Song length:</label> 
+                <input required type="number" class="form-control" id="songLen" name="song_length">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label for="genre">Genre:</label> 
+                <!--add name attribute to input tag-->
+                <input required type="text" class="form-control" id="genre">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label for="release_year">Realease year:</label> 
+                <!--add name attribute to input tag-->
+                <input required type="number" class="form-control" id="release_year">
             </div>
         </div>
         
-        <div class="row">
-            <div class="form-group">
-                <label for="genre2">Genre:</label>
-                <input required type="text" class="form-control" id="genre2" name="genre">
-            </div>
-        </div> 
-    
-        <!-- <div class="row">
-            <div class="form-group">
-                <label for="songs">Songs:</label> make a dropdown to simply add songs-->
-               <!-- <input required type="text" class="form-control" id="songs">
-            </div>
-        </div> -->
-    </div> 
+    </div>
     
     <div class="mt-3 d-flex justify-content-end">
         <button type="submit" class="btn btn-primary mx-auto">Save</button>

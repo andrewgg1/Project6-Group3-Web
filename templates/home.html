@@ -41,7 +41,7 @@
 
             <!--Display songs in table-->
             <div class="container"> 
-                <table>
+                <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>Action</th>
@@ -57,7 +57,7 @@
                     <tbody>
                         {% for song in song_list %}
                         <tr>
-                            <td><a>Edit</a> | <a>Delete</a></td>
+                            <td><a class="Link" href="{{ url_for('Edit_Song', ID=song.id) }}">Edit</a> | <a>Delete</a></td>
                             <td>{{song.song_name}}</td>
                             <td>Artist</td>
                             <td>Album</td>
