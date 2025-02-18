@@ -33,7 +33,11 @@ def get_song(ID):
             return jsonify({"error": "Song not found"}), 404
         return jsonify({
             "song_name": song.song_name,
+            "artist": song.artist,
+            "album": song.album,
             "song_length": song.song_length,
+            "genre": song.genre,
+            "release_year": song.release_year,
             "id": str(song.id)
         }), 200
     except bson_errors.InvalidId:
@@ -47,14 +51,30 @@ def get_song(ID):
 def create_song():
     """ Endpoint for creating song """
     try:
-        song = Song(
-            song_name = request.form['song_name'],
-            song_length = request.form['song_length']
-        ).save()
+        # creating song directly with HTTP POST request
+        if request.content_type == 'application/json':
+            data = json.loads(request.data)
+            song = Song(**data).save()
+        # creating song with form submit
+        elif request.content_type == 'application/x-www-form-urlencoded':
+            song = Song(
+                song_name = request.form['song_name'],
+                artist = request.form['artist'],
+                album = request.form['album'],
+                song_length = request.form['song_length'],
+                genre = request.form['genre'],
+                release_year = request.form['release_year']
+            ).save()
+        else:
+            return jsonify({"error": "Invalid request type"}), 400
 
         return jsonify({
             "song_name": song.song_name,
+            "artist": song.artist,
+            "album": song.album,
             "song_length": song.song_length,
+            "genre": song.genre,
+            "release_year": song.release_year,
             "id": str(song.id)
         }), 201
     except json.JSONDecodeError:
@@ -111,7 +131,11 @@ def edit_song(id):
         
         return jsonify({
             "song_name": song.song_name,
+            "artist": song.artist,
+            "album": song.album,
             "song_length": song.song_length,
+            "genre": song.genre,
+            "release_year": song.release_year,
             "id": str(song.id)
         }), 201
     except json.JSONDecodeError:
@@ -125,9 +149,9 @@ def edit_song(id):
 def form_to_json(form_data):
     return {
         "song_name": form_data["song_name"],
-        # "artist": form_data["artist"],
-        # "album": form_data["album"],
-        "song_length": form_data["song_length"]
-        # "genre": form_data["genre"],
-        # "release_year": form_data["release_year"]
+        "artist": form_data["artist"],
+        "album": form_data["album"],
+        "song_length": form_data["song_length"],
+        "genre": form_data["genre"],
+        "release_year": form_data["release_year"]
     }
