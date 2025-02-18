@@ -120,14 +120,14 @@ def delete_song(id):
         return jsonify({"error": str(e)}), 500
 
 # I added a POST method bc the html <form> tag from editSong.html only works with POST and GET methods
-@song_bp.route("/songs/<id>", methods=["POST", "PATCH"])
+@song_bp.route("/songs/<id>", methods=["POST", "PUT", "PATCH"])
 def edit_song(id):
     """ Endpoint for editing a song """
     try:
         # reads the json from the request into a data collection obj
         if request.method == 'POST': #checks for POST method
             data = form_to_json(request.form) #turns <form> data to json
-        elif request.method == 'PATCH': #relevant mostly for jmeter tests, which means to trigger this function, you can call the PATCH method directly
+        elif request.method == 'PUT' or request.method == 'PATCH': #relevant mostly for jmeter tests, which means to trigger this function, you can call the PATCH method directly
             data = json.loads(request.data)
 
         # Find the document that matches the id in that data collection obj
