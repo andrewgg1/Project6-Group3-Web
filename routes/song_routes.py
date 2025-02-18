@@ -13,7 +13,11 @@ def get_songs():
         all_songs = Song.objects
         songs_output = [{
             "song_name": song.song_name,
+            "artist": song.artist,
+            "album": song.album,
             "song_length": song.song_length,
+            "genre": song.genre,
+            "release_year": song.release_year,
             "id": str(song.id)
         } for song in all_songs]
         return jsonify(songs_output), 200

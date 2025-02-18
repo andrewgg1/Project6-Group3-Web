@@ -65,11 +65,11 @@
                                 </form>
                             </td>
                             <td>{{song.song_name}}</td>
-                            <td>Artist</td>
-                            <td>Album</td>
-                            <td>{{song.song_length}}</td>
-                            <td>Genre</td>
-                            <td>Release year</td>
+                            <td>{{song.artist}}</td>
+                            <td>{{song.album}}</td>
+                            <td>{{ song.song_length // 60 }}:{{ '%02d' % (song.song_length % 60) }}</td>
+                            <td>{{song.genre}}</td>
+                            <td>{{song.release_year}}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
