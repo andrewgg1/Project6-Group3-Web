@@ -14,7 +14,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12" style="padding-top: 25px;">
-                    <h1 class="homeH1 text-center">Record Label Library</h1>
+                    <div class="text-center">
+                        <h1 class="homeH1">Record Label Library</h1>
+                    </div>
                 </div>
             </div>
             <div class="row mt-5">
@@ -40,8 +42,8 @@
             <div>
                 <div class="text-center mt-2">
                     <!--redirects to addSong.html form-->
-                <a href="{{ url_for('Add_Song') }}" class="fs-3"><i class="bi bi-plus-circle-fill fs-1"></i> Add a Song</a>
-                </div>
+                <a href="{{ url_for('Add_Song') }}" class="btn btn-primary fs-3"><i class="bi bi-plus-circle-fill fs-1"></i> Add a Song</a>
+                </div><br>
             </div>
 
             <!--Display songs in table-->

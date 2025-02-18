@@ -8,6 +8,9 @@
 .homeH1 {
     font-weight: 800;
     color: black;
+    display: inline-block;
+    background-color: white;
+    padding: 10px 50px 10px 50px;
 }
 .homeP {
     font-weight: 400;
@@ -20,7 +23,6 @@ a:link{
     text-decoration: none;
 }
 a:visited{
-    color:black;
     text-decoration: none;
 }
 a:hover{

@@ -13,6 +13,7 @@ def get_songs():
         search_term = request.args.get('search')
         
         if search_term:
+            year_search = int(search_term) if search_term.isdigit() else None
             # Use a case-insensitive search on multiple fields
             all_songs = Song.objects.filter(
                 __raw__={
@@ -20,7 +21,8 @@ def get_songs():
                         {"song_name": {"$regex": search_term, "$options": "i"}},
                         {"artist": {"$regex": search_term, "$options": "i"}},
                         {"album": {"$regex": search_term, "$options": "i"}},
-                        {"genre": {"$regex": search_term, "$options": "i"}}
+                        {"genre": {"$regex": search_term, "$options": "i"}},
+                        {"release_year": year_search}
                     ]
                 }
             )
@@ -83,16 +85,8 @@ def create_song():
             ).save()
         else:
             return jsonify({"error": "Invalid request type"}), 400
-
-        return jsonify({
-            "song_name": song.song_name,
-            "artist": song.artist,
-            "album": song.album,
-            "song_length": song.song_length,
-            "genre": song.genre,
-            "release_year": song.release_year,
-            "id": str(song.id)
-        }), 201
+        
+        return redirect(url_for('home'))
     except json.JSONDecodeError:
         return jsonify({"error": "Invalid JSON format"}), 400
     except ValidationError as e:
@@ -116,7 +110,7 @@ def delete_song(id):
         if not song:
             return jsonify({"error": "Song not found"}), 404
         song.delete()
-        return jsonify({"message": "Song deleted successfully"}), 200
+        return redirect(url_for('home'))
     
     except bson_errors.InvalidId:
         return jsonify({"error": "Invalid ID format"}), 400
