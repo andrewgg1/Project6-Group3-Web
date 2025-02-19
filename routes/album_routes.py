@@ -45,8 +45,12 @@ def get_album(ID):
 def create_album():
     """ Endpoint for creating album """
     try:
-        data = json.loads(request.data)
-        album = Album(**data).save()
+        album = Album(
+            album_name = request.form['album_name'],
+            release_year = request.form['release_year'],
+            genre = request.form['genre']
+        ).save()
+
         return jsonify({
             "album_name": album.album_name,
             "release_year": album.release_year,
@@ -70,16 +74,16 @@ def delete_album(id):
         if not album:
             return jsonify({"error": "Album not found"}), 404
         
-        #remove album from any songs that reference it
-        songs_with_album = Song.objects(albums=album)
-        for song in songs_with_album:
-            #pull album out of the song's albums list
-            song.update(pull__albums=album)
-            #fetch song, to see updated list
-            updated_song = Song.objects(id=song.id).first()
-            #if no more albums in that song's list, delete the song
-            if not updated_song.albums:
-                updated_song.delete()
+        # #remove album from any songs that reference it
+        # songs_with_album = Song.objects(albums=album)
+        # for song in songs_with_album:
+        #     #pull album out of the song's albums list
+        #     song.update(pull__albums=album)
+        #     #fetch song, to see updated list
+        #     updated_song = Song.objects(id=song.id).first()
+        #     #if no more albums in that song's list, delete the song
+        #     if not updated_song.albums:
+        #         updated_song.delete()
 
         #delete the album
         album.delete()
@@ -102,6 +106,9 @@ def edit_album(id):
         # Find the document that matches the id in that data collection obj
         album = Album.objects(id=ObjectId(id)).first()
 
+        if not album:
+            return jsonify({"error": "Album not found"}), 404
+    
         # Update it using the modify command call and pass it the json request object.
         album.modify(**data)
 

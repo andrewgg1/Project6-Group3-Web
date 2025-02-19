@@ -1,0 +1,64 @@
+<!--the form page to edit a song-->
+{% extends 'base.html' %}
+{% block title %} Edit a song {% endblock %}
+
+{% block formContent %}
+
+<form action="{{ url_for('song.edit_song', id=song.id) }}" method="post">
+    <div class="container pt-4 pb-5 bg-light border">
+        <div class="row">
+            <div class="form-group">
+                <label for="songName">Song Name:</label>
+                <input required type="text" class="form-control" id="songName" name="song_name" value="{{song.song_name}}">
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="form-group">
+                <label for="artist">Artist:</label>
+                <!--add name & value attribute to input tag-->
+               <input required type="text" class="form-control" id="artist" name="artist" value="{{song.artist}}">
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="form-group">
+                <label for="album">Album:</label>
+                <!--add name & value attribute to input tag-->
+               <input required type="text" class="form-control" id="album" name="album" value="{{song.album}}">
+            </div>
+        </div> 
+
+        <div class="row">
+            <div class="form-group">
+                <label for="songLen">Song length (seconds):</label> 
+                <input required type="number" class="form-control" id="songLen" name="song_length" value="{{song.song_length}}">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label for="genre">Genre:</label> 
+                <!--add name & value attribute to input tag-->
+                <input required type="text" class="form-control" id="genre" name="genre" value="{{song.genre}}">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label for="release_year">Release year:</label> 
+                <!--add name & value attribute to input tag-->
+                <input required type="number" class="form-control" id="release_year" name="release_year" value="{{song.release_year}}">
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="mt-3 d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary mx-auto">Save</button>
+        <!--cancel button redirects to home page-->
+        <a href="{{ url_for('home') }}" class="btn btn-danger mx-auto">Cancel</a>
+    </div>
+</form>
+
+{% endblock %}

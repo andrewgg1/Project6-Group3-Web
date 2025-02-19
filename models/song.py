@@ -2,9 +2,11 @@ from mongoengine import Document, StringField, IntField, ListField, ReferenceFie
 
 class Song(Document):
     song_name = StringField(required=True)
-    artists = ListField(ReferenceField('Artist'), default=list)
-    albums = ListField(ReferenceField('Album'), default=list)
-    song_length = IntField(default=0)
+    artist = StringField()
+    album = StringField()
+    song_length = IntField()
+    genre = StringField()
+    release_year = IntField()
     meta = {
         'collection': 'songs'
     }

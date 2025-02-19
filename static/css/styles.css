@@ -1,0 +1,56 @@
+/*home.html styles*/
+.homeBody {
+    font-family: 'Poppins', sans-serif;
+    background-image: url("/static/images/home background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+.homeH1 {
+    font-weight: 800;
+    color: black;
+    display: inline-block;
+    background-color: white;
+    padding: 10px 50px 10px 50px;
+}
+.homeP {
+    font-weight: 400;
+}
+.small-text {
+    font-weight: 300;
+}
+a:link{
+    color:black;
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+a:hover{
+    color: black;
+    background-color:whitesmoke;
+    text-decoration: none;
+}
+.List{
+    color: white;
+}
+.Link:link{
+    color:blue;
+    text-decoration: underline;
+}
+.Link:visited{
+    color:blue;
+    text-decoration:dashed;
+}
+.Link:hover{
+    background-color:aliceblue;
+    text-decoration: underline;
+}
+
+/*base.html styles*/
+#baseBody {
+    font-family: 'Poppins', sans-serif;
+}
+#baseH1 {
+    font-weight: 800;
+    color: black;
+}

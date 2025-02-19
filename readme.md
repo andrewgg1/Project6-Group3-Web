@@ -7,7 +7,7 @@ A Flask-based REST API for managing a music library with MongoDB/MongoEngine.
 - [Python 3.13.1](https://www.python.org/downloads/release/python-3131/)
 - pip (Python package manager, should already be included with Python)
 - [MongoDB installed and running locally](https://www.mongodb.com/try/download/community)
-- [Postman (for API testing)](https://www.postman.com/downloads/)
+- [Postman (for manual API testing)](https://www.postman.com/downloads/)
 
 ## Setup
 
@@ -30,7 +30,7 @@ python import_data.py
 
 Run the app using the pre-made launch.json debugger.
 
-Can aso be run in non-debug mode using the following command:
+Can also be run in non-debug mode using the following command:
 
 ```sh
 flask run
@@ -40,102 +40,75 @@ flask run
 
 Use Postman to test the API endpoints.
 
-## Artists
-
-### GET /artists
-
-**URL**: `http://127.0.0.1:5000/artists`
-
-Gets all artists in the library
-
-### GET /artists/\<ID>
-
-**URL**: `http://127.0.0.1:5000/artists/6792dcfa3479a3961150f9ff`
-
-Gets a specific artist by ID
-
-### POST /artists
-
-**URL**: `http://127.0.0.1:5000/artists`
-
-**Request Body**:
-```json
-{
-    "artist_name": "Post Malone",
-    "country_of_origin": "USA",
-    "age": 28,
-    "genres": ["Hip Hop", "Pop Rap", "Alternative Rock"],
-    "label": "Republic Records"
-}
-```
-
-### DELETE /artists/\<ID>
-
-**URL**: `http://127.0.0.1:5000/artists/6792dcfa3479a3961150f9ff`
-
-Deletes a specific artist by ID
-
-## Albums
-
-### GET /albums
-
-**URL**: `http://127.0.0.1:5000/albums`
-
-Gets all albums in the library
-
-### GET /albums/\<ID>
-
-**URL**: `http://127.0.0.1:5000/albums/6792dcfa3479a3961150f9ff`
-
-Gets a specific album by ID
-
-### POST /albums
-
-**URL**: `http://127.0.0.1:5000/albums`
-
-**Request Body**:
-```json
-{
-    "album_name": "Hollywood's Bleeding",
-    "release_year": 2019,
-    "genre": "Hip Hop"
-}
-```
-
-### DELETE /albums/\<ID>
-
-**URL**: `http://127.0.0.1:5000/albums/6792dcfa3479a3961150f9ff`
-
-Deletes a specific album by ID
-
 ## Songs
 
 ### GET /songs
 
 **URL**: `http://127.0.0.1:5000/songs`
 
-Gets all songs in the library
+Gets all songs in the library. Supports a `search` query parameter for filtering.
 
 ### GET /songs/\<ID>
 
-**URL**: `http://127.0.0.1:5000/songs/6792dcfa3479a3961150f9ff`
+**URL**: `http://127.0.0.1:5000/songs/<ID>`
 
-Gets a specific song by ID
+Gets a specific song by ID.
 
 ### POST /songs
 
 **URL**: `http://127.0.0.1:5000/songs`
 
-**Request Body**:
+**Request Body (JSON)**:
 ```json
 {
-    "song_name": "Circles",
-    "song_length": 215
+    "song_name": "Song Title",
+    "artist": "Artist Name",
+    "album": "Album Name",
+    "song_length": 300,
+    "genre": "Genre",
+    "release_year": 2024
+}
+```
+**Request Body (Form Data)**:
+
+- `song_name`: Song Title
+- `artist`: Artist Name
+- `album`: Album Name
+- `song_length`: Song Length (seconds)
+- `genre`: Genre
+- `release_year`: Release Year
+
+Creates a new song. Supports both JSON and form data request types. On success, redirects to the home page.
+
+### DELETE /del-song/\<ID>
+
+**URL**: `http://127.0.0.1:5000/del-song/<ID>`
+
+Deletes a specific song by ID. This endpoint is called with a POST request from the home page.
+
+### POST/PUT/PATCH /songs/\<ID>
+
+**URL**: `http://127.0.0.1:5000/songs/<ID>`
+
+**Request Body (JSON for PUT/PATCH)**:
+```json
+{
+    "song_name": "Updated Song Title",
+    "artist": "Updated Artist Name",
+    "album": "Updated Album Name",
+    "song_length": 315,
+    "genre": "Updated Genre",
+    "release_year": 2023
 }
 ```
 
-### DELETE /songs/\<ID>
+**Request Body (Form Data for POST)**:
 
-**URL**: `http://127.0.0.1:5000/songs/6792dcfa3479a3961150f9ff`
+- `song_name`: Updated Song Title
+- `artist`: Updated Artist Name
+- `album`: Updated Album Name
+- `song_length`: Updated Song Length (seconds)
+- `genre`: Updated Genre
+- `release_year`: Updated Release Year
 
-Deletes a specific song by ID
+Edits a specific song by ID. Supports both JSON (for PUT/PATCH) and form data (for POST) request types. On success, redirects to the home page.
