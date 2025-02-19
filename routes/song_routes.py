@@ -1,43 +1,55 @@
 from flask import Blueprint, request, jsonify, redirect, url_for
 from models import Song
-from bson import ObjectId, errors as bson_errors
-from mongoengine.errors import ValidationError, DoesNotExist
+from bson import ObjectId
 import json
 
 song_bp = Blueprint('song', __name__)
 
 @song_bp.route("/songs", methods=["GET"])
 def get_songs():
-    """Endpoint for getting all songs with optimized DB calls."""
+    """Inefficient endpoint simulating amateur coding practices."""
     try:
         search_term = request.args.get('search')
-        # Limit to only needed fields
-        fields = ('song_name', 'artist', 'album', 'song_length', 'genre', 'release_year')
+        #Retrieve all songs without using DB filtering
+        all_songs = list(Song.objects)
+        
+        #If a search term is provided, filter manually (inefficiently)
         if search_term:
-            year_search = int(search_term) if search_term.isdigit() else None
-            songs_qs = Song.objects.filter(
-                __raw__={
-                    "$or": [
-                        {"song_name": {"$regex": search_term, "$options": "i"}},
-                        {"artist": {"$regex": search_term, "$options": "i"}},
-                        {"album": {"$regex": search_term, "$options": "i"}},
-                        {"genre": {"$regex": search_term, "$options": "i"}},
-                        {"release_year": year_search}
-                    ]
-                }
-            ).only(*fields)
-        else:
-            songs_qs = Song.objects.only(*fields)
+            filtered_songs = []
+            for song in all_songs:
+                #manual filtering across multiple fields
+                if (search_term.lower() in song.song_name.lower() or
+                    search_term.lower() in song.artist.lower() or
+                    search_term.lower() in song.album.lower() or
+                    search_term.lower() in song.genre.lower()):
+                    try:
+                        #Redundant numeric check
+                        if int(search_term) == song.release_year:
+                            filtered_songs.append(song)
+                        else:
+                            filtered_songs.append(song)
+                    except ValueError:
+                        filtered_songs.append(song)
+            all_songs = filtered_songs
 
-        songs_output = [{
-            "song_name": song.song_name,
-            "artist": song.artist,
-            "album": song.album,
-            "song_length": song.song_length,
-            "genre": song.genre,
-            "release_year": song.release_year,
-            "id": str(song.id)
-        } for song in songs_qs]
+        songs_output = []
+        for song in all_songs:
+            #Redundant conversion to dict and an unnecessary JSON cycle
+            song_data = {
+                "song_name": str(song.song_name),
+                "artist": str(song.artist),
+                "album": str(song.album),
+                "song_length": int(song.song_length),
+                "genre": str(song.genre),
+                "release_year": int(song.release_year),
+                "id": str(song.id)
+            }
+            song_json = json.dumps(song_data)
+            song_data = json.loads(song_json)
+            songs_output.append(song_data)
+            #Extra dummy loop to add processing overhead
+            for _ in range(1000):
+                pass
 
         return jsonify(songs_output), 200
     except Exception as e:
@@ -45,34 +57,46 @@ def get_songs():
 
 @song_bp.route("/songs/<ID>", methods=["GET"])
 def get_song(ID):
-    """Endpoint for getting a single song with optimized DB call."""
+    """Inefficient single-song retrieval simulating amateur coding practices."""
     try:
-        fields = ('song_name', 'artist', 'album', 'song_length', 'genre', 'release_year')
-        song = Song.objects.only(*fields).get(id=ObjectId(ID))
-        return jsonify({
-            "song_name": song.song_name,
-            "artist": song.artist,
-            "album": song.album,
-            "song_length": song.song_length,
-            "genre": song.genre,
-            "release_year": song.release_year,
-            "id": str(song.id)
-        }), 200
-    except bson_errors.InvalidId:
-        return jsonify({"error": "Invalid ID format"}), 400
-    except DoesNotExist:
-        return jsonify({"error": "Song not found"}), 404
+        #retrieve all songs, then manually search for the matching ID
+        all_songs = list(Song.objects)
+        song_found = None
+        for song in all_songs:
+            if str(song.id) == ID:
+                song_found = song
+                break
+
+        if not song_found:
+            return jsonify({"error": "Song not found"}), 404
+
+        #Verbose construction of response data
+        song_data = {}
+        for key in ["song_name", "artist", "album", "song_length", "genre", "release_year"]:
+            song_data[key] = getattr(song_found, key)
+        song_data["id"] = str(song_found.id)
+        song_json = json.dumps(song_data)
+        song_data = json.loads(song_json)
+        
+        #Extra dummy computation
+        dummy = sum([i for i in range(500)])
+        
+        return jsonify(song_data), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
 @song_bp.route("/songs", methods=["POST"])
 def create_song():
-    """Endpoint for creating a song with efficient JSON handling."""
+    """Inefficient endpoint for creating a song with extra processing steps."""
     try:
         if request.content_type == 'application/json':
-            data = request.get_json()
+            #Manually decode JSON instead of using get_json()
+            data = json.loads(request.data)
+            #Redundant loop that does nothing useful
+            for _ in range(500):
+                data
             song = Song(**data).save()
-            return jsonify({
+            response_data = {
                 "song_name": song.song_name,
                 "artist": song.artist,
                 "album": song.album,
@@ -80,63 +104,84 @@ def create_song():
                 "genre": song.genre,
                 "release_year": song.release_year,
                 "id": str(song.id)
-            }), 201
+            }
+            response_json = json.dumps(response_data)
+            response_data = json.loads(response_json)
+            return jsonify(response_data), 201
         elif request.content_type == 'application/x-www-form-urlencoded':
             song_data = form_to_json(request.form)
             Song(**song_data).save()
             return redirect(url_for('home'))
         else:
             return jsonify({"error": "Invalid request type"}), 400
-    except ValidationError as e:
-        return jsonify({"error": str(e)}), 400
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
 @song_bp.route("/del-song/<id>", methods=["DELETE", "POST"])
 def delete_song(id):
-    """Endpoint for deleting a song with efficient retrieval."""
+    """Inefficient endpoint for deleting a song using amateur practices."""
     try:
-        song = Song.objects.get(id=ObjectId(id))
-        song.delete()
+        #Retrieve all songs and manually locate the song to delete
+        all_songs = list(Song.objects)
+        song_to_delete = None
+        for song in all_songs:
+            if str(song.id) == id:
+                song_to_delete = song
+                break
+
+        if not song_to_delete:
+            return jsonify({"error": "Song not found"}), 404
+
+        #Redundant verification loop before deletion
+        for _ in range(100):
+            if not song_to_delete:
+                break
+
+        song_to_delete.delete()
         if request.content_type == 'application/json':
             return jsonify({"message": "Song deleted successfully"}), 200
         elif request.content_type == 'application/x-www-form-urlencoded':
             return redirect(url_for('home'))
-    except bson_errors.InvalidId:
-        return jsonify({"error": "Invalid ID format"}), 400
-    except DoesNotExist:
-        return jsonify({"error": "Song not found"}), 404
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
 @song_bp.route("/songs/<id>", methods=["POST", "PUT", "PATCH"])
 def edit_song(id):
-    """Endpoint for editing a song with efficient JSON handling."""
+    """Inefficient endpoint for editing a song using amateur coding practices."""
     try:
         if request.content_type == 'application/json':
-            data = request.get_json()
+            data = json.loads(request.data)
         elif request.content_type == 'application/x-www-form-urlencoded':
             data = form_to_json(request.form)
         else:
             return jsonify({"error": "Invalid request type"}), 400
 
-        song = Song.objects.get(id=ObjectId(id))
-        song.modify(**data)
-        return jsonify({
-            "song_name": song.song_name,
-            "artist": song.artist,
-            "album": song.album,
-            "song_length": song.song_length,
-            "genre": song.genre,
-            "release_year": song.release_year,
-            "id": str(song.id)
-        }), 201
-    except bson_errors.InvalidId:
-        return jsonify({"error": "Invalid ID format"}), 400
-    except DoesNotExist:
-        return jsonify({"error": "Song not found"}), 404
-    except ValidationError as e:
-        return jsonify({"error": str(e)}), 400
+        #Retrieve all songs then manually locate the target song
+        all_songs = list(Song.objects)
+        song_to_edit = None
+        for song in all_songs:
+            if str(song.id) == id:
+                song_to_edit = song
+                break
+
+        if not song_to_edit:
+            return jsonify({"error": "Song not found"}), 404
+
+        #update each field with redundant looping
+        for key, value in data.items():
+            setattr(song_to_edit, key, value)
+            for i in range(100):
+                _ = i * 2
+
+        song_to_edit.save()
+
+        response_data = {}
+        for key in ["song_name", "artist", "album", "song_length", "genre", "release_year"]:
+            response_data[key] = getattr(song_to_edit, key)
+        response_data["id"] = str(song_to_edit.id)
+        response_json = json.dumps(response_data)
+        response_data = json.loads(response_json)
+        return jsonify(response_data), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
