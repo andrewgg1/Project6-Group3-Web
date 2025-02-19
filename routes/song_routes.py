@@ -73,20 +73,23 @@ def create_song():
         if request.content_type == 'application/json':
             data = json.loads(request.data)
             song = Song(**data).save()
+            return jsonify({
+            "song_name": song.song_name,
+            "artist": song.artist,
+            "album": song.album,
+            "song_length": song.song_length,
+            "genre": song.genre,
+            "release_year": song.release_year,
+            "id": str(song.id)
+        }), 201
         # creating song with form submit
         elif request.content_type == 'application/x-www-form-urlencoded':
-            song = Song(
-                song_name = request.form['song_name'],
-                artist = request.form['artist'],
-                album = request.form['album'],
-                song_length = request.form['song_length'],
-                genre = request.form['genre'],
-                release_year = request.form['release_year']
-            ).save()
+            song = form_to_json(request.form)
+            Song(**song).save()
+            return redirect(url_for('home'))
         else:
             return jsonify({"error": "Invalid request type"}), 400
         
-        return redirect(url_for('home'))
     except json.JSONDecodeError:
         return jsonify({"error": "Invalid JSON format"}), 400
     except ValidationError as e:
@@ -110,7 +113,11 @@ def delete_song(id):
         if not song:
             return jsonify({"error": "Song not found"}), 404
         song.delete()
-        return redirect(url_for('home'))
+
+        if request.content_type == 'application/json':
+            return jsonify({"message": "Song deleted successfully"}), 200
+        elif request.content_type == 'application/x-www-form-urlencoded':
+            return redirect(url_for('home'))
     
     except bson_errors.InvalidId:
         return jsonify({"error": "Invalid ID format"}), 400
@@ -139,8 +146,18 @@ def edit_song(id):
         # Update it using the modify command call and pass it the json request object.
         song.modify(**data)
         
-        # Redirect to home page after successful edit
-        return redirect(url_for('home'))
+        if request.content_type == 'application/json':
+            return jsonify({
+            "song_name": song.song_name,
+            "artist": song.artist,
+            "album": song.album,
+            "song_length": song.song_length,
+            "genre": song.genre,
+            "release_year": song.release_year,
+            "id": str(song.id)
+        }), 201
+        elif request.content_type == 'application/x-www-form-urlencoded':
+            return redirect(url_for('home'))
 
     except json.JSONDecodeError:
         return jsonify({"error": "Invalid JSON format"}), 400

@@ -29,6 +29,7 @@ def options():
         },
         "status_codes": {
             "200": "Success",
+            "201": "Created",
             "302": "Redirect",
             "400": "Bad Request",
             "404": "Not Found",
