@@ -1,9 +1,9 @@
-<!--the main page for the record label website-->
+<!--the main page for the music library website-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Record Label Library</title>
+        <title>Music Library</title>
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/styles.css') }}">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" >
         <link rel="icon" type="image/png" href="favicon.png">
@@ -15,15 +15,16 @@
             <div class="row">
                 <div class="col-12" style="padding-top: 25px;">
                     <div class="text-center">
-                        <h1 class="homeH1">Record Label Library</h1>
+                        <h1 class="homeH1 rounded">Music Library</h1>
                     </div>
                 </div>
             </div>
             <div class="row mt-5">
                 <form action="{{ url_for('home')}}">
                     <div class="input-group w-50 col-6 mx-auto">
-                        <!--make the search work-->
-                      <input type="text" class="form-control" placeholder="Search" id="search" name="search" value="{{search_term}}" autofocus>
+                      <input type="text" class="form-control" placeholder="Search" id="search" name="search" value="{{search_term}}" autofocus 
+                      onfocus="var val = this.value; this.value = ''; this.value = val;" 
+                      onkeydown="if (event.key === 'Escape') { document.getElementById('search').value = ''; this.form.submit(); }">
                       <span>
                         <div class="input-group-text">
                             <button class="btn btn-default" type="submit">
@@ -33,21 +34,24 @@
                       </span>
                       <div class="input-group-text">
                         <button class="btn btn-default" type="submit" onclick="document.getElementById('search').value = '';">
-                            Reset
+                            Reset (Esc)
                         </button>
                     </div>
                     </div>
                   </form>
             </div>
-            <div>
-                <div class="text-center mt-2">
-                    <!--redirects to addSong.html form-->
+            <div class="d-flex justify-content-center align-items-center mt-2">
+                {% if search_term %}
+                    <p class="text-dark bg-light fw-bold rounded p-3 fs-4 d-inline-block me-3 mb-0">Songs Found: {{ song_list|length }}</p>
+                {% else %}
+                    <p class="text-dark bg-light fw-bold rounded p-3 fs-4 d-inline-block me-3 mb-0">Total Songs: {{ song_list|length }}</p>
+                {% endif %}
                 <a href="{{ url_for('Add_Song') }}" class="btn btn-primary fs-3"><i class="bi bi-plus-circle-fill fs-1"></i> Add a Song</a>
-                </div><br>
             </div>
+            <br>
 
             <!--Display songs in table-->
-            <div class="container"> 
+            <div class="container-fluid"> 
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>

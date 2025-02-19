@@ -50,7 +50,7 @@
     },
     {
       "song_name": "Crazy in Love",
-      "artist": "Beyoncé",
+      "artist": "Beyonce",
       "album": "Lemonade",
       "song_length": 236,
       "genre": "R&B",
@@ -97,14 +97,6 @@
       "release_year": 1972
     },
     {
-      "song_name": "Personal Jesus",
-      "artist": "Depeche Mode",
-      "album": "Violator",
-      "song_length": 295,
-      "genre": "Electronic",
-      "release_year": 1990
-    },
-    {
       "song_name": "Hotline Bling",
       "artist": "Drake",
       "album": "Views",
@@ -113,12 +105,12 @@
       "release_year": 2016
     },
     {
-      "song_name": "Shape of You",
+      "song_name": "American Town",
       "artist": "Ed Sheeran",
-      "album": "÷ (Divide)",
-      "song_length": 233,
+      "album": "Autumn Variations",
+      "song_length": 198,
       "genre": "Pop",
-      "release_year": 2017
+      "release_year": 2023
     },
     {
       "song_name": "Tiny Dancer",
@@ -191,14 +183,6 @@
       "song_length": 252,
       "genre": "Metal",
       "release_year": 1983
-    },
-    {
-      "song_name": "99 Problems",
-      "artist": "Jay-Z",
-      "album": "The Black Album",
-      "song_length": 239,
-      "genre": "Hip Hop",
-      "release_year": 2003
     },
     {
       "song_name": "Ring of Fire",
@@ -313,12 +297,12 @@
       "release_year": 1997
     },
     {
-      "song_name": "Under the Bridge",
+      "song_name": "Around the World",
       "artist": "Red Hot Chili Peppers",
-      "album": "Blood Sugar Sex Magik",
-      "song_length": 264,
+      "album": "Californication",
+      "song_length": 238,
       "genre": "Alternative Rock",
-      "release_year": 1991
+      "release_year": 1999
     },
     {
       "song_name": "Paint it Black",
@@ -327,14 +311,6 @@
       "song_length": 226,
       "genre": "Rock",
       "release_year": 1966
-    },
-    {
-      "song_name": "Shake It Off",
-      "artist": "Taylor Swift",
-      "album": "1989",
-      "song_length": 219,
-      "genre": "Pop",
-      "release_year": 2014
     },
     {
       "song_name": "Good Vibrations",
@@ -399,6 +375,1231 @@
       "song_length": 273,
       "genre": "Pop",
       "release_year": 1992
+    },
+    {
+      "song_name": "Hallelujah",
+      "artist": "Leonard Cohen",
+      "album": "Various",
+      "song_length": 437,
+      "genre": "Folk",
+      "release_year": 1984
+    },
+    {
+      "song_name": "Fast Car",
+      "artist": "Tracy Chapman",
+      "album": "Tracy Chapman",
+      "song_length": 248,
+      "genre": "Folk Rock",
+      "release_year": 1988
+    },
+    {
+      "song_name": "Creep",
+      "artist": "Radiohead",
+      "album": "Pablo Honey",
+      "song_length": 238,
+      "genre": "Alternative Rock",
+      "release_year": 1993
+    },
+    {
+      "song_name": "Hotel California",
+      "artist": "Eagles",
+      "album": "Hotel California",
+      "song_length": 390,
+      "genre": "Rock",
+      "release_year": 1976
+    },
+    {
+      "song_name": "Born to Be Wild",
+      "artist": "Steppenwolf",
+      "album": "Steppenwolf",
+      "song_length": 210,
+      "genre": "Rock",
+      "release_year": 1968
+    },
+    {
+      "song_name": "All Along the Watchtower",
+      "artist": "Jimi Hendrix",
+      "album": "Electric Ladyland",
+      "song_length": 240,
+      "genre": "Rock",
+      "release_year": 1968
+    },
+    {
+      "song_name": "Knockin' on Heaven's Door",
+      "artist": "Bob Dylan",
+      "album": "Pat Garrett & Billy the Kid",
+      "song_length": 152,
+      "genre": "Folk Rock",
+      "release_year": 1973
+    },
+    {
+      "song_name": "Walking on Sunshine",
+      "artist": "Katrina & The Waves",
+      "album": "Katrina & The Waves",
+      "song_length": 225,
+      "genre": "Pop",
+      "release_year": 1985
+    },
+    {
+      "song_name": "Take On Me",
+      "artist": "a-ha",
+      "album": "Hunting High and Low",
+      "song_length": 226,
+      "genre": "Synth-pop",
+      "release_year": 1985
+    },
+    {
+      "song_name": "Livin' on a Prayer",
+      "artist": "Bon Jovi",
+      "album": "Slippery When Wet",
+      "song_length": 244,
+      "genre": "Rock",
+      "release_year": 1986
+    },
+    {
+      "song_name": "Crawling",
+      "artist": "Linkin Park",
+      "album": "Hybrid Theory",
+      "song_length": 209,
+      "genre": "Nu Metal",
+      "release_year": 2000
+    },
+    {
+      "song_name": "Don't Stop Believin'",
+      "artist": "Journey",
+      "album": "Escape",
+      "song_length": 250,
+      "genre": "Rock",
+      "release_year": 1981
+    },
+    {
+      "song_name": "Under Pressure",
+      "artist": "Queen & David Bowie",
+      "album": "Hot Space",
+      "song_length": 248,
+      "genre": "Rock",
+      "release_year": 1981
+    },
+    {
+      "song_name": "Thriller",
+      "artist": "Michael Jackson",
+      "album": "Thriller",
+      "song_length": 357,
+      "genre": "Pop",
+      "release_year": 1982
+    },
+    {
+      "song_name": "Girls Just Want to Have Fun",
+      "artist": "Cyndi Lauper",
+      "album": "She's So Unusual",
+      "song_length": 228,
+      "genre": "Pop",
+      "release_year": 1983
+    },
+    {
+      "song_name": "Tears in Heaven",
+      "artist": "Eric Clapton",
+      "album": "Unplugged",
+      "song_length": 273,
+      "genre": "Rock",
+      "release_year": 1992
+    },
+    {
+      "song_name": "One",
+      "artist": "U2",
+      "album": "Achtung Baby",
+      "song_length": 272,
+      "genre": "Rock",
+      "release_year": 1991
+    },
+    {
+      "song_name": "Zombie",
+      "artist": "The Cranberries",
+      "album": "No Need to Argue",
+      "song_length": 306,
+      "genre": "Alternative Rock",
+      "release_year": 1994
+    },
+    {
+      "song_name": "No Rain",
+      "artist": "Blind Melon",
+      "album": "Blind Melon",
+      "song_length": 217,
+      "genre": "Alternative Rock",
+      "release_year": 1992
+    },
+    {
+      "song_name": "Bitter Sweet Symphony",
+      "artist": "The Verve",
+      "album": "Urban Hymns",
+      "song_length": 358,
+      "genre": "Alternative Rock",
+      "release_year": 1997
+    },
+    {
+      "song_name": "Mr. Brightside",
+      "artist": "The Killers",
+      "album": "Hot Fuss",
+      "song_length": 222,
+      "genre": "Indie Rock",
+      "release_year": 2004
+    },
+    {
+      "song_name": "Seven Nation Army",
+      "artist": "The White Stripes",
+      "album": "Elephant",
+      "song_length": 232,
+      "genre": "Alternative Rock",
+      "release_year": 2003
+    },
+    {
+      "song_name": "Hey Ya!",
+      "artist": "OutKast",
+      "album": "Speakerboxxx/The Love Below",
+      "song_length": 258,
+      "genre": "Hip Hop",
+      "release_year": 2003
+    },
+    {
+      "song_name": "Crazy",
+      "artist": "Gnarls Barkley",
+      "album": "St. Elsewhere",
+      "song_length": 182,
+      "genre": "Soul",
+      "release_year": 2006
+    },
+    {
+      "song_name": "Rolling in the Deep",
+      "artist": "Adele",
+      "album": "21",
+      "song_length": 228,
+      "genre": "Pop",
+      "release_year": 2011
+    },
+    {
+      "song_name": "Somebody That I Used to Know",
+      "artist": "Gotye feat. Kimbra",
+      "album": "Making Mirrors",
+      "song_length": 247,
+      "genre": "Indie Pop",
+      "release_year": 2011
+    },
+    {
+      "song_name": "Call Me Maybe",
+      "artist": "Carly Rae Jepsen",
+      "album": "Kiss",
+      "song_length": 193,
+      "genre": "Pop",
+      "release_year": 2012
+    },
+    {
+      "song_name": "Happy",
+      "artist": "Pharrell Williams",
+      "album": "G I R L",
+      "song_length": 234,
+      "genre": "Pop",
+      "release_year": 2013
+    },
+    {
+      "song_name": "Uptown Funk",
+      "artist": "Mark Ronson feat. Bruno Mars",
+      "album": "Uptown Special",
+      "song_length": 270,
+      "genre": "Funk",
+      "release_year": 2014
+    },
+    {
+      "song_name": "Thinking Out Loud",
+      "artist": "Ed Sheeran",
+      "album": "x",
+      "song_length": 231,
+      "genre": "Pop",
+      "release_year": 2014
+    },
+    {
+      "song_name": "Can't Stop the Feeling!",
+      "artist": "Justin Timberlake",
+      "album": "Trolls (Original Motion Picture Soundtrack)",
+      "song_length": 236,
+      "genre": "Pop",
+      "release_year": 2016
+    },
+    {
+      "song_name": "Someone Like You",
+      "artist": "Adele",
+      "album": "21",
+      "song_length": 285,
+      "genre": "Pop",
+      "release_year": 2011
+    },
+    {
+      "song_name": "Shake it Off",
+      "artist": "Taylor Swift",
+      "album": "1989",
+      "song_length": 219,
+      "genre": "Pop",
+      "release_year": 2014
+    },
+    {
+      "song_name": "Blank Space",
+      "artist": "Taylor Swift",
+      "album": "1989",
+      "song_length": 231,
+      "genre": "Pop",
+      "release_year": 2014
+    },
+    {
+      "song_name": "Bad Blood",
+      "artist": "Taylor Swift",
+      "album": "1989",
+      "song_length": 201,
+      "genre": "Pop",
+      "release_year": 2014
+    },
+    {
+      "song_name": "Style",
+      "artist": "Taylor Swift",
+      "album": "1989",
+      "song_length": 231,
+      "genre": "Pop",
+      "release_year": 2014
+    },
+    {
+      "song_name": "Can't Feel My Face",
+      "artist": "The Weeknd",
+      "album": "Beauty Behind the Madness",
+      "song_length": 215,
+      "genre": "R&B",
+      "release_year": 2015
+    },
+    {
+      "song_name": "Riptide",
+      "artist": "Vance Joy",
+      "album": "Dream Your Life Away",
+      "song_length": 204,
+      "genre": "Indie Pop",
+      "release_year": 2013
+    },
+    {
+      "song_name": "Little Talks",
+      "artist": "Of Monsters and Men",
+      "album": "My Head Is an Animal",
+      "song_length": 270,
+      "genre": "Indie Folk",
+      "release_year": 2011
+    },
+    {
+      "song_name": "Ho Hey",
+      "artist": "The Lumineers",
+      "album": "The Lumineers",
+      "song_length": 163,
+      "genre": "Folk Rock",
+      "release_year": 2012
+    },
+    {
+      "song_name": "Pompeii",
+      "artist": "Bastille",
+      "album": "Bad Blood",
+      "song_length": 214,
+      "genre": "Indie Pop",
+      "release_year": 2013
+    },
+    {
+      "song_name": "Royals",
+      "artist": "Lorde",
+      "album": "Pure Heroine",
+      "song_length": 210,
+      "genre": "Indie Pop",
+      "release_year": 2013
+    },
+    {
+      "song_name": "Counting Stars",
+      "artist": "OneRepublic",
+      "album": "Native",
+      "song_length": 257,
+      "genre": "Pop Rock",
+      "release_year": 2013
+    },
+    {
+      "song_name": "Am I Wrong",
+      "artist": "Nico & Vinz",
+      "album": "Innocent!",
+      "song_length": 242,
+      "genre": "Pop",
+      "release_year": 2013
+    },
+    {
+      "song_name": "Chandelier",
+      "artist": "Sia",
+      "album": "1000 Forms of Fear",
+      "song_length": 216,
+      "genre": "Pop",
+      "release_year": 2014
+    },
+    {
+      "song_name": "All About That Bass",
+      "artist": "Meghan Trainor",
+      "album": "Title",
+      "song_length": 227,
+      "genre": "Pop",
+      "release_year": 2014
+    },
+    {
+      "song_name": "Take Me to Church",
+      "artist": "Hozier",
+      "album": "Hozier",
+      "song_length": 241,
+      "genre": "Blues Rock",
+      "release_year": 2014
+    },
+    {
+      "song_name": "Love Yourself",
+      "artist": "Justin Bieber",
+      "album": "Purpose",
+      "song_length": 233,
+      "genre": "Pop",
+      "release_year": 2015
+    },
+    {
+      "song_name": "Stressed Out",
+      "artist": "Twenty One Pilots",
+      "album": "Blurryface",
+      "song_length": 202,
+      "genre": "Alternative Rock",
+      "release_year": 2015
+    },
+    {
+      "song_name": "Cheap Thrills",
+      "artist": "Sia feat. Sean Paul",
+      "album": "This Is Acting",
+      "song_length": 211,
+      "genre": "Pop",
+      "release_year": 2016
+    },
+    {
+      "song_name": "Closer",
+      "artist": "The Chainsmokers feat. Halsey",
+      "album": "Collage",
+      "song_length": 244,
+      "genre": "Electronic",
+      "release_year": 2016
+    },
+    {
+      "song_name": "Starboy",
+      "artist": "The Weeknd feat. Daft Punk",
+      "album": "Starboy",
+      "song_length": 230,
+      "genre": "R&B",
+      "release_year": 2016
+    },
+    {
+      "song_name": "Despacito",
+      "artist": "Luis Fonsi & Daddy Yankee feat. Justin Bieber",
+      "album": "Despacito",
+      "song_length": 229,
+      "genre": "Latin Pop",
+      "release_year": 2017
+    },
+    {
+      "song_name": "Havana",
+      "artist": "Camila Cabello feat. Young Thug",
+      "album": "Camila",
+      "song_length": 217,
+      "genre": "Pop",
+      "release_year": 2017
+    },
+    {
+      "song_name": "One Kiss",
+      "artist": "Calvin Harris & Dua Lipa",
+      "album": "One Kiss",
+      "song_length": 219,
+      "genre": "Electronic",
+      "release_year": 2018
+    },
+    {
+      "song_name": "Shallow",
+      "artist": "Lady Gaga & Bradley Cooper",
+      "album": "A Star Is Born Soundtrack",
+      "song_length": 237,
+      "genre": "Pop",
+      "release_year": 2018
+    },
+    {
+      "song_name": "Someone You Loved",
+      "artist": "Lewis Capaldi",
+      "album": "Divinely Uninspired to a Hellish Extent",
+      "song_length": 182,
+      "genre": "Pop",
+      "release_year": 2019
+    },
+    {
+      "song_name": "Blinding Lights",
+      "artist": "The Weeknd",
+      "album": "After Hours",
+      "song_length": 201,
+      "genre": "Synth-pop",
+      "release_year": 2019
+    },
+    {
+      "song_name": "As It Was",
+      "artist": "Harry Styles",
+      "album": "Harry's House",
+      "song_length": 167,
+      "genre": "Pop",
+      "release_year": 2022
+    },
+    {
+      "song_name": "Hey, Soul Sister",
+      "artist": "Train",
+      "album": "Save Me, San Francisco",
+      "song_length": 216,
+      "genre": "Pop Rock",
+      "release_year": 2010
+    },
+    {
+      "song_name": "Firework",
+      "artist": "Katy Perry",
+      "album": "Teenage Dream",
+      "song_length": 227,
+      "genre": "Pop",
+      "release_year": 2010
+    },
+    {
+      "song_name": "Numb",
+      "artist": "Linkin Park",
+      "album": "Meteora",
+      "song_length": 187,
+      "genre": "Alternative Rock",
+      "release_year": 2003
+    },
+    {
+      "song_name": "Grenade",
+      "artist": "Bruno Mars",
+      "album": "Doo-Wops & Hooligans",
+      "song_length": 222,
+      "genre": "Pop",
+      "release_year": 2010
+    },
+    {
+      "song_name": "Moves Like Jagger",
+      "artist": "Maroon 5 ft. Christina Aguilera",
+      "album": "Hands All Over",
+      "song_length": 201,
+      "genre": "Pop",
+      "release_year": 2011
+    },
+    {
+      "song_name": "Pumped Up Kicks",
+      "artist": "Foster the People",
+      "album": "Torches",
+      "song_length": 239,
+      "genre": "Indie Pop",
+      "release_year": 2011
+    },
+    {
+      "song_name": "We Found Love",
+      "artist": "Rihanna ft. Calvin Harris",
+      "album": "Talk That Talk",
+      "song_length": 215,
+      "genre": "Electronic",
+      "release_year": 2011
+    },
+    {
+      "song_name": "Set Fire to the Rain",
+      "artist": "Adele",
+      "album": "21",
+      "song_length": 242,
+      "genre": "Pop",
+      "release_year": 2011
+    },
+    {
+      "song_name": "Some Nights",
+      "artist": "fun.",
+      "album": "Some Nights",
+      "song_length": 277,
+      "genre": "Alternative Rock",
+      "release_year": 2012
+    },
+    {
+      "song_name": "Locked Out of Heaven",
+      "artist": "Bruno Mars",
+      "album": "Unorthodox Jukebox",
+      "song_length": 223,
+      "genre": "Pop",
+      "release_year": 2012
+    },
+    {
+      "song_name": "Thrift Shop",
+      "artist": "Macklemore & Ryan Lewis ft. Wanz",
+      "album": "The Heist",
+      "song_length": 239,
+      "genre": "Hip Hop",
+      "release_year": 2012
+    },
+    {
+      "song_name": "Mirrors",
+      "artist": "Justin Timberlake",
+      "album": "The 20/20 Experience",
+      "song_length": 484,
+      "genre": "Pop",
+      "release_year": 2013
+    },
+    {
+      "song_name": "Roar",
+      "artist": "Katy Perry",
+      "album": "Prism",
+      "song_length": 224,
+      "genre": "Pop",
+      "release_year": 2013
+    },
+    {
+      "song_name": "Flowers",
+      "artist": "Miley Cyrus",
+      "album": "Endless Summer Vacation",
+      "song_length": 200,
+      "genre": "Pop",
+      "release_year": 2023
+    },
+    {
+      "song_name": "Yellow Submarine",
+      "artist": "The Beatles",
+      "album": "Yellow Submarine",
+      "song_length": 160,
+      "genre": "Rock",
+      "release_year": 1968
+    },
+    {
+      "song_name": "Brown Eyed Girl",
+      "artist": "Van Morrison",
+      "album": "Blowin' Your Mind!",
+      "song_length": 183,
+      "genre": "Rock",
+      "release_year": 1967
+    },
+    {
+      "song_name": "Respect",
+      "artist": "Aretha Franklin",
+      "album": "I Never Loved a Man the Way I Love You",
+      "song_length": 142,
+      "genre": "R&B",
+      "release_year": 1967
+    },
+    {
+      "song_name": "Light My Fire",
+      "artist": "The Doors",
+      "album": "The Doors",
+      "song_length": 405,
+      "genre": "Rock",
+      "release_year": 1967
+    },
+    {
+      "song_name": "(Sittin' On) The Dock of the Bay",
+      "artist": "Otis Redding",
+      "album": "The Dock of the Bay",
+      "song_length": 164,
+      "genre": "Soul",
+      "release_year": 1968
+    },
+    {
+      "song_name": "Fortunate Son",
+      "artist": "Creedence Clearwater Revival",
+      "album": "Willy and the Poor Boys",
+      "song_length": 140,
+      "genre": "Rock",
+      "release_year": 1969
+    },
+    {
+      "song_name": "Let It Be",
+      "artist": "The Beatles",
+      "album": "Let It Be",
+      "song_length": 243,
+      "genre": "Rock",
+      "release_year": 1970
+    },
+    {
+      "song_name": "Imagine",
+      "artist": "John Lennon",
+      "album": "Imagine",
+      "song_length": 181,
+      "genre": "Rock",
+      "release_year": 1971
+    },
+    {
+      "song_name": "American Pie",
+      "artist": "Don McLean",
+      "album": "American Pie",
+      "song_length": 408,
+      "genre": "Folk Rock",
+      "release_year": 1971
+    },
+    {
+      "song_name": "Don't Stop Me Now",
+      "artist": "Queen",
+      "album": "Jazz",
+      "song_length": 224,
+      "genre": "Rock",
+      "release_year": 1978
+    },
+    {
+      "song_name": "Another One Bites the Dust",
+      "artist": "Queen",
+      "album": "The Game",
+      "song_length": 215,
+      "genre": "Rock",
+      "release_year": 1980
+    },
+    {
+      "song_name": "Semi-Charmed Life",
+      "artist": "Third Eye Blind",
+      "album": "Third Eye Blind",
+      "song_length": 228,
+      "genre": "Alternative Rock",
+      "release_year": 1997
+    },
+    {
+      "song_name": "Smooth",
+      "artist": "Santana ft. Rob Thomas",
+      "album": "Supernatural",
+      "song_length": 239,
+      "genre": "Latin Rock",
+      "release_year": 1999
+    },
+    {
+      "song_name": "Hips Don't Lie",
+      "artist": "Shakira ft. Wyclef Jean",
+      "album": "Oral Fixation Vol. 2",
+      "song_length": 218,
+      "genre": "Latin Pop",
+      "release_year": 2006
+    },
+    {
+      "song_name": "September",
+      "artist": "Earth, Wind & Fire",
+      "album": "The Best of Earth, Wind & Fire, Vol. 1",
+      "song_length": 215,
+      "genre": "Funk",
+      "release_year": 1978
+    },
+    {
+      "song_name": "You Shook Me All Night Long",
+      "artist": "AC/DC",
+      "album": "Back in Black",
+      "song_length": 210,
+      "genre": "Hard Rock",
+      "release_year": 1980
+    },
+    {
+      "song_name": "Sweet Home Alabama",
+      "artist": "Lynyrd Skynyrd",
+      "album": "Second Helping",
+      "song_length": 283,
+      "genre": "Southern Rock",
+      "release_year": 1974
+    },
+    {
+      "song_name": "Born in the U.S.A.",
+      "artist": "Bruce Springsteen",
+      "album": "Born in the U.S.A.",
+      "song_length": 279,
+      "genre": "Rock",
+      "release_year": 1984
+    },
+    {
+      "song_name": "It's a Long Way to the Top (If You Wanna Rock 'n' Roll)",
+      "artist": "AC/DC",
+      "album": "T.N.T.",
+      "song_length": 311,
+      "genre": "Hard Rock",
+      "release_year": 1975
+    },
+    {
+      "song_name": "Wake Me Up When September Ends",
+      "artist": "Green Day",
+      "album": "American Idiot",
+      "song_length": 285,
+      "genre": "Punk Rock",
+      "release_year": 2004
+    },
+    {
+      "song_name": "Smooth Criminal",
+      "artist": "Michael Jackson",
+      "album": "Bad",
+      "song_length": 259,
+      "genre": "Pop",
+      "release_year": 1987
+    },
+    {
+      "song_name": "Man in the Mirror",
+      "artist": "Michael Jackson",
+      "album": "Bad",
+      "song_length": 319,
+      "genre": "Pop",
+      "release_year": 1987
+    },
+    {
+      "song_name": "Africa",
+      "artist": "Toto",
+      "album": "Toto IV",
+      "song_length": 295,
+      "genre": "Rock",
+      "release_year": 1982
+    },
+    {
+      "song_name": "Take My Breath Away",
+      "artist": "Berlin",
+      "album": "Top Gun Soundtrack",
+      "song_length": 256,
+      "genre": "Synth-Pop",
+      "release_year": 1986
+    },
+    {
+      "song_name": "I Wanna Dance with Somebody (Who Loves Me)",
+      "artist": "Whitney Houston",
+      "album": "Whitney",
+      "song_length": 291,
+      "genre": "Pop",
+      "release_year": 1987
+    },
+    {
+      "song_name": "Walk This Way",
+      "artist": "Aerosmith",
+      "album": "Toys in the Attic",
+      "song_length": 221,
+      "genre": "Rock",
+      "release_year": 1975
+    },
+    {
+      "song_name": "Paradise City",
+      "artist": "Guns N' Roses",
+      "album": "Appetite for Destruction",
+      "song_length": 387,
+      "genre": "Hard Rock",
+      "release_year": 1987
+    },
+    {
+      "song_name": "Summer of '69",
+      "artist": "Bryan Adams",
+      "album": "Reckless",
+      "song_length": 216,
+      "genre": "Rock",
+      "release_year": 1984
+    },
+    {
+      "song_name": "Don't You (Forget About Me)",
+      "artist": "Simple Minds",
+      "album": "The Breakfast Club Soundtrack",
+      "song_length": 262,
+      "genre": "New Wave",
+      "release_year": 1985
+    },
+    {
+      "song_name": "Pour Some Sugar on Me",
+      "artist": "Def Leppard",
+      "album": "Hysteria",
+      "song_length": 267,
+      "genre": "Hard Rock",
+      "release_year": 1987
+    },
+    {
+      "song_name": "Welcome to the Jungle",
+      "artist": "Guns N' Roses",
+      "album": "Appetite for Destruction",
+      "song_length": 273,
+      "genre": "Hard Rock",
+      "release_year": 1987
+    },
+    {
+      "song_name": "It's My Life",
+      "artist": "Bon Jovi",
+      "album": "Crush",
+      "song_length": 224,
+      "genre": "Rock",
+      "release_year": 2000
+    },
+    {
+      "song_name": "The Final Countdown",
+      "artist": "Europe",
+      "album": "The Final Countdown",
+      "song_length": 310,
+      "genre": "Hard Rock",
+      "release_year": 1986
+    },
+    {
+      "song_name": "Hysteria",
+      "artist": "Def Leppard",
+      "album": "Hysteria",
+      "song_length": 354,
+      "genre": "Hard Rock",
+      "release_year": 1987
+    },
+    {
+      "song_name": "I Still Haven't Found What I'm Looking For",
+      "artist": "U2",
+      "album": "The Joshua Tree",
+      "song_length": 277,
+      "genre": "Rock",
+      "release_year": 1987
+    },
+    {
+      "song_name": "Where Is My Mind?",
+      "artist": "Pixies",
+      "album": "Surfer Rosa",
+      "song_length": 234,
+      "genre": "Alternative Rock",
+      "release_year": 1988
+    },
+    {
+      "song_name": "Under the Bridge",
+      "artist": "Red Hot Chili Peppers",
+      "album": "Blood Sugar Sex Magik",
+      "song_length": 289,
+      "genre": "Alternative Rock",
+      "release_year": 1991
+    },
+    {
+      "song_name": "Run to the Hills",
+      "artist": "Iron Maiden",
+      "album": "The Number of the Beast",
+      "song_length": 230,
+      "genre": "Metal",
+      "release_year": 1982
+    },
+    {
+      "song_name": "Lithium",
+      "artist": "Nirvana",
+      "album": "Nevermind",
+      "song_length": 257,
+      "genre": "Grunge",
+      "release_year": 1991
+    },
+    {
+      "song_name": "Jessie's Girl",
+      "artist": "Rick Springfield",
+      "album": "Working Class Dog",
+      "song_length": 195,
+      "genre": "Pop Rock",
+      "release_year": 1981
+    },
+    {
+      "song_name": "You Give Love a Bad Name",
+      "artist": "Bon Jovi",
+      "album": "Slippery When Wet",
+      "song_length": 223,
+      "genre": "Hard Rock",
+      "release_year": 1986
+    },
+    {
+      "song_name": "It's Tricky",
+      "artist": "Run-DMC",
+      "album": "Raising Hell",
+      "song_length": 215,
+      "genre": "Hip Hop",
+      "release_year": 1986
+    },
+    {
+      "song_name": "Fight for Your Right",
+      "artist": "Beastie Boys",
+      "album": "Licensed to Ill",
+      "song_length": 208,
+      "genre": "Hip Hop",
+      "release_year": 1986
+    },
+    {
+      "song_name": "Sweet Dreams (Are Made of This)",
+      "artist": "Eurythmics",
+      "album": "Sweet Dreams (Are Made of This)",
+      "song_length": 216,
+      "genre": "Synth-Pop",
+      "release_year": 1983
+    },
+    {
+      "song_name": "Wake Me Up Before You Go-Go",
+      "artist": "Wham!",
+      "album": "Make It Big",
+      "song_length": 230,
+      "genre": "Pop",
+      "release_year": 1984
+    },
+    {
+      "song_name": "Careless Whisper",
+      "artist": "George Michael",
+      "album": "Make It Big",
+      "song_length": 303,
+      "genre": "Pop",
+      "release_year": 1984
+    },
+    {
+      "song_name": "The Power of Love",
+      "artist": "Huey Lewis and the News",
+      "album": "Back to the Future Soundtrack",
+      "song_length": 234,
+      "genre": "Pop Rock",
+      "release_year": 1985
+    },
+    {
+      "song_name": "You're the Inspiration",
+      "artist": "Chicago",
+      "album": "Chicago 17",
+      "song_length": 231,
+      "genre": "Soft Rock",
+      "release_year": 1984
+    },
+    {
+      "song_name": "Broken Wings",
+      "artist": "Mr. Mister",
+      "album": "Welcome to the Real World",
+      "song_length": 346,
+      "genre": "Synth-Pop",
+      "release_year": 1985
+    },
+    {
+      "song_name": "Everybody Wants to Rule the World",
+      "artist": "Tears for Fears",
+      "album": "Songs from the Big Chair",
+      "song_length": 248,
+      "genre": "Synth-Pop",
+      "release_year": 1985
+    },
+    {
+      "song_name": "I Want to Know What Love Is",
+      "artist": "Foreigner",
+      "album": "Agent Provocateur",
+      "song_length": 300,
+      "genre": "Rock",
+      "release_year": 1984
+    },
+    {
+      "song_name": "Waiting for a Star to Fall",
+      "artist": "Boy Meets Girl",
+      "album": "Boy Meets Girl",
+      "song_length": 278,
+      "genre": "Pop",
+      "release_year": 1988
+    },
+    {
+      "song_name": "Kokomo",
+      "artist": "The Beach Boys",
+      "album": "Cocktail (Original Motion Picture Soundtrack)",
+      "song_length": 200,
+      "genre": "Pop",
+      "release_year": 1988
+    },
+    {
+      "song_name": "Eternal Flame",
+      "artist": "The Bangles",
+      "album": "Everything",
+      "song_length": 236,
+      "genre": "Pop",
+      "release_year": 1988
+    },
+    {
+      "song_name": "Walk Like an Egyptian",
+      "artist": "The Bangles",
+      "album": "Different Light",
+      "song_length": 200,
+      "genre": "Pop",
+      "release_year": 1986
+    },
+    {
+      "song_name": "It's the End of the World as We Know It (And I Feel Fine)",
+      "artist": "R.E.M.",
+      "album": "Document",
+      "song_length": 249,
+      "genre": "Alternative Rock",
+      "release_year": 1987
+    },
+
+    {
+      "song_name": "Holding Out for a Hero",
+      "artist": "Bonnie Tyler",
+      "album": "Secret Dreams and Forbidden Fire",
+      "song_length": 347,
+      "genre": "Pop Rock",
+      "release_year": 1984
+    },
+    {
+      "song_name": "The Reflex",
+      "artist": "Duran Duran",
+      "album": "Seven and the Ragged Tiger",
+      "song_length": 328,
+      "genre": "New Wave",
+      "release_year": 1984
+    },
+    {
+      "song_name": "Owner of a Lonely Heart",
+      "artist": "Yes",
+      "album": "90125",
+      "song_length": 268,
+      "genre": "Progressive Rock",
+      "release_year": 1983
+    },
+    {
+      "song_name": "Sunglasses at Night",
+      "artist": "Corey Hart",
+      "album": "First Offense",
+      "song_length": 234,
+      "genre": "Synth-Pop",
+      "release_year": 1983
+    },
+    {
+      "song_name": "Electric Avenue",
+      "artist": "Eddy Grant",
+      "album": "Killer on the Rampage",
+      "song_length": 229,
+      "genre": "Reggae",
+      "release_year": 1982
+    },
+    {
+      "song_name": "Mickey",
+      "artist": "Toni Basil",
+      "album": "Word of Mouth",
+      "song_length": 251,
+      "genre": "Pop",
+      "release_year": 1982
+    },
+    {
+      "song_name": "Tainted Love",
+      "artist": "Soft Cell",
+      "album": "Non-Stop Erotic Cabaret",
+      "song_length": 171,
+      "genre": "Synth-Pop",
+      "release_year": 1981
+    },
+    {
+      "song_name": "Celebration",
+      "artist": "Kool & The Gang",
+      "album": "Celebrate!",
+      "song_length": 218,
+      "genre": "Funk",
+      "release_year": 1980
+    },
+    {
+      "song_name": "Babe",
+      "artist": "Styx",
+      "album": "Cornerstone",
+      "song_length": 265,
+      "genre": "Rock",
+      "release_year": 1979
+    },
+    {
+      "song_name": "Video Killed the Radio Star",
+      "artist": "The Buggles",
+      "album": "The Age of Plastic",
+      "song_length": 193,
+      "genre": "New Wave",
+      "release_year": 1979
+    },
+    {
+      "song_name": "Y.M.C.A.",
+      "artist": "Village People",
+      "album": "Cruisin'",
+      "song_length": 227,
+      "genre": "Disco",
+      "release_year": 1978
+    },
+    {
+      "song_name": "In the End",
+      "artist": "Linkin Park",
+      "album": "Hybrid Theory",
+      "song_length": 206,
+      "genre": "Nu Metal",
+      "release_year": 2000
+    },
+    {
+      "song_name": "Brick House",
+      "artist": "Commodores",
+      "album": "Commodores",
+      "song_length": 217,
+      "genre": "Funk",
+      "release_year": 1977
+    },
+    {
+      "song_name": "More Than a Feeling",
+      "artist": "Boston",
+      "album": "Boston",
+      "song_length": 285,
+      "genre": "Rock",
+      "release_year": 1976
+    },
+    {
+      "song_name": "Rhiannon",
+      "artist": "Fleetwood Mac",
+      "album": "Fleetwood Mac",
+      "song_length": 251,
+      "genre": "Rock",
+      "release_year": 1975
+    },
+    {
+      "song_name": "Killer Queen",
+      "artist": "Queen",
+      "album": "Sheer Heart Attack",
+      "song_length": 180,
+      "genre": "Rock",
+      "release_year": 1974
+    },
+    {
+      "song_name": "Rebel Rebel",
+      "artist": "David Bowie",
+      "album": "Diamond Dogs",
+      "song_length": 270,
+      "genre": "Glam Rock",
+      "release_year": 1974
+    },
+    {
+      "song_name": "The Joker",
+      "artist": "Steve Miller Band",
+      "album": "The Joker",
+      "song_length": 263,
+      "genre": "Rock",
+      "release_year": 1973
+    },
+    {
+      "song_name": "Crocodile Rock",
+      "artist": "Elton John",
+      "album": "Don't Shoot Me I'm Only the Piano Player",
+      "song_length": 235,
+      "genre": "Pop Rock",
+      "release_year": 1972
+    },
+    {
+      "song_name": "Maggie May",
+      "artist": "Rod Stewart",
+      "album": "Every Picture Tells a Story",
+      "song_length": 316,
+      "genre": "Rock",
+      "release_year": 1971
+    },
+    {
+      "song_name": "Your Song",
+      "artist": "Elton John",
+      "album": "Elton John",
+      "song_length": 240,
+      "genre": "Pop",
+      "release_year": 1970
+    },
+    {
+      "song_name": "Pinball Wizard",
+      "artist": "The Who",
+      "album": "Tommy",
+      "song_length": 180,
+      "genre": "Rock",
+      "release_year": 1969
+    },
+    {
+      "song_name": "White Room",
+      "artist": "Cream",
+      "album": "Wheels of Fire",
+      "song_length": 305,
+      "genre": "Rock",
+      "release_year": 1968
+    },
+    {
+      "song_name": "Somebody to Love",
+      "artist": "Jefferson Airplane",
+      "album": "Surrealistic Pillow",
+      "song_length": 180,
+      "genre": "Rock",
+      "release_year": 1967
     }
   ]
 }
