@@ -2,11 +2,10 @@ import os
 import json
 import mongoengine
 import database
-from models import Song  # This will implicitly import and connect via database.py
+from models import Song 
 
 def import_data():
     try:
-        # (Optional) Drop the old songs collection
         Song.drop_collection()
 
         data_dir = 'test_data'
