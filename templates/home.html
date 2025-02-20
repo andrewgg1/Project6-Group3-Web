@@ -227,37 +227,78 @@
                     seekSlider.value = 0;
                 });
 
+                audioPlayer.addEventListener('ended', function() {
+                    playPauseBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
+                });
+
+                function loadSong(songId) {
+                    const songName = document.querySelector(`.play-song-btn[data-song-id="${songId}"]`).closest('tr').querySelector('td:nth-child(3)').textContent;
+                    const artistName = document.querySelector(`.play-song-btn[data-song-id="${songId}"]`).closest('tr').querySelector('td:nth-child(4)').textContent;
+                    const songThumbnail = document.getElementById(`song-thumbnail-${songId}`);
+                    const songLink = document.getElementById(`song-link-${songId}`);
+
+                    fetch(`/song/get_youtube_info/${songId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.youtube_url) {
+                                audioPlayer.src = data.audio_url;
+                                audioPlayer.load();
+                                audioPlayer.play();
+                                albumArt.src = data.thumbnail_url || '{{ url_for('static', filename='images/music-note-96.png') }}';
+                                songNameDisplay.textContent = songName;
+                                artistNameDisplay.textContent = artistName;
+                                playPauseBtn.innerHTML = '<i class="bi bi-pause-fill"></i>';
+                                enablePlayerControls();
+
+                                songThumbnail.src = data.thumbnail_url || '{{ url_for('static', filename='images/music-note-96.png') }}';
+                                songLink.href = data.youtube_url || '#';
+                            } else {
+                                alert('Audio URL not found for this song.');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error fetching audio URL:', error);
+                            alert('Error fetching audio URL.');
+                        })
+                        .finally(() => {
+                            // Remove loading message after fetch is complete (success or error)
+                            loadingMessage.remove();
+                        });
+
+                    // Display loading message while fetching
+                    const loadingMessage = document.createElement('div');
+                    loadingMessage.textContent = `Loading audio for ${songName} by ${artistName}...`;
+                    loadingMessage.classList.add('loading-message'); // Add a class for styling if needed
+                    document.getElementById('audio-player-container').prepend(loadingMessage);
+                }
+
+                nextBtn.addEventListener('click', function() {
+                    if (songList.length > 0) {
+                        currentSongIndex = (currentSongIndex + 1) % songList.length;
+                        loadSong(songList[currentSongIndex].id);
+                    }
+                });
+
+                prevBtn.addEventListener('click', function() {
+                    if (songList.length > 0) {
+                        currentSongIndex = (currentSongIndex - 1 + songList.length) % songList.length;
+                        loadSong(songList[currentSongIndex].id);
+                    }
+                });
+
                 playSongButtons.forEach(button => {
                     button.addEventListener('click', function() {
                         const songId = this.dataset.songId;
-                        const songName = this.closest('tr').querySelector('td:nth-child(3)').textContent;
-                        const artistName = this.closest('tr').querySelector('td:nth-child(4)').textContent;
-                        const songThumbnail = document.getElementById(`song-thumbnail-${songId}`);
-                        const songLink = document.getElementById(`song-link-${songId}`);
+                        
+                        // Populate songList if it's empty
+                        if (songList.length === 0) {
+                            songList = Array.from(playSongButtons).map(btn => ({
+                                id: btn.dataset.songId
+                            }));
+                        }
 
-                        fetch(`/song/get_youtube_info/${songId}`)
-                            .then(response => response.json())
-                            .then(data => {
-                                if (data.youtube_url) {
-                                    audioPlayer.src = data.audio_url;
-                                    audioPlayer.load();
-                                    audioPlayer.play();
-                                    albumArt.src = data.thumbnail_url || '{{ url_for('static', filename='images/music-note-96.png') }}';
-                                    songNameDisplay.textContent = songName;
-                                    artistNameDisplay.textContent = artistName;
-                                    playPauseBtn.innerHTML = '<i class="bi bi-pause-fill"></i>';
-                                    enablePlayerControls();
-
-                                    songThumbnail.src = data.thumbnail_url || '{{ url_for('static', filename='images/music-note-96.png') }}';
-                                    songLink.href = data.youtube_url || '#';
-                                } else {
-                                    alert('Audio URL not found for this song.');
-                                }
-                            })
-                            .catch(error => {
-                                console.error('Error fetching audio URL:', error);
-                                alert('Error fetching audio URL.');
-                            });
+                        currentSongIndex = songList.findIndex(song => song.id === songId);
+                        loadSong(songId);
                     });
                 });
             });
