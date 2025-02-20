@@ -43,15 +43,11 @@
                     </div>
                 </form>
             </div>
-            <div class="row mt-2 justify-content-center"> {# Add justify-content-center to center the buttons #}
-                <div class="col-12 col-md-auto d-flex justify-content-center align-items-center"> {# Use Bootstrap's column classes and d-flex to control alignment #}
-                {% if search_term %}
-                    <p class="text-dark bg-light fw-bold rounded p-3 fs-4 d-inline-block me-3 mb-0">Songs Found: {{ song_list|length }}</p>
-                {% else %}
-                    <p class="text-dark bg-light fw-bold rounded p-3 fs-4 d-inline-block me-3 mb-0">Total Songs: {{ song_list|length }}</p>
-                {% endif %}
-                <a href="{{ url_for('Add_Song') }}" class="btn btn-success fs-3"><i class="bi bi-plus-circle-fill fs-1"></i> Add a Song</a>
-            </div>
+            <div class="row mt-2 justify-content-center">
+                <div class="col-12 col-md-auto d-flex justify-content-center align-items-center">
+                    <p class="text-dark bg-light fw-bold rounded p-3 fs-4 d-inline-block me-3 mb-0" id="song-count">Total Songs: 0</p>
+                    <a href="{{ url_for('Add_Song') }}" class="btn btn-success fs-3"><i class="bi bi-plus-circle-fill fs-1"></i> Add a Song</a>
+                </div>
             </div>
             <br>
 
@@ -161,6 +157,7 @@
                 const searchForm = document.getElementById('search-form');
                 const searchInput = document.getElementById('search');
                 const songTableBody = document.querySelector('.table tbody');
+                const songCount = document.getElementById('song-count'); // Get the song count element
                 let currentSongIndex = 0;
                 let songList = [];
 
@@ -337,6 +334,13 @@
                                 `;
                                 songTableBody.appendChild(tr);
                             });
+
+                            // Update the song count dynamically
+                            if (searchTerm) {
+                                songCount.textContent = `Songs Found: ${data.length}`;
+                            } else {
+                                songCount.textContent = `Total Songs: ${data.length}`;
+                            }
 
                             // Attach event listeners to the play song buttons
                             const playSongButtons = document.querySelectorAll('.play-song-btn');

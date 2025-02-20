@@ -19,6 +19,9 @@ COPY . /app
 # Copy the initialization script
 COPY init.sh /app/
 
+# Convert init.sh to LF
+RUN sed -i 's/\r$//' /app/init.sh
+
 # Make the initialization script executable
 RUN chmod +x /app/init.sh
 

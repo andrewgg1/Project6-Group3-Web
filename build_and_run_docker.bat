@@ -7,6 +7,9 @@ docker desktop start
 @REM Build docker image:
 docker-compose build
 
+@REM Comment above and uncomment below to build with no cache
+@REM docker-compose build --no-cache
+
 @REM Start docker container:
 docker-compose up -d
 
