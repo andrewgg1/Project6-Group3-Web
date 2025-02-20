@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request, render_template
 from routes.song_routes import song_bp, get_songs, get_song
 import database
+import os
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
@@ -42,7 +43,8 @@ def options():
 def home():
     song_list = get_songs()[0].json
     search_term = request.args.get('search') if request.args.get('search') != None else ''
-    return render_template('home.html', song_list=song_list, search_term=search_term)
+    env = os.environ.get('ENVIRONMENT', 'local')
+    return render_template('home.html', song_list=song_list, search_term=search_term, env=env)
 
 #edit song
 @app.route('/edit/<ID>', methods=['GET'])

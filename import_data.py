@@ -1,12 +1,12 @@
 import os
 import json
-import mongoengine
-import database
+from database import *
 from models import Song 
 
 def import_data():
     try:
-        Song.drop_collection()
+        print('------------ BEGIN TEST DATA IMPORT ------------')
+        db.drop_database('music-library')
 
         data_dir = 'test_data'
         processed = 0
