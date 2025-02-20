@@ -198,6 +198,7 @@ def get_youtube_info(song_id):
     # If audio URL is already available, return it immediately
     if song.youtube_audio_url:
         return jsonify({
+            'youtube_url': song.youtube_url,
             'audio_url': song.youtube_audio_url,
             'thumbnail_url': song.youtube_thumbnail  # Include thumbnail URL
         })
@@ -205,6 +206,7 @@ def get_youtube_info(song_id):
     # Otherwise, fetch YouTube info
     if song.get_youtube_info_from_search():
         return jsonify({
+            'youtube_url': song.youtube_url,
             'audio_url': song.youtube_audio_url,
             'thumbnail_url': song.youtube_thumbnail  # Include thumbnail URL
         })
