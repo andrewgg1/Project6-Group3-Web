@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     </head>
-    <body class="homeBody">
+    <body class="homeBody" style="padding-bottom: 150px;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12" style="padding-top: 25px;">
@@ -75,15 +75,12 @@
                         {% for song in song_list %}
                         <tr class="text-center">
                             <td>
-                                <a href="{{song.youtube_url}}" target="_blank" rel="noopener noreferrer">
-                                    <img src="{{song.youtube_thumbnail}}" height="100" width="100" class="rounded mx-auto d-block">
+                                <a href="{{song.youtube_url}}" target="_blank" rel="noopener noreferrer" id="song-link-{{ song.id }}">
+                                    <img src="{{song.youtube_thumbnail}}" height="100" width="100" class="rounded mx-auto d-block song-thumbnail" id="song-thumbnail-{{ song.id }}">
                                 </a>
                             </td>
                             <td>
-                                <audio controls>
-                                    <source src="{{song.youtube_audio_url}}" type="audio/mp4">
-                                    Your browser does not support the audio element.
-                                </audio>
+                                <button class="btn btn-success play-song-btn" data-song-id="{{ song.id }}">Play</button>
                             </td>
                             <td>{{song.song_name}}</td>
                             <td>{{song.artist}}</td>
@@ -101,6 +98,62 @@
                 </table>
             </div>
         </div>
+
+        <!-- Persistent Audio Player -->
+        <div id="audio-player-container" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #f8f9fa; padding: 10px; text-align: center; display: flex; align-items: center; justify-content: center;">
+            <img id="album-art" src="static/images/music-note-96.png" alt="Album Art" style="height: 100px; width: 100px;" class="rounded mx-auto d-block">
+            <div id="song-info" style="margin-left: 10px; margin-right: 10px; text-align: left;">
+                <div id="song-name" class="fw-bold"></div>
+                <div id="artist-name" class="fst-normal"></div>
+            </div>
+            <audio id="persistent-audio-player" controls style="width: 100%;">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const playSongButtons = document.querySelectorAll('.play-song-btn');
+                const persistentAudioPlayer = document.getElementById('persistent-audio-player');
+                const albumArt = document.getElementById('album-art');
+                const songNameDisplay = document.getElementById('song-name');
+                const artistNameDisplay = document.getElementById('artist-name');
+
+                playSongButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const songId = this.dataset.songId;
+                        const songName = this.closest('tr').querySelector('td:nth-child(3)').textContent;
+                        const artistName = this.closest('tr').querySelector('td:nth-child(4)').textContent;
+                        const songThumbnail = document.getElementById(`song-thumbnail-${songId}`);
+                        const songLink = document.getElementById(`song-link-${songId}`);
+
+                        // Fetch YouTube info and update audio player
+                        fetch(`/song/get_youtube_info/${songId}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.audio_url) {
+                                    persistentAudioPlayer.src = data.audio_url;
+                                    persistentAudioPlayer.load(); // Load the new source
+                                    persistentAudioPlayer.play(); // Autoplay the song
+                                    albumArt.src = data.thumbnail_url || 'static/images/music-note-96.png'; // Set album art
+                                    songNameDisplay.textContent = songName;
+                                    artistNameDisplay.textContent = artistName;
+
+                                    // Update the album art in the song list
+                                    songThumbnail.src = data.thumbnail_url || 'static/images/music-note-96.png';
+                                    songLink.href = data.youtube_url || '#';
+                                } else {
+                                    alert('Audio URL not found for this song.');
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error fetching audio URL:', error);
+                                alert('Error fetching audio URL.');
+                            });
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
 

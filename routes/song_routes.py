@@ -41,7 +41,7 @@ def get_songs():
             "youtube_thumbnail": song.youtube_thumbnail,
             "id": str(song.id)
         } for song in all_songs]
-        return jsonify(songs_output), 200
+        return jsonify(songs_output[::-1]), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -86,6 +86,9 @@ def create_song():
             "song_length": song.song_length,
             "genre": song.genre,
             "release_year": song.release_year,
+            "youtube_url": song.youtube_url,
+            "youtube_audio_url": song.youtube_audio_url,
+            "youtube_thumbnail": song.youtube_thumbnail,
             "id": str(song.id)
         }), 201
         # creating song with form submit
@@ -185,3 +188,25 @@ def form_to_json(form_data):
         "genre": form_data["genre"],
         "release_year": form_data["release_year"]
     }
+
+@song_bp.route('/song/get_youtube_info/<string:song_id>')
+def get_youtube_info(song_id):
+    song = Song.objects(id=song_id).first()
+    if not song:
+        return jsonify({'error': 'Song not found'}), 404
+
+    # If audio URL is already available, return it immediately
+    if song.youtube_audio_url:
+        return jsonify({
+            'audio_url': song.youtube_audio_url,
+            'thumbnail_url': song.youtube_thumbnail  # Include thumbnail URL
+        })
+
+    # Otherwise, fetch YouTube info
+    if song.get_youtube_info_from_search():
+        return jsonify({
+            'audio_url': song.youtube_audio_url,
+            'thumbnail_url': song.youtube_thumbnail  # Include thumbnail URL
+        })
+    else:
+        return jsonify({'error': 'Could not retrieve audio URL'}), 500
