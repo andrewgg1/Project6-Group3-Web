@@ -22,26 +22,26 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-5 justify-content-center">  {# Add justify-content-center to center the search form #}
-                <form action="{{ url_for('home')}}" class="col-12 col-md-6"> {# Use Bootstrap's column classes to control width #}
+            <div class="row mt-5 justify-content-center">
+                <form id="search-form" class="col-12 col-md-6">
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search" id="search" name="search" value="{{search_term}}" autofocus 
-                      onfocus="var val = this.value; this.value = ''; this.value = val;" 
-                      onkeydown="if (event.key === 'Escape') { document.getElementById('search').value = ''; this.form.submit(); }">
-                      <span>
+                        <input type="text" class="form-control" placeholder="Search" id="search" name="search" value="{{search_term}}" autofocus
+                               onfocus="var val = this.value; this.value = ''; this.value = val;"
+                               onkeydown="if (event.key === 'Escape') { document.getElementById('search').value = ''; this.form.dispatchEvent(new Event('submit')); }">
+                        <span>
+                            <div class="input-group-text">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </span>
                         <div class="input-group-text">
-                            <button class="btn btn-default" type="submit">
-                            <i class="bi bi-search"></i>
+                            <button class="btn btn-default" type="button" onclick="document.getElementById('search').value = ''; document.getElementById('search-form').dispatchEvent(new Event('submit'));">
+                                Reset (Esc)
                             </button>
                         </div>
-                      </span>
-                      <div class="input-group-text">
-                        <button class="btn btn-default" type="submit" onclick="document.getElementById('search').value = '';">
-                            Reset (Esc)
-                        </button>
                     </div>
-                    </div>
-                  </form>
+                </form>
             </div>
             <div class="row mt-2 justify-content-center"> {# Add justify-content-center to center the buttons #}
                 <div class="col-12 col-md-auto d-flex justify-content-center align-items-center"> {# Use Bootstrap's column classes and d-flex to control alignment #}
@@ -77,7 +77,7 @@
                         {% for song in song_list %}
                         <tr class="text-center">
                             <td>
-                                <button class="btn btn-success play-song-btn" data-song-id="{{ song.id }}"><i class="bi bi-play fs-4"></i></button>
+                                <button class="btn btn-success play-song-btn" data-song-id="{{ song.id }}"><i class="bi bi-play fs-4 mx-3"></i></button>
                             </td>
                             <td>
                                 {% if song.youtube_url %}
@@ -90,7 +90,7 @@
                             </td>
                             <td>{{song.song_name}}</td>
                             <td>{{song.artist}}</td>
-                            <td >{{song.album}}</td>
+                            <td>{{song.album}}</td>
                             <td>{{ song.song_length // 60 }}:{{ '%02d' % (song.song_length % 60) }}</td>
                             <td>{{song.genre}}</td>
                             <td>{{song.release_year}}</td>
@@ -158,6 +158,9 @@
                 const seekSlider = document.getElementById('seek-slider');
                 const currentTimeDisplay = document.getElementById('current-time');
                 const totalDurationDisplay = document.getElementById('total-duration');
+                const searchForm = document.getElementById('search-form');
+                const searchInput = document.getElementById('search');
+                const songTableBody = document.querySelector('.table tbody');
                 let currentSongIndex = 0;
                 let songList = [];
 
@@ -300,6 +303,70 @@
                         currentSongIndex = songList.findIndex(song => song.id === songId);
                         loadSong(songId);
                     });
+                });
+
+                function fetchSongs(searchTerm = '') {
+                    fetch(`/songs?search=${searchTerm}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            songTableBody.innerHTML = '';
+
+                            data.forEach(song => {
+                                const tr = document.createElement('tr');
+                                tr.classList.add('text-center');
+
+                                tr.innerHTML = `
+                                    <td class="d-flex align-items-center justify-content-center">
+                                        <button class="btn btn-success play-song-btn" data-song-id="${song.id}"><i class="bi bi-play fs-4 mx-3"></i></button>
+                                    </td>
+                                    <td>
+                                        ${song.youtube_url ? `<a href="${song.youtube_url}" target="_blank" rel="noopener noreferrer" id="song-link-${song.id}">` : `<a target="_blank" rel="noopener noreferrer" id="song-link-${song.id}">`}
+                                            <img src="${song.youtube_thumbnail}" height="100" width="100" class="rounded mx-auto d-block song-thumbnail" id="song-thumbnail-${song.id}">
+                                        </a>
+                                    </td>
+                                    <td>${song.song_name}</td>
+                                    <td>${song.artist}</td>
+                                    <td>${song.album}</td>
+                                    <td>${Math.floor(song.song_length / 60)}:${String(song.song_length % 60).padStart(2, '0')}</td>
+                                    <td>${song.genre}</td>
+                                    <td>${song.release_year}</td>
+                                    <td>
+                                        <a href="/edit-song/${song.id}" class="btn btn-primary">Edit</a>
+                                        <a href="/del-song/${song.id}" class="btn btn-danger">Delete</a>
+                                    </td>
+                                `;
+                                songTableBody.appendChild(tr);
+                            });
+
+                            // Attach event listeners to the play song buttons
+                            const playSongButtons = document.querySelectorAll('.play-song-btn');
+                            playSongButtons.forEach(button => {
+                                button.addEventListener('click', function() {
+                                    const songId = this.dataset.songId;
+
+                                    // Populate songList if it's empty
+                                    if (songList.length === 0) {
+                                        songList = Array.from(playSongButtons).map(btn => ({
+                                            id: btn.dataset.songId
+                                        }));
+                                    }
+
+                                    currentSongIndex = songList.findIndex(song => song.id === songId);
+                                    loadSong(songId);
+                                });
+                            });
+                        })
+                        .catch(error => console.error('Error fetching songs:', error));
+                }
+
+                // Initial load of all songs
+                fetchSongs();
+
+                // Handle form submission
+                searchForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const searchTerm = searchInput.value;
+                    fetchSongs(searchTerm);
                 });
             });
         </script>

@@ -43,7 +43,6 @@
     text-align: center;
     padding: 8px;
 }
-
 .loading-message::after {
     content: '';
     border: 3px solid #ccc;
@@ -60,6 +59,16 @@
         transform: rotate(360deg);
     }
 }
+
+.table td {
+    padding: 0.75rem; /* Adjust this value as needed */
+    vertical-align: middle; /* Align content vertically in the middle */
+}
+
+.table td .btn {
+    margin: 0.25rem; /* Add some spacing around the button */
+}
+
 
 /*base.html styles*/
 #baseBody {
