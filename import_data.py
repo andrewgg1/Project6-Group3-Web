@@ -1,11 +1,12 @@
 import os
 import json
-from database import connect
-from models import Artist, Album, Song
+import mongoengine
+import database
+from models import Song 
 
 def import_data():
     try:
-        connect('music-library').drop_database('music-library')
+        Song.drop_collection()
 
         data_dir = 'test_data'
         processed = 0
@@ -24,33 +25,16 @@ def import_data():
                 
                 with open(file_path, 'r') as file:
                     data = json.load(file)
-                    
-                    # # Handle artists data
-                    # if 'artists' in data:
-                    #     for artist_data in data['artists']:
-                    #         artist = Artist(**artist_data)
-                    #         artist.save()
-                    #         print(f"Added artist: {artist.artist_name}")
-                    #         processed += 1
-                            
-                    # # Handle albums data
-                    # if 'albums' in data:
-                    #     for album_data in data['albums']:
-                    #         album = Album(**album_data)
-                    #         album.save()
-                    #         print(f"Added album: {album.album_name}")
-                    #         processed += 1
-                            
-                    # Handle songs data
+
                     if 'songs' in data:
                         for song_data in data['songs']:
                             song = Song(**song_data)
                             song.save()
                             print(f"Added song: {song.song_name}")
                             processed += 1
-                            
+
         print(f"\nImport completed successfully! Processed {processed} items.")
-        
+
     except FileNotFoundError as e:
         print(f"Error: File not found - {str(e)}")
     except json.JSONDecodeError as e:
