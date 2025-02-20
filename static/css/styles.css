@@ -42,3 +42,11 @@
     font-weight: 800;
     color: black;
 }
+
+#audio-player-container .form-range {
+    width: 100%;
+}
+
+#audio-player-container .btn {
+    font-size: 1rem;
+}

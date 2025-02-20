@@ -22,9 +22,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-5">
-                <form action="{{ url_for('home')}}">
-                    <div class="input-group w-50 col-6 mx-auto">
+            <div class="row mt-5 justify-content-center">  {# Add justify-content-center to center the search form #}
+                <form action="{{ url_for('home')}}" class="col-12 col-md-6"> {# Use Bootstrap's column classes to control width #}
+                    <div class="input-group">
                       <input type="text" class="form-control" placeholder="Search" id="search" name="search" value="{{search_term}}" autofocus 
                       onfocus="var val = this.value; this.value = ''; this.value = val;" 
                       onkeydown="if (event.key === 'Escape') { document.getElementById('search').value = ''; this.form.submit(); }">
@@ -43,13 +43,15 @@
                     </div>
                   </form>
             </div>
-            <div class="d-flex justify-content-center align-items-center mt-2">
+            <div class="row mt-2 justify-content-center"> {# Add justify-content-center to center the buttons #}
+                <div class="col-12 col-md-auto d-flex justify-content-center align-items-center"> {# Use Bootstrap's column classes and d-flex to control alignment #}
                 {% if search_term %}
                     <p class="text-dark bg-light fw-bold rounded p-3 fs-4 d-inline-block me-3 mb-0">Songs Found: {{ song_list|length }}</p>
                 {% else %}
                     <p class="text-dark bg-light fw-bold rounded p-3 fs-4 d-inline-block me-3 mb-0">Total Songs: {{ song_list|length }}</p>
                 {% endif %}
                 <a href="{{ url_for('Add_Song') }}" class="btn btn-success fs-3"><i class="bi bi-plus-circle-fill fs-1"></i> Add a Song</a>
+            </div>
             </div>
             <br>
 
@@ -103,14 +105,41 @@
             </div>
         </div>
 
-        <!-- Persistent Audio Player -->
-        <div id="audio-player-container" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #f8f9fa; padding: 10px; text-align: center; display: flex; align-items: center; justify-content: center;">
-            <img id="album-art" src="static/images/music-note-96.png" alt="Album Art" style="height: 100px; width: 100px;" class="rounded mx-auto d-block">
-            <div id="song-info" style="margin-left: 10px; margin-right: 10px; text-align: left;">
-                <div id="song-name" class="fw-bold"></div>
-                <div id="artist-name" class="fst-normal"></div>
+        <!-- Bootstrap Audio Player -->
+        <div id="audio-player-container" class="fixed-bottom bg-light p-3">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-1 d-flex align-items-center">
+                        <img id="album-art" src="{{ url_for('static', filename='images/music-note-96.png') }}" style="height: 100px;" alt="Album Art" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-10">
+                        <div class="d-flex">
+                            <div class="col-md-2">
+                            <div id="song-info">
+                                <div id="song-name" class="d-flex fw-bold"></div>
+                                <div id="artist-name" class="d-flex fst-italic"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="d-flex justify-content-center">
+                                <button id="prev-btn" class="btn btn-outline-secondary fs-4 mx-3" disabled><i class="bi bi-skip-backward-fill"></i></button>
+                                <button id="play-pause-btn" class="btn btn-success fs-4 mx-3" disabled><i class="bi bi-play-fill"></i></button>
+                                <button id="next-btn" class="btn btn-outline-secondary fs-4 mx-3" disabled><i class="bi bi-skip-forward-fill"></i></button>
+                            </div>
+                        </div>
+                        </div>
+                        <input type="range" id="seek-slider" class="form-range">
+                        <div class="d-flex justify-content-between">
+                            <span id="current-time">0:00</span>
+                            <span id="total-duration">0:00</span>
+                        </div>
+                    </div>
+                    <div class="col-md-1 d-flex justify-content-center">
+                    <button id="mute-btn" class="btn btn-outline-secondary fs-1" disabled><i class="bi bi-volume-up-fill"></i></button>
+                </div>
+                </div>
             </div>
-            <audio id="persistent-audio-player" controls style="width: 100%;">
+            <audio id="persistent-audio-player" preload="metadata">
                 Your browser does not support the audio element.
             </audio>
         </div>
@@ -118,10 +147,85 @@
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const playSongButtons = document.querySelectorAll('.play-song-btn');
-                const persistentAudioPlayer = document.getElementById('persistent-audio-player');
+                const audioPlayer = document.getElementById('persistent-audio-player');
                 const albumArt = document.getElementById('album-art');
                 const songNameDisplay = document.getElementById('song-name');
                 const artistNameDisplay = document.getElementById('artist-name');
+                const playPauseBtn = document.getElementById('play-pause-btn');
+                const prevBtn = document.getElementById('prev-btn');
+                const nextBtn = document.getElementById('next-btn');
+                const muteBtn = document.getElementById('mute-btn');
+                const seekSlider = document.getElementById('seek-slider');
+                const currentTimeDisplay = document.getElementById('current-time');
+                const totalDurationDisplay = document.getElementById('total-duration');
+                let currentSongIndex = 0;
+                let songList = [];
+
+                function enablePlayerControls() {
+                    prevBtn.removeAttribute('disabled');
+                    playPauseBtn.removeAttribute('disabled');
+                    nextBtn.removeAttribute('disabled');
+                    muteBtn.removeAttribute('disabled');
+                    seekSlider.removeAttribute('disabled');
+                }
+
+                function disablePlayerControls() {
+                    prevBtn.setAttribute('disabled', true);
+                    playPauseBtn.setAttribute('disabled', true);
+                    nextBtn.setAttribute('disabled', true);
+                    muteBtn.setAttribute('disabled', true);
+                    seekSlider.setAttribute('disabled', true);
+                }
+
+                disablePlayerControls();
+
+                function formatTime(time) {
+                    const minutes = Math.floor(time / 60);
+                    const seconds = Math.floor(time % 60);
+                    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                }
+
+                playPauseBtn.addEventListener('click', function() {
+                    if (audioPlayer.paused) {
+                        audioPlayer.play();
+                        playPauseBtn.innerHTML = '<i class="bi bi-pause-fill"></i>';
+                    } else {
+                        audioPlayer.pause();
+                        playPauseBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
+                    }
+                });
+
+                muteBtn.addEventListener('click', function() {
+                    if (audioPlayer.muted) {
+                        audioPlayer.muted = false;
+                        muteBtn.innerHTML = '<i class="bi bi-volume-up-fill"></i>';
+                    } else {
+                        audioPlayer.muted = true;
+                        muteBtn.innerHTML = '<i class="bi bi-volume-mute-fill"></i>';
+                    }
+                });
+
+                seekSlider.addEventListener('input', function() {
+                    const seekTime = audioPlayer.duration * (seekSlider.value / 100);
+                    audioPlayer.currentTime = seekTime;
+                });
+
+                audioPlayer.addEventListener('timeupdate', function() {
+                    const currentTime = audioPlayer.currentTime;
+                    const duration = audioPlayer.duration;
+
+                    currentTimeDisplay.textContent = formatTime(currentTime);
+                    if (!isNaN(duration)) {
+                        totalDurationDisplay.textContent = formatTime(duration);
+                        const seekPosition = (currentTime / duration) * 100;
+                        seekSlider.value = seekPosition;
+                    }
+                });
+
+                audioPlayer.addEventListener('loadedmetadata', function() {
+                    totalDurationDisplay.textContent = formatTime(audioPlayer.duration);
+                    seekSlider.value = 0;
+                });
 
                 playSongButtons.forEach(button => {
                     button.addEventListener('click', function() {
@@ -131,20 +235,20 @@
                         const songThumbnail = document.getElementById(`song-thumbnail-${songId}`);
                         const songLink = document.getElementById(`song-link-${songId}`);
 
-                        // Fetch YouTube info and update audio player
                         fetch(`/song/get_youtube_info/${songId}`)
                             .then(response => response.json())
                             .then(data => {
                                 if (data.youtube_url) {
-                                    persistentAudioPlayer.src = data.audio_url;
-                                    persistentAudioPlayer.load(); // Load the new source
-                                    persistentAudioPlayer.play(); // Autoplay the song
-                                    albumArt.src = data.thumbnail_url || 'static/images/music-note-96.png'; // Set album art
+                                    audioPlayer.src = data.audio_url;
+                                    audioPlayer.load();
+                                    audioPlayer.play();
+                                    albumArt.src = data.thumbnail_url || '{{ url_for('static', filename='images/music-note-96.png') }}';
                                     songNameDisplay.textContent = songName;
                                     artistNameDisplay.textContent = artistName;
+                                    playPauseBtn.innerHTML = '<i class="bi bi-pause-fill"></i>';
+                                    enablePlayerControls();
 
-                                    // Update the album art in the song list
-                                    songThumbnail.src = data.thumbnail_url || 'static/images/music-note-96.png';
+                                    songThumbnail.src = data.thumbnail_url || '{{ url_for('static', filename='images/music-note-96.png') }}';
                                     songLink.href = data.youtube_url || '#';
                                 } else {
                                     alert('Audio URL not found for this song.');

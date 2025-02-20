@@ -3,6 +3,8 @@ from models import Song
 from bson import ObjectId, errors as bson_errors
 from mongoengine.errors import ValidationError, DoesNotExist
 import json
+from urllib.parse import urlparse
+import requests
 
 song_bp = Blueprint('song', __name__)
 
@@ -195,20 +197,41 @@ def get_youtube_info(song_id):
     if not song:
         return jsonify({'error': 'Song not found'}), 404
 
-    # If audio URL is already available, return it immediately
+    # Check if audio URL is available and valid
     if song.youtube_audio_url:
-        return jsonify({
-            'youtube_url': song.youtube_url,
-            'audio_url': song.youtube_audio_url,
-            'thumbnail_url': song.youtube_thumbnail  # Include thumbnail URL
-        })
+        if is_youtube_url_valid(song.youtube_audio_url):
+            return jsonify({
+                'youtube_url': song.youtube_url,
+                'audio_url': song.youtube_audio_url,
+                'thumbnail_url': song.youtube_thumbnail
+            })
+        else:
+            # Refetch YouTube info if the URL is invalid
+            if song.get_youtube_info_from_search():
+                return jsonify({
+                    'youtube_url': song.youtube_url,
+                    'audio_url': song.youtube_audio_url,
+                    'thumbnail_url': song.youtube_thumbnail
+                })
+            else:
+                return jsonify({'error': 'Could not retrieve audio URL'}), 500
 
     # Otherwise, fetch YouTube info
     if song.get_youtube_info_from_search():
         return jsonify({
             'youtube_url': song.youtube_url,
             'audio_url': song.youtube_audio_url,
-            'thumbnail_url': song.youtube_thumbnail  # Include thumbnail URL
+            'thumbnail_url': song.youtube_thumbnail
         })
     else:
         return jsonify({'error': 'Could not retrieve audio URL'}), 500
+
+def is_youtube_url_valid(url):
+    try:
+        parsed_url = urlparse(url)
+        if not all([parsed_url.scheme, parsed_url.netloc]):
+            return False
+        response = requests.head(url, timeout=5)  # Check if the URL is reachable
+        return response.status_code == 200
+    except requests.RequestException:
+        return False
