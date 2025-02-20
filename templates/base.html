@@ -6,12 +6,16 @@
         <title> {% block title %} {% endblock %}</title>
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/styles.css') }}">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" >
-        <link rel="icon" type="image/png" href="favicon.png">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     </head>
-    <body id="baseBody">
-        <h1 id="baseH1" class="mt-4 mb-4 text-center">Fill the form to {{self.title()}}</h1>
+    <body id="baseBody" class="baseBody">
+        <div class="col-12" style="padding-top: 25px;">
+            <div class="text-center">
+                <h1 id="baseH1" class="baseH1 rounded">{{self.title()}}</h1>
+            </div>
+        </div>
         <!--child html files will fill their content within the block-->
         {% block formContent %} {% endblock%}
  

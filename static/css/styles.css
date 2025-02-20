@@ -1,11 +1,11 @@
 /*home.html styles*/
-.homeBody {
+.homeBody, .baseBody {
     font-family: 'Poppins', sans-serif;
     background-image: url("/static/images/home background.jpg");
     background-size: cover;
     background-attachment: fixed;
 }
-.homeH1 {
+.homeH1, .baseH1 {
     font-weight: 800;
     color: black;
     display: inline-block;
@@ -17,18 +17,6 @@
 }
 .small-text {
     font-weight: 300;
-}
-a:link{
-    color:black;
-    text-decoration: none;
-}
-a:visited{
-    text-decoration: none;
-}
-a:hover{
-    color: black;
-    background-color:whitesmoke;
-    text-decoration: none;
 }
 .List{
     color: white;
@@ -45,6 +33,42 @@ a:hover{
     background-color:aliceblue;
     text-decoration: underline;
 }
+.loading-message {
+    display: flex;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: #555;
+    text-align: center;
+    padding: 8px;
+}
+.loading-message::after {
+    content: '';
+    border: 3px solid #ccc;
+    border-top-color: #333;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.table td {
+    padding: 0.75rem; /* Adjust this value as needed */
+    vertical-align: middle; /* Align content vertically in the middle */
+}
+
+.table td .btn {
+    margin: 0.25rem; /* Add some spacing around the button */
+}
+
 
 /*base.html styles*/
 #baseBody {
@@ -53,4 +77,12 @@ a:hover{
 #baseH1 {
     font-weight: 800;
     color: black;
+}
+
+#audio-player-container .form-range {
+    width: 100%;
+}
+
+#audio-player-container .btn {
+    font-size: 1rem;
 }

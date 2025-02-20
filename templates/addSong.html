@@ -1,6 +1,6 @@
 <!--the form page to add a song-->
 {% extends 'base.html' %}
-{% block title %} Add a song {% endblock %}
+{% block title %} Fill the form to add a song {% endblock %}
 
 {% block formContent %}
 
@@ -25,14 +25,14 @@
             <div class="form-group">
                 <label for="album">Album:</label>
                 <!--add name attribute to input tag-->
-               <input required type="text" class="form-control" id="album" name="album">
+               <input type="text" class="form-control" id="album" name="album">
             </div>
         </div> 
 
         <div class="row">
             <div class="form-group">
                 <label for="songLen">Song length (seconds):</label> 
-                <input required type="number" class="form-control" id="songLen" name="song_length">
+                <input type="number" class="form-control" id="songLen" name="song_length" value="60">
             </div>
         </div>
 
@@ -40,7 +40,7 @@
             <div class="form-group">
                 <label for="genre">Genre:</label> 
                 <!--add name attribute to input tag-->
-                <input required type="text" class="form-control" id="genre" name="genre">
+                <input type="text" class="form-control" id="genre" name="genre">
             </div>
         </div>
 
@@ -48,16 +48,16 @@
             <div class="form-group">
                 <label for="release_year">Release year:</label> 
                 <!--add name attribute to input tag-->
-                <input required type="number" class="form-control" id="release_year" name="release_year">
+                <input type="number" class="form-control" id="release_year" name="release_year" value="2015">
             </div>
         </div>
         
     </div>
     
-    <div class="mt-3 d-flex justify-content-end">
-        <button type="submit" class="btn btn-primary mx-auto">Save</button>
+    <div class="mt-3 d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary me-5 fs-2">Save</button>
         <!--cancel button redirects to home page-->
-        <a href="{{ url_for('home') }}" class="btn btn-danger mx-auto">Cancel</a>
+        <a href="{{ url_for('home') }}" class="btn btn-danger me-5 fs-2">Cancel</a>
     </div>
 </form>
 

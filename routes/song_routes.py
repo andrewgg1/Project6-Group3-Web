@@ -3,6 +3,8 @@ from models import Song
 from bson import ObjectId, errors as bson_errors
 from mongoengine.errors import ValidationError, DoesNotExist
 import json
+from urllib.parse import urlparse
+import requests
 
 song_bp = Blueprint('song', __name__)
 
@@ -36,9 +38,12 @@ def get_songs():
             "song_length": song.song_length,
             "genre": song.genre,
             "release_year": song.release_year,
+            "youtube_url": song.youtube_url,
+            "youtube_audio_url": song.youtube_audio_url,
+            "youtube_thumbnail": song.youtube_thumbnail,
             "id": str(song.id)
         } for song in all_songs]
-        return jsonify(songs_output), 200
+        return jsonify(songs_output[::-1]), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -56,6 +61,9 @@ def get_song(ID):
             "song_length": song.song_length,
             "genre": song.genre,
             "release_year": song.release_year,
+            "youtube_url": song.youtube_url,
+            "youtube_audio_url": song.youtube_audio_url,
+            "youtube_thumbnail": song.youtube_thumbnail,
             "id": str(song.id)
         }), 200
     except bson_errors.InvalidId:
@@ -80,6 +88,9 @@ def create_song():
             "song_length": song.song_length,
             "genre": song.genre,
             "release_year": song.release_year,
+            "youtube_url": song.youtube_url,
+            "youtube_audio_url": song.youtube_audio_url,
+            "youtube_thumbnail": song.youtube_thumbnail,
             "id": str(song.id)
         }), 201
         # creating song with form submit
@@ -102,21 +113,21 @@ def create_song():
 # I also added a POST method bc that was the only way i could think of to
 # directly call the delete_song(id) function without making a new html page & 
 # ultimately a new function in app.py
-@song_bp.route("/del-song/<id>", methods=["DELETE", "POST"])
+@song_bp.route("/del-song/<id>", methods=["DELETE", "POST", "GET"])
 def delete_song(id):
     """ Endpoint for deleting a song """
     try:
-        if request.method == "POST": #checks for POST method
-            song = Song.objects(id=ObjectId(id)).first()
-        elif request.method == "DELETE": #relevant mostly for jmeter tests, which means to trigger this function, you can call the DELETE method directly
-            song = Song.objects(id=ObjectId(id)).first()
+        # if request.method == "POST": #checks for POST method
+        #     song = Song.objects(id=ObjectId(id)).first()
+        # elif request.method == "DELETE": #relevant mostly for jmeter tests, which means to trigger this function, you can call the DELETE method directly
+        song = Song.objects(id=ObjectId(id)).first()
         if not song:
             return jsonify({"error": "Song not found"}), 404
         song.delete()
 
         if request.content_type == 'application/json':
             return jsonify({"message": "Song deleted successfully"}), 200
-        elif request.content_type == 'application/x-www-form-urlencoded':
+        else:
             return redirect(url_for('home'))
     
     except bson_errors.InvalidId:
@@ -154,6 +165,9 @@ def edit_song(id):
             "song_length": song.song_length,
             "genre": song.genre,
             "release_year": song.release_year,
+            "youtube_url": song.youtube_url,
+            "youtube_audio_url": song.youtube_audio_url,
+            "youtube_thumbnail": song.youtube_thumbnail,
             "id": str(song.id)
         }), 201
         elif request.content_type == 'application/x-www-form-urlencoded':
@@ -176,3 +190,48 @@ def form_to_json(form_data):
         "genre": form_data["genre"],
         "release_year": form_data["release_year"]
     }
+
+@song_bp.route('/song/get_youtube_info/<string:song_id>')
+def get_youtube_info(song_id):
+    song = Song.objects(id=song_id).first()
+    if not song:
+        return jsonify({'error': 'Song not found'}), 404
+
+    # Check if audio URL is available and valid
+    if song.youtube_audio_url:
+        if is_youtube_url_valid(song.youtube_audio_url):
+            return jsonify({
+                'youtube_url': song.youtube_url,
+                'audio_url': song.youtube_audio_url,
+                'thumbnail_url': song.youtube_thumbnail
+            })
+        else:
+            # Refetch YouTube info if the URL is invalid
+            if song.get_youtube_info_from_search():
+                return jsonify({
+                    'youtube_url': song.youtube_url,
+                    'audio_url': song.youtube_audio_url,
+                    'thumbnail_url': song.youtube_thumbnail
+                })
+            else:
+                return jsonify({'error': 'Could not retrieve audio URL'}), 500
+
+    # Otherwise, fetch YouTube info
+    if song.get_youtube_info_from_search():
+        return jsonify({
+            'youtube_url': song.youtube_url,
+            'audio_url': song.youtube_audio_url,
+            'thumbnail_url': song.youtube_thumbnail
+        })
+    else:
+        return jsonify({'error': 'Could not retrieve audio URL'}), 500
+
+def is_youtube_url_valid(url):
+    try:
+        parsed_url = urlparse(url)
+        if not all([parsed_url.scheme, parsed_url.netloc]):
+            return False
+        response = requests.head(url, timeout=5)  # Check if the URL is reachable
+        return response.status_code == 200
+    except requests.RequestException:
+        return False
