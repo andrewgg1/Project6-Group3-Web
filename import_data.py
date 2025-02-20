@@ -1,7 +1,7 @@
 import os
 import json
 from database import *
-from models import Song 
+from models import Song
 
 def import_data():
     try:
@@ -10,24 +10,26 @@ def import_data():
 
         data_dir = 'test_data'
         processed = 0
-        
+
         # Ensure directory exists
         if not os.path.exists(data_dir):
             print(f"Creating {data_dir} directory...")
             os.makedirs(data_dir)
             return
-        
+
         # Process each JSON file
         for filename in os.listdir(data_dir):
             if filename.endswith('.json'):
                 file_path = os.path.join(data_dir, filename)
                 print(f"\nProcessing {filename}...")
-                
+
                 with open(file_path, 'r') as file:
                     data = json.load(file)
 
                     if 'songs' in data:
                         for song_data in data['songs']:
+                            # Remove _id field if it exists
+                            song_data.pop('_id', None)
                             song = Song(**song_data)
                             song.save()
                             print(f"Added song: {song.song_name}")

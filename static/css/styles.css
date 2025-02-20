@@ -1,11 +1,11 @@
 /*home.html styles*/
-.homeBody {
+.homeBody, .baseBody {
     font-family: 'Poppins', sans-serif;
     background-image: url("/static/images/home background.jpg");
     background-size: cover;
     background-attachment: fixed;
 }
-.homeH1 {
+.homeH1, .baseH1 {
     font-weight: 800;
     color: black;
     display: inline-block;
@@ -17,18 +17,6 @@
 }
 .small-text {
     font-weight: 300;
-}
-a:link{
-    color:black;
-    text-decoration: none;
-}
-a:visited{
-    text-decoration: none;
-}
-a:hover{
-    color: black;
-    background-color:whitesmoke;
-    text-decoration: none;
 }
 .List{
     color: white;

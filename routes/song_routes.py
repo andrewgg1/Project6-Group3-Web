@@ -36,6 +36,9 @@ def get_songs():
             "song_length": song.song_length,
             "genre": song.genre,
             "release_year": song.release_year,
+            "youtube_url": song.youtube_url,
+            "youtube_audio_url": song.youtube_audio_url,
+            "youtube_thumbnail": song.youtube_thumbnail,
             "id": str(song.id)
         } for song in all_songs]
         return jsonify(songs_output), 200
@@ -56,6 +59,9 @@ def get_song(ID):
             "song_length": song.song_length,
             "genre": song.genre,
             "release_year": song.release_year,
+            "youtube_url": song.youtube_url,
+            "youtube_audio_url": song.youtube_audio_url,
+            "youtube_thumbnail": song.youtube_thumbnail,
             "id": str(song.id)
         }), 200
     except bson_errors.InvalidId:
@@ -102,21 +108,21 @@ def create_song():
 # I also added a POST method bc that was the only way i could think of to
 # directly call the delete_song(id) function without making a new html page & 
 # ultimately a new function in app.py
-@song_bp.route("/del-song/<id>", methods=["DELETE", "POST"])
+@song_bp.route("/del-song/<id>", methods=["DELETE", "POST", "GET"])
 def delete_song(id):
     """ Endpoint for deleting a song """
     try:
-        if request.method == "POST": #checks for POST method
-            song = Song.objects(id=ObjectId(id)).first()
-        elif request.method == "DELETE": #relevant mostly for jmeter tests, which means to trigger this function, you can call the DELETE method directly
-            song = Song.objects(id=ObjectId(id)).first()
+        # if request.method == "POST": #checks for POST method
+        #     song = Song.objects(id=ObjectId(id)).first()
+        # elif request.method == "DELETE": #relevant mostly for jmeter tests, which means to trigger this function, you can call the DELETE method directly
+        song = Song.objects(id=ObjectId(id)).first()
         if not song:
             return jsonify({"error": "Song not found"}), 404
         song.delete()
 
         if request.content_type == 'application/json':
             return jsonify({"message": "Song deleted successfully"}), 200
-        elif request.content_type == 'application/x-www-form-urlencoded':
+        else:
             return redirect(url_for('home'))
     
     except bson_errors.InvalidId:
@@ -154,6 +160,9 @@ def edit_song(id):
             "song_length": song.song_length,
             "genre": song.genre,
             "release_year": song.release_year,
+            "youtube_url": song.youtube_url,
+            "youtube_audio_url": song.youtube_audio_url,
+            "youtube_thumbnail": song.youtube_thumbnail,
             "id": str(song.id)
         }), 201
         elif request.content_type == 'application/x-www-form-urlencoded':

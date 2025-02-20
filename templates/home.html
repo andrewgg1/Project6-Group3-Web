@@ -49,7 +49,7 @@
                 {% else %}
                     <p class="text-dark bg-light fw-bold rounded p-3 fs-4 d-inline-block me-3 mb-0">Total Songs: {{ song_list|length }}</p>
                 {% endif %}
-                <a href="{{ url_for('Add_Song') }}" class="btn btn-primary fs-3"><i class="bi bi-plus-circle-fill fs-1"></i> Add a Song</a>
+                <a href="{{ url_for('Add_Song') }}" class="btn btn-success fs-3"><i class="bi bi-plus-circle-fill fs-1"></i> Add a Song</a>
             </div>
             <br>
 
@@ -57,33 +57,44 @@
             <div class="container-fluid"> 
                 <table class="table table-striped table-bordered">
                     <thead>
-                        <tr>
-                            <th>Action</th>
+                        <tr class="text-center">
+                            <th>Album Art</th>
+                            <th>Play Song</th>
                             <th>Song name</th>
                             <th>Artist</th>
                             <th>Album</th>
                             <th>Song length</th>
                             <th>Genre</th>
                             <th>Release year</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <!--loop through song list-->
                         {% for song in song_list %}
-                        <tr>
+                        <tr class="text-center">
                             <td>
-                                <a class="Link" href="{{ url_for('Edit_Song', ID=song.id) }}">Edit</a> | <form action="{{ url_for('song.delete_song', id=song.id) }}" method="post" style="display:inline;">
-                                    <input type="hidden">
-                                    <button type="submit" class="btn btn-link Link">Delete</button>
-                                </form>
+                                <a href="{{song.youtube_url}}" target="_blank" rel="noopener noreferrer">
+                                    <img src="{{song.youtube_thumbnail}}" height="100" width="100" class="rounded mx-auto d-block">
+                                </a>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="{{song.youtube_audio_url}}" type="audio/mp4">
+                                    Your browser does not support the audio element.
+                                </audio>
                             </td>
                             <td>{{song.song_name}}</td>
                             <td>{{song.artist}}</td>
-                            <td>{{song.album}}</td>
+                            <td >{{song.album}}</td>
                             <td>{{ song.song_length // 60 }}:{{ '%02d' % (song.song_length % 60) }}</td>
                             <td>{{song.genre}}</td>
                             <td>{{song.release_year}}</td>
+                            <td>
+                                <a href="{{ url_for('Edit_Song', ID=song.id) }}" class="btn btn-primary">Edit</a>
+                                <a href="{{ url_for('Delete_Song', ID=song.id) }}" class="btn btn-danger">Delete</a>
+                            </td>
                         </tr>
                         {% endfor %}
                     </tbody>
