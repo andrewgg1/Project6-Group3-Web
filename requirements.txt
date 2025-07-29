@@ -19,7 +19,7 @@ mongoengine==0.29.1
 prompt_toolkit==3.0.50
 pymongo==4.10.1
 python-dateutil==2.9.0.post0
-requests==2.32.3
+requests==2.32.4
 six==1.17.0
 typing_extensions==4.12.2
 tzdata==2025.1
